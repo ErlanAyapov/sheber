@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% if order %}
+		<form method="POST" action="{% url 'make_order' %}" enctype="multipart/form-data">
+			{% csrf_token %}
+			{% for object in order %}
+				{{ object }}<br>
+			{% endfor%}
+			<button type="submit">Submit</button>
+		</form>
+	{% endif %}
+{% endblock %}

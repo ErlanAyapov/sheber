@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+	<ul>
+		<li><a href="{% url 'main' %}">О нас</a></li>
+		<li><a href="{% url 'maker' %}">Заказать</a></li>
+		{% if not user.is_authenticated %}
+			<li><a href="{% url 'members' %}" id="active">Аккаунт</a></li>
+		{% else %}
+			<li><a href="{% url 'profile' request.user.id %}" id="active">Аккаунт</a></li>
+		{% endif %}
+		<li><a href="#">Помощь</a></li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+	<div class="auth-inner">
+		<h3>Авторизация</h3>
+		<form action="{% url 'auth' %}" method="POST">
+			{% csrf_token %}
+			<input type="text" placeholder="Имя пользователя" name="username" required>
+			<input type="password" placeholder="Пороль" name="password" required>
+			{% if error %}
+				<div class="message">
+				{{ error }}
+				</div>
+			{% endif %}
+			<button type="submit">Авторизоватся</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

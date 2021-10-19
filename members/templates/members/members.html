@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block other_links %}
+	<link rel="stylesheet" type="text/css" href="{% static 'members/style.css' %}">
+{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li><a href="{% url 'main' %}">О нас</a></li>
+		<li><a href="{% url 'maker' %}">Заказать</a></li>
+		{% if not user.is_authenticated %}
+			<li><a href="{% url 'members' %}" id="active">Аккаунт</a></li>
+		{% else %}
+			<li><a href="{% url 'profile' request.user.id %}" id="active">Аккаунт</a></li>
+		{% endif %}
+		<li><a href="#">Помощь</a></li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+	{% if not user.is_authenticated %}
+		{% if register_form %}
+			<div class="members-container">
+				<div class="register">
+					<div class="register-inner">
+						<h3>Регистрация</h3>
+						<form action="{% url 'members' %}" method="POST">
+							{% csrf_token %}
+							<input type="text" name="username" maxlength="150" autofocus required id="id_username" placeholder="Имя пользователя">
+							<input type="password" name="password1" autocomplete="new-password" required id="id_password1" placeholder="Пороль">
+							<input type="password" name="password2" autocomplete="new-password" required id="id_password2" placeholder="Повторите пороль">
+							{% if message %}
+							<div class="message">
+								{{ message}}
+							</div>
+
+							{% endif %}
+							<p id="go_to">У вас уже есть <a href="{% url 'auth' %}"> аккаунт</a> ?</p>
+							<button type="submit">Далее</button>
+						</form>
+					</div>
+				</div>
+				<div class="auth">
+					<div class="auth-inner">
+						<h3>Авторизация</h3>
+						<form action="{% url 'auth' %}" method="POST">
+							{% csrf_token %}
+							<input type="text" placeholder="Имя пользователя" name="username" required>
+							<input type="password" placeholder="Пороль" name="password" required>
+
+							<button type="submit">Авторизоватся</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endif %} 
+{% endblock %}
