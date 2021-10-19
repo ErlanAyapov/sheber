@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Online qesu</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+		{% block other_links %}
+		{% endblock %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<header>
+			
+			<div class="logo-content">
+				<div class="top-nav">
+					<div class="nav-inner">
+						{% block nav %}
+						<ul>
+							<li><a href="{% url 'main' %}">О нас</a></li>
+							<li><a href="{% url 'maker' %}">Создать</a></li>
+							<li><a href="{% url 'members' %}">Аккаунт</a></li>
+							<li><a href="#">Помощь</a></li>
+						</ul>
+						{% endblock %}
+					</div>
+				</div>
+				<div class="logo-dec-line"></div>
+				<div class="logo-icon">Oq</div>
+				<div class="logo-text">
+					<strong>Online qesu</strong>
+				</div>
+			</div>
+		</header>
+		{% block content %}
+
+		{% endblock %}
+		<script src="https://kit.fontawesome.com/e9b4a4c6c5.js" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="{% static 'main/script/maker.js' %}"></script>
+		<script src="{% static 'main/script/html2canvas.js' %}"></script>
+
+	</body>
+</html>

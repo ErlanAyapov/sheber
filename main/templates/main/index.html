@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nav %}
+	<ul>
+		<li><a href="{% url 'main' %}" id="active">О нас</a></li>
+		<li><a href="{% url 'maker' %}">Заказать</a></li>
+		{% if user.is_authenticated %}
+			<li><a href="{% url 'profile' request.user.id %}">Аккаунт</a></li>
+		{% else %}
+			<li><a href="{% url 'members' %}">Аккаунт</a></li>
+		{% endif %}
+		<li><a href="#">Помощь</a></li>
+	</ul>
+{% endblock %}
+{% block content %}
+	
+	<div class="about-content">
+		<div class="about-title">Erlan Aiapov</div>
+		<div class="about-text" style="font-size:18px">
+			 Привет! Данное время этот плотформа находится под разработкой и мы набираем команду, если хотите вступить в проект то обращайтесь на <a href="https://wa.me/+77478160485?text=Здравствуйте%2C+Ерлан+Аяпов+у+меня+есть+к+вам+вопрос">WhatsApp</a>. Этот проект является учебным. Автор проекта <strong>Ерлан Аяпов</strong>. Платформа временно расположен на бесплатном хостинге. Наш хост-провайдер Heroku. Наш <a href="">GitHub</a> !
+		</div>
+	</div>
+
+	
+	<div class="main-container">
+
+		{% if object_list %}
+		<div class="news-conteainer">
+			<h1>Новости</h1>
+			{% for object in object_list %}
+			<div class="news-block">
+				{% if object.image %}
+				<div class="image-block">
+					<img src="{{ object.image.url }}" >
+				</div>
+				{% endif %}
+				<div class="text-block">
+					<div class="news-title"><strong>{{ object.title }}</strong></div><hr style="margin:10px 0;">
+					<div class="news-body">{{ object.body }}</div>
+					<div class="news-date">
+						{{ object.date }}
+					</div>
+				</div>
+				
+			</div>
+			{% endfor %}
+		</div>
+		{% else %}
+			<h1 style="text-align:center">Пока нету новости :(</h1>
+		{% endif %} 
+	</div>
+	<div id="news_block_open" class="news_button">
+		>
+	</div>
+	<div id="news_block_close" class="news_button">
+		<
+	</div>
+	<script type="text/javascript">
+		jQuery('#news_block_open').on('click', function() {
+			$(".news-conteainer").css("left","5%")
+			$(".about-content").css("display","none")
+			$(".logo-content").css("display","none")
+			$("#news_block_close").css("display","block")
+		});
+		jQuery('#news_block_close').on('click', function() {
+			$(".news-conteainer").css("left","-150%")
+			$(".about-content").css("display","block")
+			$(".logo-content").css("display","block")
+			$("#news_block_close").css("display","none")
+			$("#news_block_open").css("display","block")
+		});
+		
+	</script>
+
+	 
+{% endblock %}
