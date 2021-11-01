@@ -2,7 +2,7 @@
 
 {% block nav %}
 	<ul>
-		<li><a href="{% url 'main' %}">О нас</a></li>
+		<li><a href="{% url 'main' %}">Дом</a></li>
 		<li><a href="{% url 'maker' %}">Заказать</a></li>
 		{% if not user.is_authenticated %}
 			<li><a href="{% url 'members' %}" id="active">Аккаунт</a></li>
