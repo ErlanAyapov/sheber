@@ -1,7 +1,7 @@
 from django.db import models
 
 class Article(models.Model):
-
+	id = models.AutoField(primary_key=True)
 	title  = models.CharField('Тақырып', max_length = 170)
 	body   = models.TextField('Мәтін')
 	image  = models.ImageField(upload_to = 'image', blank = True)
