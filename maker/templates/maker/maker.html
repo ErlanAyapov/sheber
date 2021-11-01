@@ -2,7 +2,7 @@
 {% load static %}
 {% block nav %}
 	<ul>
-		<li><a href="{% url 'main' %}">О нас</a></li>
+		<li><a href="{% url 'main' %}">Дом</a></li>
 		<li><a href="{% url 'maker' %}" id="active">Заказать</a></li>
 		{% if not user.is_authenticated %}
 			<li><a href="{% url 'members' %}">Аккаунт</a></li>
@@ -13,21 +13,22 @@
 	</ul>
 {% endblock %}
 {% block content %}
+	{% if request.user.is_authenticated %}
 	<div class="container-mk">
 		<div class="maker-inner">
 			<div class="maker-content">
 				<div class="img-mk">
 					<div class="img-mk-inner" id="content">	
-						<img src="{% static 'main/ornek/4.png' %}" width="240px" id="border_1" class="border_1 bor">
-						<img id='ex_1' src="{% static 'main/ornek/5.png' %}" width="170px" class="center_img c1">
-						<img id='ex_2' src="{% static 'main/ornek/5.png' %}" width="170px" class="center_img c2">
+						<img src="{% static 'main/ornek/4.png' %}" width="100" id="border_1" class="border_1 bor">
+						<img id='ex_1' src="{% static 'main/ornek/5.png' %}" width="100" class="center_img c1">
+						<img id='ex_2' src="{% static 'main/ornek/5.png' %}" width="100" class="center_img c2">
 
-						<img id="ex_3" class="center_img c1 de" src="{% static 'main/ornek/2.png' %}" width="170px"></img>
-						<img id="ex_4" class="center_img c2 de" src="{% static 'main/ornek/2.png' %}" width="170px"></img>
+						<img id="ex_3" class="center_img c1 de" src="{% static 'main/ornek/2.png' %}" width="100"></img>
+						<img id="ex_4" class="center_img c2 de" src="{% static 'main/ornek/2.png' %}" width="100"></img>
 
-						<img id="ex_5" class="center_img c1 dd" src="{% static 'main/ornek/6.png' %}" width="170px">
-						<img id="ex_6" class="center_img c2 dd" src="{% static 'main/ornek/6.png' %}" width="170px">
-						<img src="{% static 'main/ornek/7.png' %}" width="240px" id="border_2" class="border_1 bor">
+						<img id="ex_5" class="center_img c1 dd" src="{% static 'main/ornek/6.png' %}" width="100">
+						<img id="ex_6" class="center_img c2 dd" src="{% static 'main/ornek/6.png' %}" width="100">
+						<img src="{% static 'main/ornek/7.png' %}" width="100" id="border_2" class="border_1 bor">
 					</div>
 				</div>
 			</div>
@@ -134,7 +135,12 @@
 		</div>
 
 	</div>
-	
+	{% else %}
+		<div class="auth-pl">
+			<h1>Нужно <a href="{% url 'members' %}">авторизоватся</a> :)</h1>
+			
+		</div>
+	{% endif %}
 
 	
 {% endblock %}

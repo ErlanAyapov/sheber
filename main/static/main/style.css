@@ -171,6 +171,10 @@
 	position: absolute;
 	left: 0;
 	margin-left: 35px;
+	width: 170px;
+}
+.border_1 {
+	width: 240px;
 }
 #center_img {
 	margin-left: 35px;
@@ -276,6 +280,7 @@
 .magenta {
 	background: magenta;
 }
+
 .members-container {
 	margin-top: 5%;
 	width: 100%;
@@ -614,6 +619,19 @@
 	.tools-title {
 		display: none;
 	}
+	 
+	.center_img {
+		width: 120px;
+	}
+	.border_1 {
+		width: 190px;
+	}
+	.c1 {
+		top: 50px;
+	}
+	.c2 {
+		bottom: 50px;
+	}
 }
 .mk-button {
 	position: absolute;
@@ -738,4 +756,8 @@
 }
 #mk_ord:hover {
 	box-shadow: 0 0 10px #000;
+}
+.auth-pl {
+	margin-top: 20%;
+	text-align: center;
 }

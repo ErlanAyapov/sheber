@@ -23,7 +23,24 @@
 
 	
 	<div class="main-container">
+		<div class="block-left">
+			<div class="object-order-inner">
+				<h1>Заказ #{{ object_order.id }}</h1>
+				<hr>
+				<div class="object-order">
 
+					<div class="object-order-left">
+						<div><strong>Покупатель: </strong>{{ object_order.custom.first_name }} {{ object_order.custom.last_name }}</div>
+						<div><strong>Заказанный товар:</strong> {{ object_order.category }}</div>
+						<div><strong>Желаемый цена заказа:</strong> {{ object_order.price }}₸</div>
+						<div><strong>Комментарий к заказу:</strong> {{ object_order.comment }}</div>
+					</div>
+					<div>
+						<div><img class="object_order-img" src="{{ object_order.des_image }}"></div>
+					</div>
+				</div>
+		</div>
+		</div>
 		
 	</div>
 	<div id="news_block_open" class="news_button">
@@ -32,15 +49,21 @@
 	<div id="news_block_close" class="news_button">
 		<
 	</div>
+	<style type="text/css">
+		.block-left {
+			position: absolute;
+			left: -150%;
+		}
+	</style>
 	<script type="text/javascript">
 		jQuery('#news_block_open').on('click', function() {
-			$(".news-conteainer").css("left","5%")
+			$(".block-left").css("left","5%")
 			$(".about-content").css("display","none")
 			$(".logo-content").css("display","none")
 			$("#news_block_close").css("display","block")
 		});
 		jQuery('#news_block_close').on('click', function() {
-			$(".news-conteainer").css("left","-150%")
+			$(".block-left").css("left","-150%")
 			$(".about-content").css("display","block")
 			$(".logo-content").css("display","block")
 			$("#news_block_close").css("display","none")
