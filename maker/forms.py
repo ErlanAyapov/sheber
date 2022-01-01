@@ -1,15 +1,15 @@
 from django import forms
-from maker.models import Product
+from maker.models import Product, OrnamentFragment
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
 
 
 class OrderForm(forms.ModelForm):
     class Meta:
     	model  = Product
-    	fields = ('category', 'comment', 'custom', 'image', 'price', 'salesman', 'des_image')
+    	fields = ('__all__')
 
-    	# widgets = {
-    	# 	'comment': Textarea  (attrs={'class': 'order-form', 'placeholder': 'Комментарий к заказу',}) 
-    	# 	'price':   TextInput (attrs={'class': 'order-form', 'placeholder': 'Комментарий к заказу',}) 
-    	# }
-    	# exclude = ['custom', 'category']
+
+class FragmentAdd(forms.ModelForm):
+    class Meta:
+        model = OrnamentFragment
+        fields = ('__all__')

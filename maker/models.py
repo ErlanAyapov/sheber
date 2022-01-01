@@ -13,11 +13,29 @@ class Product(models.Model):
 	
 	category	= models.ForeignKey(Category, on_delete = models.CASCADE, verbose_name = 'Категрия' )
 	comment 	= models.TextField('Комментарий к заказу')
-	image		= models.ImageField('Дизайн', upload_to = 'image/product/', blank = True)
 	price		= models.DecimalField(max_digits = 9, decimal_places = 2, verbose_name = 'Цена')
-	custom		= models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Покупатель', related_name='custom')
-	salesman	= models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Продавец')
-	des_image	= models.TextField('Image', blank = True)
+	des_image	= models.TextField('Фото (Base64)', blank = True)
+	client_first_name = models.CharField('Имя', max_length = 50, default = 'Anonymous_user')
+	client_last_name  = models.CharField('Фамилия', max_length = 50, default = 'Anonymous_user')
+	whatsapp 	  = models.CharField('Whatsapp', max_length = 12, default = 'Anonymous_user')
+	phone_number  = models.CharField('Телефон', max_length = 12, default = 'Anonymous_user')
+
+
+	# def __str__(self):
+	# 	return f'Покупатель: {client_first_name} {client_last_name}'
+
+
+class TypeOfOrnament(models.Model):
+	name = models.CharField('Тип орнамента', max_length = 255)
+	slug = models.SlugField(unique = True)
 
 	def __str__(self):
-		return f'Покупатель: {self.custom.first_name} {self.custom.last_name}'
+		return self.name
+
+
+class OrnamentFragment(models.Model):
+	types 		 = models.ForeignKey(TypeOfOrnament, on_delete = models.CASCADE, verbose_name = 'Тип орнамента' )
+	image_base64 = models.TextField('Изоброжение (Base64)')
+
+	def __str__(self):
+		return str(self.types.name)

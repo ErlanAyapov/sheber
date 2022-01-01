@@ -3,4 +3,6 @@ from .models import *
 
 admin.site.register(Category)
 admin.site.register(Product)
+admin.site.register(TypeOfOrnament)
+admin.site.register(OrnamentFragment)
 

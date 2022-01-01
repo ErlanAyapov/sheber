@@ -13,7 +13,7 @@
 	</ul>
 {% endblock %}
 {% block content %}
-	{% if request.user.is_authenticated %}
+	
 	<div class="container-mk">
 		<div class="maker-inner">
 			<div class="maker-content">
@@ -39,7 +39,7 @@
 			</div>
 			<div class="inner-tool">
 				<details>
-					<summary class="summary1"><span>Мата түсі</span> <i class="fas fa-palette"></i></summary>
+					<summary class="summary1"><span>Фрагменты №1</span> <i class="fas fa-palette"></i></summary>
 					<div class="color-container">
 						<label>
 							<div class="yellow color-block" ></div>
@@ -68,7 +68,7 @@
 					</div>
 				</details>
 				<details>
-					<summary class="summary2"><span>Ішкі оюлар</span> <i class="fab fa-first-order-alt"></i></i></summary>
+					<summary class="summary2"><span>Фрагменты №2</span> <i class="fab fa-first-order-alt"></i></i></summary>
 					<label class="img-lab">
 						<img src="{% static 'main/ornek/5.png' %}" width="80">
 						<input type="radio" onclick="fun1()" name="r1" value="5">
@@ -84,7 +84,7 @@
 				</details>
 
 				<details>
-					<summary class="summary3"><span>Жақтау оюлар</span> <i class="fas fa-border-style"></i></summary>
+					<summary class="summary3"><span>Фрагменты №3</span> <i class="fas fa-border-style"></i></summary>
 					<label class="img-lab">
 						<img src="{% static 'main/ornek/4.png' %}" width="80">
 						<input type="radio" onclick="border()" name="border_button" value="5">
@@ -116,13 +116,17 @@
 						{% csrf_token %}
 						<div class="model-left">
 							<input type="hidden" name="category" required id="id_category" value="1">
-							<input type="hidden" name="custom" required id="id_custom" value="{{ request.user.id }}">
-							<input type="hidden" name="salesman" required id="id_salesman" value="5">
+							<!-- <input type="hidden" name="custom" required id="id_custom" value="{{ request.user.id }}"> -->
+							<!-- <input type="hidden" name="salesman" required id="id_salesman" value="5"> -->
 							<textarea class="model-form" name="comment"  rows="1" required id="id_comment" placeholder="Комментарий к заказу"></textarea>
 							<!-- <input type="file" name="image" accept="image/*" required id="id_image" value=""> -->
 							<textarea style="display:none" name="des_image"  id="id_des_image"></textarea>
 							<input class="model-form" type="number" name="price" step="500" required id="id_price" placeholder="Введите желаемую сумму ₸">
 							
+							<input class="model-form" type="text" name="client_first_name" value="" maxlength="50" required id="id_client_first_name" placeholder="Имя">
+							<input class="model-form" type="text" name="client_last_name" value="" maxlength="50" required id="id_client_last_name" placeholder="Фамилия">
+							<input class="model-form" type="text" name="whatsapp" maxlength="12" required id="id_whatsapp" placeholder="Whatsapp">
+							<input class="model-form" type="text" name="phone_number" maxlength="12" required id="id_phone_number" placeholder="Телефон">
 							<button id="mk_ord" type="submit">Заказать</button>
 						</div>
 						<div class="model-right">
@@ -133,14 +137,5 @@
 				</div>
 			</div>
 		</div>
-
-	</div>
-	{% else %}
-		<div class="auth-pl">
-			<h1>Нужно <a href="{% url 'members' %}">авторизоватся</a> :)</h1>
-			
-		</div>
-	{% endif %}
-
-	
+	</div>	
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="input-ornaments-block">
+		<form method="POST" action="">
+			{% csrf_token %}
+			{{ fragment_form.types }}<br>
+			<textarea name="image_base64" cols="40" rows="10" required id="id_image_base64" ></textarea>
+			<input class="form-control"  type="file" name="im" title="Выберите орнамент" accept="image/*" id="id_p" onchange="encodeImageFileAsURL(this, input_id = 'id_image_base64')" />
+			<div class="output-image">
+				<img src="" id="blah">
+			</div>
+			<button type="submit" class="btn btn-primary">Сохранить</button>
+		</form>
+	</div>
+{% endblock %}
