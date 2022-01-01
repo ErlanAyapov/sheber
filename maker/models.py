@@ -25,8 +25,10 @@ class Product(models.Model):
 	# 	return f'Покупатель: {client_first_name} {client_last_name}'
 
 class Test(models.Model):
-	pass 
-	
+	passname = models.CharField('Тип орнамента', max_length = 255)
+	slug = models.SlugField(unique = True)
+
+		
 class TypeOfOrnament(models.Model):
 	name = models.CharField('Тип орнамента', max_length = 255)
 	slug = models.SlugField(unique = True)
