@@ -17,8 +17,8 @@ class Product(models.Model):
 	des_image	= models.TextField('Фото (Base64)', blank = True)
 	client_first_name = models.CharField('Имя', max_length = 50, default = 'Anonymous_user')
 	client_last_name  = models.CharField('Фамилия', max_length = 50, default = 'Anonymous_user')
-	whatsapp 	  = models.CharField('Whatsapp', max_length = 11, default = 'Anonymous_user')
-	phone_number  = models.CharField('Телефон', max_length = 11, default = 'Anonymous_user')
+	whatsapp 	  = models.CharField('Whatsapp', max_length = 15, default = 'Anonymous_user')
+	phone_number  = models.CharField('Телефон', max_length = 15, default = 'Anonymous_user')
 
 
 	# def __str__(self):
