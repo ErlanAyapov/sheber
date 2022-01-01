@@ -30,17 +30,17 @@ function fun1() {
 function bg_pos() {
 	var bg = document.getElementsByName('bg_pos');
 	if (bg[0].checked) {
-		$(".bor").css("background","yellow")
+		$(".maker-block").css("background","yellow")
 	} else if (bg[1].checked) {
-		$(".bor").css("background","blue")
+		$(".maker-block").css("background","blue")
 	} else if (bg[2].checked) {
-		$(".bor").css("background","lightgreen")
+		$(".maker-block").css("background","lightgreen")
 	} else if (bg[3].checked) {
-		$(".bor").css("background","gray")
+		$(".maker-block").css("background","gray")
 	} else if (bg[4].checked) {
-		$(".bor").css("background","white")
+		$(".maker-block").css("background","white")
 	} else if (bg[5].checked) {
-		$(".bor").css("background","magenta")
+		$(".maker-block").css("background","magenta")
 	}
 
 }
@@ -73,3 +73,31 @@ function screen_shot(){
 	});	
 	
 };
+
+function encodeImageFileAsURL(element, input_id) {
+    const input_base64 = document.getElementById(input_id);
+    var file = element.files[0];
+    var reader = new FileReader();
+    var base64;
+    reader.onloadend = function() {
+        input_base64.value = reader.result;
+        $('#blah').attr('src', reader.result);
+        $('#blah').attr('alt', 'таңдалды');
+        $("#blah").css("display", 'block');
+        $("#btn_upd").css("display", 'block');
+    }
+    reader.readAsDataURL(file);
+    // reader.readAsDataURL(element.files[0]);        
+}
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+            .attr('src', e.target.result)
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+}
