@@ -8,11 +8,10 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
 		{% block other_links %}
 		{% endblock %}
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="{% static 'main/script/jquery.js' %}"></script>
 	</head>
-	<body>
+	<body oncontextmenu="return false;">
 		<header>
-			
 			<div class="logo-content">
 				<div class="top-nav">
 					<div class="nav-inner">
@@ -37,9 +36,9 @@
 
 		{% endblock %}
 		<script src="https://kit.fontawesome.com/e9b4a4c6c5.js" crossorigin="anonymous"></script>
-
 		<script type="text/javascript" src="{% static 'main/script/maker.js' %}"></script>
 		<script src="{% static 'main/script/html2canvas.js' %}"></script>
+		<script src="{% static 'main/script/scripts.js' %}"></script>
 
 	</body>
 </html>

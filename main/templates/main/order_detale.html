@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="order-detail-container">
+		<div class="order-block">
+			<h2>Заказ №{{ object.id }}</h2>
+			<div class="order-info">
+				<p><strong>Покупатель:</strong> {{ object.client_first_name }} {{ object.client_last_name }}</p>
+				<p><strong>Комментарий к заказу:</strong> {{ object.comment }}</p>
+				<p><strong>Желаемый цена заказа:</strong> {{ object.price }}₸</p>
+				<p>
+					<strong>Телефон:</strong> 
+					<a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a>
+				</p>
+				<p>
+					<strong>Whatsapp:</strong> 
+					<a href="https://wa.me/+77478160485?text=Добрый+день!+{{ object.client_first_name }}+{{ object.client_last_name }}%2C+обращяюсь+по+поводу+заказа+№{{ object.id }}">{{ object.whatsapp }}</a>
+				</p>
+			</div>
+				<hr>
+			<div class="order-design">
+				<img src="{{ object.des_image }}">
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -6,10 +6,13 @@
 		<li><a href="{% url 'maker' %}">Заказать</a></li>
 		{% if user.is_authenticated %}
 			<li><a href="{% url 'profile' request.user.id %}">Аккаунт</a></li>
+		{% if request.user.is_staff %}
+			<li><a href="{% url 'add_fragment' %}">Добавить</a></li>
+		{% endif %}
 		{% else %}
 			<li><a href="{% url 'members' %}">Аккаунт</a></li>
 		{% endif %}
-		<li><a href="#">Помощь</a></li>
+		<!-- <li><a href="#">Помощь</a></li> -->
 	</ul>
 {% endblock %}
 {% block content %}
@@ -24,24 +27,22 @@
 	
 	<div class="main-container">
 		<div class="block-left">
-			<div class="object-order-inner">
-				<h1>Заказ #{{ object_order.id }}</h1>
-				<hr>
-				<div class="object-order">
-
-					<div class="object-order-left">
-						<div><strong>Покупатель: </strong>{{ object_order.custom.first_name }} {{ object_order.custom.last_name }}</div>
+			{% if product %}
+				<div class="order-product-container">
+				<h2>Все заказы</h2>
+				{% for object_order in product %}
+					<div class="order-product-block">
+						<div><strong>Покупатель: </strong>{{ object_order.client_first_name }} {{ object_order.client_last_name }}</div>
 						<div><strong>Заказанный товар:</strong> {{ object_order.category }}</div>
 						<div><strong>Желаемый цена заказа:</strong> {{ object_order.price }}₸</div>
-						<div><strong>Комментарий к заказу:</strong> {{ object_order.comment }}</div>
-					</div>
-					<div>
-						<div><img class="object_order-img" src="{{ object_order.des_image }}"></div>
-					</div>
+						<div><strong>Комментарий к заказу:</strong> {{ object_order.comment|slice:":150" }}...</div><br>
+						<a href="{% url 'detail_order' object_order.id %}">Посмотреть заказ</a>		
+					</div>					
+				{% endfor %}
 				</div>
+			{% endif %}
 		</div>
-		</div>
-		
+	
 	</div>
 	<div id="news_block_open" class="news_button">
 		>
@@ -49,23 +50,18 @@
 	<div id="news_block_close" class="news_button">
 		<
 	</div>
-	<style type="text/css">
-		.block-left {
-			position: absolute;
-			left: -150%;
-		}
-	</style>
 	<script type="text/javascript">
 		jQuery('#news_block_open').on('click', function() {
-			$(".block-left").css("left","5%")
-			$(".about-content").css("display","none")
-			$(".logo-content").css("display","none")
+			$(".block-left").css("left","0")
+			$(".block-left").css("position","absolute")
 			$("#news_block_close").css("display","block")
+			$(".about-content").css("display","none")
 		});
 		jQuery('#news_block_close').on('click', function() {
-			$(".block-left").css("left","-150%")
+			$(".block-left").css("left","-100%")
+			$(".block-left").css("position","absolute")
 			$(".about-content").css("display","block")
-			$(".logo-content").css("display","block")
+
 			$("#news_block_close").css("display","none")
 			$("#news_block_open").css("display","block")
 		});
