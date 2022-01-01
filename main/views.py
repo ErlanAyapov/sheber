@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Article
 from maker.models import Product
 # def MainView(request):
@@ -13,3 +13,9 @@ class MainView(ListView):
 		context = super(MainView, self).get_context_data(**kwargs)
 		context['product'] = Product.objects.all()
 		return context
+
+
+class OrderDetaleView(DetailView):
+	model = Product
+	ordering = '-id'
+	template_name = 'main/order_detale.html'
