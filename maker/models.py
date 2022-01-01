@@ -24,7 +24,9 @@ class Product(models.Model):
 	# def __str__(self):
 	# 	return f'Покупатель: {client_first_name} {client_last_name}'
 
-
+class Test(models.Model):
+	pass 
+	
 class TypeOfOrnament(models.Model):
 	name = models.CharField('Тип орнамента', max_length = 255)
 	slug = models.SlugField(unique = True)
