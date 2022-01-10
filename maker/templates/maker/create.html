@@ -8,7 +8,7 @@
 		{% else %}
 			<li><a href="{% url 'profile' request.user.id %}">Аккаунт</a></li>
 		{% endif %}
-		<li><a href="#">Помощь</a></li>
+		<li><a href="#">{{ ipaddress }}</a></li>
 	</ul>
 {% endblock %}
 {% block content %}
@@ -98,41 +98,32 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-<div class="mk-button" id="get_images" onclick="screen_shot()"><i class="fas fa-check"></i></div>
-<div class="order-model">
-	<div class="order-form">
-		<div class="model-header">
-			<div class="exit-icon"><i class="fas fa-times"></i></div>
+<div class="mk-button" id="get_images" onclick="screen_shot()">Оформить</div>
+<div class="form-modal-container-my clear-fix">
+		<div class="form-modal-title">
 			<h2>Оформить заказ</h2>
-			<hr>
+			<button id="modal_close_btn" onclick="close_modal()">X</button>
 		</div>
-		<div class="model-body">
-			<form class="model-form-cont" action="{% url 'make_order' %}" enctype="multipart/form-data" method="POST">
+		<div class="form-modal">
+			<form action="{% url 'make_order' %}" enctype="multipart/form-data" method="post">
 				{% csrf_token %}
-				<div class="model-left">
-					<input type="hidden" name="category" required id="id_category" value="1">
-					<!-- <input type="hidden" name="custom" required id="id_custom" value="{{ request.user.id }}"> -->
-					<!-- <input type="hidden" name="salesman" required id="id_salesman" value="5"> -->
-					<textarea class="model-form" name="comment"  rows="1" required id="id_comment" placeholder="Комментарий к заказу"></textarea>
-					<!-- <input type="file" name="image" accept="image/*" required id="id_image" value=""> -->
-					<textarea style="display:none" name="des_image"  id="id_des_image"></textarea>
-					<input class="model-form" type="number" name="price" step="500" required id="id_price" placeholder="Введите желаемую сумму ₸">
-					
-					<input class="model-form" type="text" name="client_first_name" value="" maxlength="50" required id="id_client_first_name" placeholder="Имя">
-					<input class="model-form" type="text" name="client_last_name" value="" maxlength="50" required id="id_client_last_name" placeholder="Фамилия">
-					<input class="model-form" type="text" name="whatsapp" maxlength="12" required id="id_whatsapp" placeholder="Whatsapp">
-					<input class="model-form" type="text" name="phone_number" maxlength="12" required id="id_phone_number" placeholder="Телефон">
-					<button id="mk_ord" type="submit">Заказать</button>
-				</div>
-				<div class="model-right">
-					<img id="rm" width="240">
-				</div>
+				<input type="hidden" name="category" required id="id_category" value="1">
+				<!-- <input type="hidden" name="custom" required id="id_custom" value="{{ request.user.id }}"> -->
+				<!-- <input type="hidden" name="salesman" required id="id_salesman" value="5"> -->
+				<textarea class="model-form" name="comment"  rows="1" required id="id_comment" placeholder="Комментарий к заказу"></textarea>
+				<!-- <input type="file" name="image" accept="image/*" required id="id_image" value=""> -->
+				<textarea style="display:none" name="des_image"  id="id_des_image"></textarea>
+				<input class="model-form" type="number" name="price" step="500" required id="id_price" placeholder="Введите желаемую сумму ₸">
+				
+				<input class="model-form" type="text" name="client_first_name" value="" maxlength="50" required id="id_client_first_name" placeholder="Имя">
+				<input class="model-form" type="text" name="client_last_name" value="" maxlength="50" required id="id_client_last_name" placeholder="Фамилия">
+				<input class="model-form" type="text" name="whatsapp" maxlength="12" required id="id_whatsapp" placeholder="Whatsapp">
+				<input class="model-form" type="text" name="phone_number" maxlength="12" required id="id_phone_number" placeholder="Телефон">
+				<button id="mk_ord" type="submit">Заказать</button>
 			</form>
 		</div>
+		<div class="result-img-my">
+			<img id="rm" >
+		</div> 
 	</div>
-</div>
 {% endblock %}

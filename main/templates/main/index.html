@@ -35,7 +35,10 @@
 						<div><strong>Покупатель: </strong>{{ object_order.client_first_name }} {{ object_order.client_last_name }}</div>
 						<div><strong>Заказанный товар:</strong> {{ object_order.category }}</div>
 						<div><strong>Желаемый цена заказа:</strong> {{ object_order.price }}₸</div>
-						<div><strong>Комментарий к заказу:</strong> {{ object_order.comment|slice:":150" }}...</div><br>
+						{% if object_order.date %}
+						<div><strong>Время заказа:</strong> {{ object_order.date|slice:":16" }}</div>
+						{% endif %}
+						<br>
 						<a href="{% url 'detail_order' object_order.id %}">Посмотреть заказ</a>		
 					</div>					
 				{% endfor %}

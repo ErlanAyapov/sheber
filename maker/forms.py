@@ -5,8 +5,19 @@ from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
 
 class OrderForm(forms.ModelForm):
     class Meta:
-    	model  = Product
-    	fields = ('__all__')
+        model  = Product
+        fields = (
+            'category', 
+            'comment', 
+            'price', 
+            'des_image',
+            'client_first_name',
+            'client_last_name',
+            'whatsapp',
+            'phone_number',
+            )
+
+        exclude = ['ip', 'date']
 
 
 class FragmentAdd(forms.ModelForm):

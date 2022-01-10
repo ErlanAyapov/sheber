@@ -51,12 +51,18 @@ function screen_shot(){
 		logo.value = my_screen;
 		document.getElementById('rm').src = my_screen;
 	});	
-	
-};
+	$(".form-modal-container-my").css("top","0")
+	$("#rm").css("display","block")
+};	
 
-el.onmousedown = function (e) {
-    if (window.event.stopPropagation) window.event.stopPropagation();
-    window.event.cancelBubble = true;
-    e.cancelBubble = true;
-}
+// el.onmousedown = function (e) {
+//     if (window.event.stopPropagation) window.event.stopPropagation();
+//     window.event.cancelBubble = true;
+//     e.cancelBubble = true;
+// }
 $("img, a").on("dragstart", function(event) { event.preventDefault(); });
+
+function close_modal() {
+	$(".form-modal-container-my").css("top","-100%")
+	$("#rm").css("display","none")
+};

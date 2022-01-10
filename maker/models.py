@@ -19,10 +19,11 @@ class Product(models.Model):
 	client_last_name  = models.CharField('Фамилия', max_length = 50, default = 'Anonymous_user')
 	whatsapp 	  = models.CharField('Whatsapp', max_length = 15, default = 'Anonymous_user')
 	phone_number  = models.CharField('Телефон', max_length = 15, default = 'Anonymous_user')
+	ip	  = models.CharField('Ip', max_length = 50, blank = True)
+	date  = models.CharField('Время', max_length = 50, blank = True)
 
-
-	# def __str__(self):
-	# 	return f'Покупатель: {client_first_name} {client_last_name}'
+	def __str__(self):
+		return f'{self.client_first_name} {self.client_last_name}: {self.ip}'
 
 class Test(models.Model):
 	passname = models.CharField('Тип орнамента', max_length = 255)
