@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect
-from django.views.generic import ListView
-from main.models import Article
-from .forms import OrderForm, FragmentAdd
-from .models import Product
-from .models import OrnamentFragment, TypeOfOrnament
 import pickle
 import datetime
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DeleteView
+from django.urls import reverse_lazy
+from .models import Product
+from .models import OrnamentFragment, TypeOfOrnament
+from main.models import Article
+from .forms import OrderForm, FragmentAdd
 
 
 def get_client_ip(request):
@@ -86,3 +87,8 @@ def add_fragment(request):
 		'fragment_form': form
 	}
 	return render(request, 'maker/add_fragments.html', data)
+
+class OrderDeleteView(DeleteView):
+	model = Product
+	template_name = 'main/order_delete.html'
+	success_url = reverse_lazy('maker')
