@@ -37,7 +37,7 @@ def create_view(request):
 	center_ornament = OrnamentFragment.objects.filter(types = center_ornament)
 	border_ornament = OrnamentFragment.objects.filter(types = border_ornament)
 	ip = get_client_ip(request)
-	print(request.META['HTTP_USER_AGENT'])
+	# print(request.META['HTTP_USER_AGENT'])
 	data = {
 		'center_ornament':center_ornament,
 		'border_ornament':border_ornament,
@@ -63,6 +63,7 @@ def make_order(request):
 			form = form.save(commit=False)
 			form.date = datetime.datetime.now()
 			form.ip = str(get_client_ip(request))
+			form.system_info = str(request.META['HTTP_USER_AGENT'])
 			form.save()
 			return redirect('main')
 			

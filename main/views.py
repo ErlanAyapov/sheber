@@ -25,9 +25,9 @@ class OrderDetaleView(DetailView):
 
 		if str(self.object.ip) == str(get_client_ip(self.request)) and str(self.object.system_info) == str(self.request.META['HTTP_USER_AGENT']):
 			order_hour, order_minute = map(int, str(self.object.date)[11:-10].split(':'))
-			order_date = order_time[:-16]
+			order_date = str(self.object.date)[:-16]
 			real_hour, real_minute = map(int, str(datetime.datetime.now())[11:-10].split(':'))
-			real_date = real_time[:-16]
+			real_date = str(datetime.datetime.now())[:-16]
 
 			order_minute = order_hour * 60 + order_minute
 			real_minute = real_hour * 60 + real_minute

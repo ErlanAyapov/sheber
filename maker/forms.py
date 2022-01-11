@@ -15,9 +15,10 @@ class OrderForm(forms.ModelForm):
             'client_last_name',
             'whatsapp',
             'phone_number',
+
             )
 
-        exclude = ['ip', 'date']
+        exclude = ['ip', 'date', 'system_info']
 
 
 class FragmentAdd(forms.ModelForm):
