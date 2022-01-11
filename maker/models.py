@@ -21,6 +21,8 @@ class Product(models.Model):
 	phone_number  = models.CharField('Телефон', max_length = 15, default = 'Anonymous_user')
 	ip	  = models.CharField('Ip', max_length = 50, blank = True)
 	date  = models.CharField('Время', max_length = 50, blank = True)
+	system_info = models.CharField('Системный информация', max_length = 150, default = 'Anonymous_user')
+	
 
 	def __str__(self):
 		return f'{self.client_first_name} {self.client_last_name}: {self.ip}'

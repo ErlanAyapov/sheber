@@ -23,8 +23,7 @@ class OrderDetaleView(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(OrderDetaleView, self).get_context_data(**kwargs)
 
-		if str(self.object.ip) == str(get_client_ip(self.request)):
-
+		if str(self.object.ip) == str(get_client_ip(self.request)) and str(self.object.system_info) == str(self.request.META['HTTP_USER_AGENT']):
 			order_hour, order_minute = map(int, str(self.object.date)[11:-10].split(':'))
 			order_date = order_time[:-16]
 			real_hour, real_minute = map(int, str(datetime.datetime.now())[11:-10].split(':'))

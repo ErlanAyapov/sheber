@@ -37,7 +37,7 @@ def create_view(request):
 	center_ornament = OrnamentFragment.objects.filter(types = center_ornament)
 	border_ornament = OrnamentFragment.objects.filter(types = border_ornament)
 	ip = get_client_ip(request)
-
+	print(request.META['HTTP_USER_AGENT'])
 	data = {
 		'center_ornament':center_ornament,
 		'border_ornament':border_ornament,
