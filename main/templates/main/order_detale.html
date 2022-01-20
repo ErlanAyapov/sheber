@@ -23,11 +23,33 @@
 			</div>
 
 			{% if result == 'True' %}
-				<form action="{% url 'order_delete' object.id %}" method="POST">
-					{% csrf_token %}
-					<button type="submit">Удалить заказ</button>
-				</form>
+				<div class="delete-form">
+					<form action="{% url 'order_delete' object.id %}" method="POST">
+						{% csrf_token %}
+						<button type="submit">Удалить заказ</button>
+					</form>
+				</div>
+
 			{% endif %}
-		</div>
+			<h3>Использованные узоры</h3>
+			<div class="maked-ornaments-container">
+				
+				<div class="maked-center">
+					<img src="{{ center_img  }}" width="80">
+					<a href="{{ center_img  }}" download>Скачать</a>
+				</div>
+				<div class="maked-border">
+					<img src="{{ border_img  }}" width="80">
+					<a href="{{ border_img  }}" download>Скачать</a>
+				</div>
+			</div>
+		</div> 
 	</div>
+	{% if result == 'True' %}
+	<div class="delete-info">
+		<h3>Заказ успешно опубликован!</h3>
+		<p>Вы можете удалить заказ в течени {{ dead_line }} минут.</p>
+		<button onclick="close_info()">ok</button>
+	</div>
+	{% endif %}
 {% endblock %}

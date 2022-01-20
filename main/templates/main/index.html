@@ -6,13 +6,15 @@
 		<li><a href="{% url 'maker' %}">Заказать</a></li>
 		{% if user.is_authenticated %}
 			<li><a href="{% url 'profile' request.user.id %}">Аккаунт</a></li>
+		{% else %}
+			<li><a href="{% url 'members' %}">Аккаунт</a></li>
+			<li><a href="#">Помощь</a></li>
+
+		{% endif %}
 		{% if request.user.is_staff %}
 			<li><a href="{% url 'add_fragment' %}">Добавить</a></li>
 		{% endif %}
-		{% else %}
-			<li><a href="{% url 'members' %}">Аккаунт</a></li>
-		{% endif %}
-		<!-- <li><a href="#">Помощь</a></li> -->
+		
 	</ul>
 {% endblock %}
 {% block content %}

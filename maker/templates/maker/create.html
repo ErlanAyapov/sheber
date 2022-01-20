@@ -8,7 +8,7 @@
 		{% else %}
 			<li><a href="{% url 'profile' request.user.id %}">Аккаунт</a></li>
 		{% endif %}
-		<li><a href="#">{{ ipaddress }}</a></li>
+		<li><a href="#">Помощь</a></li>
 	</ul>
 {% endblock %}
 {% block content %}
@@ -18,7 +18,7 @@
 			<div class="border_content">
 			{% for border_content in border_ornament %}
 				<div class="border_content_inner">
-					<img src="{{ border_content.image_base64 }}" width="240" unselectable="on">
+					<img name='border_img' src="{{ border_content.image_base64 }}" width="240" unselectable="on">
 				</div>
 			{% endfor %}
 			</div>
@@ -26,7 +26,7 @@
 			<div class="center_top_content">
 			{% for center_top_content in center_ornament %}
 				<div class="border_content_inner_top"> 
-					<img src="{{ center_top_content.image_base64 }}" name="border_top_content" width="160" unselectable="on">
+					<img name="center_im" src="{{ center_top_content.image_base64 }}" name="border_top_content" width="160" unselectable="on" >
 				</div>
 			{% endfor %}
 			</div>
@@ -108,7 +108,7 @@
 			<form action="{% url 'make_order' %}" enctype="multipart/form-data" method="post">
 				{% csrf_token %}
 				<input type="hidden" name="category" required id="id_category" value="1">
-				<!-- <input type="hidden" name="custom" required id="id_custom" value="{{ request.user.id }}"> -->
+				<input type="hidden" name="ornament_info" required id="id_ornament_info" value="">
 				<!-- <input type="hidden" name="salesman" required id="id_salesman" value="5"> -->
 				<textarea class="model-form" name="comment"  rows="1" required id="id_comment" placeholder="Комментарий к заказу"></textarea>
 				<!-- <input type="file" name="image" accept="image/*" required id="id_image" value=""> -->
@@ -126,4 +126,9 @@
 			<img id="rm" >
 		</div> 
 	</div>
+<script type="text/javascript">
+	var borderImgText = document.getElementsByName('border_img')[0].src.substr(-50, 30);
+	var centerImgText = document.getElementsByName('center_im')[0].src.substr(-50, 30);
+	console.log(borderImgText)
+</script>
 {% endblock %}

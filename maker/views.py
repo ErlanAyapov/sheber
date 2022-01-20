@@ -7,6 +7,7 @@ from .models import Product
 from .models import OrnamentFragment, TypeOfOrnament
 from main.models import Article
 from .forms import OrderForm, FragmentAdd
+from django.http import HttpResponseRedirect
 
 
 def get_client_ip(request):
@@ -65,13 +66,13 @@ def make_order(request):
 			form.ip = str(get_client_ip(request))
 			form.system_info = str(request.META['HTTP_USER_AGENT'])
 			form.save()
-			return redirect('main')
+			return HttpResponseRedirect('/order/detail' + str(form.id))
 			
 	form = OrderForm()
 	data = {
 		'order':form,
 	}
-	print('Ip', str(get_client_ip(request)))
+	# print('Ip', str(get_client_ip(request)))
 	return render(request, 'maker/order.html', data)
 
 

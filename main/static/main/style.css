@@ -719,6 +719,7 @@
 	margin-top: 10vh;
 	box-shadow: 0 0 20px #000;
 	border-radius: 20px;
+	/*position: relative;*/
 }
 .order-block h2 {
 	text-align: center;
@@ -929,6 +930,75 @@
 	color: #000;
 	border: 2px solid #000;
 	border-radius: 20px;
+	cursor: pointer;
+}
+.maked-ornaments-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.order-block h3 {
+	text-align: center;
+	padding: 20px;
+}
+.maked-ornaments-container div {
+	display: inline-block;
+	/*background: gray;*/
+	margin: 10px;
+	position: relative;
+	padding: 5px;
+	box-shadow: 0 0 5px #000;
+	border-radius: 15px;
+} 
+.maked-ornaments-container div a {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	text-decoration: none;
+	/*padding: 2.5px;*/
+	font-size: 17px;
+	color: #fff;
+	background: blue;
+	border-radius: 15px;
+
+}
+.delete-form {
+	position: absolute;
+	top: 170px;
+	left: 0;
+}
+.delete-form button {
+	background: blue;
+	color: #fff;
+	font-size: 18px;
+	border: 0;
+	/*border-radius: 25px;*/
+	border-bottom-right-radius: 25px;
+	border-top-right-radius: 25px;
+	padding: 0 20px;
+}
+.delete-info {
+	position: fixed;
+	top: 50px;
+	width: 70%;
+	background: yellow;
+	margin: auto;
+	margin-left: 15%;
+	padding: 5px;
+	border-radius: 15px;
+	border: 2px solid blue;
+	box-shadow: 0 0 25px;
+
+}
+.delete-info button {
+	background: blue;
+	color: #fff;
+	border: 0;
+	padding: 5px;
+	/*position: absolute;*/
+	margin: 5px 2px;
 	cursor: pointer;
 }
 
