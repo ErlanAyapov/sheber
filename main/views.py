@@ -46,15 +46,19 @@ class OrderDetaleView(DetailView):
 
 			if real_date == order_date and real_minute - order_minute <= 60:
 				result = 'True'
+				context['dead_line']  = str(60 - (real_minute - order_minute))
+
 			else:
 				result = 'False'
 				real_hour = 23 + (int(real_date[8:]) - int(order_date[8:]))
 				real_minute = real_hour * 60 + real_minute_1
 				if real_minute - order_minute <= 60:
 					result = 'True'
+					context['dead_line']  = str(60 - (real_minute - order_minute))
+
 				
 			context['result'] = result
+
 		context['border_img'] = border_img
 		context['center_img'] = center_img
-		context['dead_line']  = str(60 - (real_minute - order_minute))
 		return context

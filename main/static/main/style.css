@@ -829,8 +829,18 @@
 
 
 @media screen and (max-width: 520px) {
+	.maker-container {
+		margin-top: 5%;
+	}
+	.maker-tools {
+		margin-top: 5%;
+	}
+	.maker-content {
+		width: 70%;
+	}
 	.maker-block {
 		height: 370px;
+		width: 190px;
 		
 	}
 	.maker-block img {
@@ -1117,6 +1127,6 @@
 		display: block;
 	}
 	#rm {
-		max-width: 240px;
+		max-width: 200px;
 	}
 }
