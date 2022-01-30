@@ -18,7 +18,7 @@
 			<div class="border_content">
 			{% for border_content in border_ornament %}
 				<div class="border_content_inner">
-					<img name='border_img' src="{{ border_content.image_base64 }}" width="240" unselectable="on">
+					<img name='border_img' src="{{ border_content.image_base64 }}" width="240" height="422.02" unselectable="on">
 				</div>
 			{% endfor %}
 			</div>
@@ -76,7 +76,7 @@
 				<div class="color-container">
 				{% for border in border_ornament %}
 					<label>
-						<img src="{{ border.image_base64 }}" width="80">
+						<img src="{{ border.image_base64 }}" width="80" height="140.67">
 						<input type="radio" onclick="border_click()" name="border_ornament">
 					</label>
 				{% endfor %}
