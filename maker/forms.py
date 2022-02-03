@@ -16,6 +16,7 @@ class OrderForm(forms.ModelForm):
             'whatsapp',
             'phone_number',
             'ornament_info',
+            'number',
             )
 
         exclude = ['ip', 'date', 'system_info']

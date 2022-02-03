@@ -5,6 +5,8 @@
 			{% csrf_token %}
 			{{ fragment_form.types }}<br>
 			<textarea name="image_base64" cols="40" rows="10" required id="id_image_base64" ></textarea>
+			<input class="form-control" type="num" name="price" id="id_price" required="" placeholder="Цена орнамента">
+
 			<input class="form-control"  type="file" name="im" title="Выберите орнамент" accept="image/*" id="id_p" onchange="encodeImageFileAsURL(this, input_id = 'id_image_base64')" />
 			<div class="output-image">
 				<img src="" id="blah">

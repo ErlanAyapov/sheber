@@ -12,6 +12,10 @@
 	</ul>
 {% endblock %}
 {% block content %}
+<script type="text/javascript">
+	var center_price = [0], border_price = [0], price = 1000;
+	var x = 0, y = 0;
+</script>
 <div class="maker-container">
 	<div class="maker-content">
 		<div class="maker-block" id="content">
@@ -77,7 +81,11 @@
 				{% for border in border_ornament %}
 					<label>
 						<img src="{{ border.image_base64 }}" width="80" height="140.67">
-						<input type="radio" onclick="border_click()" name="border_ornament">
+						<input type="radio" onclick="border_click();" name="border_ornament">
+						<script type="text/javascript">
+							border_price[x] = '{{ border.price }}';
+							x++
+						</script>
 					</label>
 				{% endfor %}
 				</div>
@@ -90,6 +98,10 @@
 					<label>
 						<img src="{{ center.image_base64 }}" width="80">
 						<input type="radio" onclick="center_content()" name="center_ornament">
+						<script type="text/javascript">
+							center_price[y] = '{{ center.price }}';
+							y++
+						</script>
 					</label>
 				{% endfor %}
 				</div>
@@ -113,12 +125,15 @@
 				<textarea class="model-form" name="comment"  rows="1" required id="id_comment" placeholder="Комментарий к заказу"></textarea>
 				<!-- <input type="file" name="image" accept="image/*" required id="id_image" value=""> -->
 				<textarea style="display:none" name="des_image"  id="id_des_image"></textarea>
-				<input class="model-form" type="number" name="price" step="500" required id="id_price" placeholder="Введите желаемую сумму ₸">
+				
 				
 				<input class="model-form" type="text" name="client_first_name" value="" maxlength="50" required id="id_client_first_name" placeholder="Имя">
 				<input class="model-form" type="text" name="client_last_name" value="" maxlength="50" required id="id_client_last_name" placeholder="Фамилия">
 				<input class="model-form" type="text" name="whatsapp" maxlength="12" required id="id_whatsapp" placeholder="Whatsapp">
 				<input class="model-form" type="text" name="phone_number" maxlength="12" required id="id_phone_number" placeholder="Телефон">
+				<input class="model-form" type="hidden" name="price" step="500" required id="id_price" placeholder="Введите желаемую сумму ₸" readonly>
+				<input type="range" id="id_number"  min="1" max="10" name="number" step="1" value="1">
+				<div id="range_res"></div>
 				<button id="mk_ord" type="submit">Заказать</button>
 			</form>
 		</div>
@@ -129,6 +144,6 @@
 <script type="text/javascript">
 	var borderImgText = document.getElementsByName('border_img')[0].src.substr(-50, 30);
 	var centerImgText = document.getElementsByName('center_im')[0].src.substr(-50, 30);
-	console.log(borderImgText)
+	var price_c = eval(border_price[0]), price_b = eval(center_price[0]);
 </script>
 {% endblock %}

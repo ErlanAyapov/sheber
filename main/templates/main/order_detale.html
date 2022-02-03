@@ -7,7 +7,8 @@
 			<div class="order-info">
 				<p><strong>Покупатель:</strong> {{ object.client_first_name }} {{ object.client_last_name }}</p>
 				<p><strong>Комментарий к заказу:</strong> {{ object.comment }}</p>
-				<p><strong>Желаемый цена заказа:</strong> {{ object.price }}₸</p>
+				<p><strong>Цена заказа:</strong> {{ object.price }}₸</p>
+				<p><strong>Заказано:</strong> {{ object.number }}x</p>
 				<p>
 					<strong>Телефон:</strong> 
 					<a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a>
