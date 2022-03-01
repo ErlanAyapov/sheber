@@ -1,3 +1,12 @@
+
+function picture_load(image) { 
+	for (l = image.length - 1; l>= 0; l--) {
+	console.log(image[l].src.substr(-50, 30));
+	$('<div class="border_content_inner_bottom"><img src="'+image[l].src+'"width="160"unselectable="on"></div>').insertAfter('p');
+
+};}
+
+
 function border_click() {
 	var border_name = document.getElementsByName('border_ornament');
 	var border_content = document.getElementsByClassName('border_content_inner');

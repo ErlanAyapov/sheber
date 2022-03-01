@@ -1,3 +1,6 @@
+
+
+
 function fun1() {
 	var rad = document.getElementsByName('r1');
 	var hd;

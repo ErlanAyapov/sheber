@@ -20,27 +20,13 @@
 	<div class="maker-content">
 		<div class="maker-block" id="content">
 			<div class="border_content">
-			{% for border_content in border_ornament %}
-				<div class="border_content_inner">
-					<img name='border_img' src="{{ border_content.image_base64 }}" width="240" height="422.02" unselectable="on">
-				</div>
-			{% endfor %}
+				<p></p>
 			</div>
-
 			<div class="center_top_content">
-			{% for center_top_content in center_ornament %}
-				<div class="border_content_inner_top"> 
-					<img name="center_im" src="{{ center_top_content.image_base64 }}" name="border_top_content" width="160" unselectable="on" >
-				</div>
-			{% endfor %}
+				<p></p>
 			</div>
-
-			<div class="center_bottom_content">
-			{% for center_bottom_content in center_ornament %}
-				<div class="border_content_inner_bottom">
-					<img src="{{ center_bottom_content.image_base64 }}" name="border_bottom_content" width="160" unselectable="on">
-				</div>
-			{% endfor %}
+			<div class="center_bottom_content"> 
+				<p></p> 
 			</div>
 		</div>
 	</div>
@@ -80,7 +66,7 @@
 				<div class="color-container">
 				{% for border in border_ornament %}
 					<label>
-						<img src="{{ border.image_base64 }}" width="80" height="140.67">
+						<img name="border_img" src="{{ border.image_base64 }}" width="80" height="140.67">
 						<input type="radio" onclick="border_click();" name="border_ornament">
 						<script type="text/javascript">
 							border_price[x] = '{{ border.price }}';
@@ -96,7 +82,7 @@
 				<div class="color-container">
 				{% for center in center_ornament %}
 					<label>
-						<img src="{{ center.image_base64 }}" width="80">
+						<img name="center_im" src="{{ center.image_base64 }}" width="80">
 						<input type="radio" onclick="center_content()" name="center_ornament">
 						<script type="text/javascript">
 							center_price[y] = '{{ center.price }}';
@@ -116,7 +102,7 @@
 			<h2>Оформить заказ</h2>
 			<button id="modal_close_btn" onclick="close_modal()">X</button>
 		</div>
-		<div class="form-modal">
+		<div class="form-modal">()
 			<form action="{% url 'make_order' %}" enctype="multipart/form-data" method="post">
 				{% csrf_token %}
 				<input type="hidden" name="category" required id="id_category" value="1">
@@ -142,8 +128,31 @@
 		</div> 
 	</div>
 <script type="text/javascript">
-	var borderImgText = document.getElementsByName('border_img')[0].src.substr(-50, 30);
-	var centerImgText = document.getElementsByName('center_im')[0].src.substr(-50, 30);
+
+	var border_images = document.getElementsByName('border_img');
+	var center_images = document.getElementsByName('center_im');
+	var	border_bottom_img = document.getElementsByClassName('border_content_inner_bottom');
+	var borderImgText = border_images[0].src.substr(-50, 30);
+	var centerImgText = center_images[0].src.substr(-50, 30);
 	var price_c = eval(border_price[0]), price_b = eval(center_price[0]);
+	var l, b;
+
+
+	function picture_load(image_c, image_b) { 
+		for (l = image_c.length - 1; l>= 0; l--) { 
+			$('<div class="border_content_inner_bottom"><img src="'+image_c[l].src+'"width="160"unselectable="on"></div>').insertAfter('.center_bottom_content p');
+			$('<div class="border_content_inner_top"><img src="'+image_c[l].src+'"width="160"unselectable="on"></div>').insertAfter('.center_top_content p');
+		};
+		for (b = image_b.length - 1; b>= 0; b--) { 
+			$('<div class="border_content_inner"><img src="'+image_b[b].src+'" width="240" height="422.02" unselectable="on"></div>').insertAfter('.border_content p');
+		};
+	}
+
+	picture_load(center_images, border_images) 
+
+
+
+
+
 </script>
 {% endblock %}
