@@ -96,13 +96,13 @@ def make_order(request):
 
 def add_fragment(request):
 	if request.method == 'POST':
-		form = FragmentAdd(request.POST)
+		form = FragmentAddForm(request.POST)
 		if form.is_valid():
 			form.save(commit = False)
 			form.save()
 			return redirect('main')
 
-	form = FragmentAdd()
+	form = FragmentAddForm()
 	data = {
 		'fragment_form': form
 	}
