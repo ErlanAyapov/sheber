@@ -1,3 +1,17 @@
+function encodeImageFileAsURL(element, input_id) {
+    const input_base64 = document.getElementById(input_id);
+    var file = element.files[0];
+    var reader = new FileReader();
+    var base64;
+    reader.onloadend = function() {
+        input_base64.value = reader.result;
+        $('#blah').attr('src', reader.result);
+        $('#blah').attr('alt', 'таңдалды');
+        $("#blah").css("display", 'block');
+        $("#btn_upd").css("display", 'block');
+    }
+    reader.readAsDataURL(file);      
+}
 
 function picture_load(image) { 
 	for (l = image.length - 1; l>= 0; l--) {

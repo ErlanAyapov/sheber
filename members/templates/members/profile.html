@@ -46,6 +46,9 @@
 						
 					</form>
 				{% endif %}
+				{% if request.user.is_staff %}
+					<a href="{% url 'maker_ad' %}">Создать рекламу</a>
+				{% endif %}
 			</div>
 		</div>
 	{% endif %}

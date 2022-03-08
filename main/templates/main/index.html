@@ -33,6 +33,16 @@
 				<div class="order-product-container">
 				<h2>Все заказы</h2>
 				{% for object_order in product %}
+					{% if object_order.category.name == 'Жарнама' %}
+					<div class="order-product-block ad-product">
+						<div>{{ object_order.comment }}</div> 
+						{% if object_order.des_image %}<br>
+						<div><img src="{{ object_order.des_image }}"></div>
+						{% endif %}<br>
+						<br>
+						<a href="{{ object_order.sys_info }}" target="_blank">Перейти на продукт</a>		
+					</div>
+					{% else %}
 					<div class="order-product-block">
 						<div><strong>Покупатель: </strong>{{ object_order.client_first_name }} {{ object_order.client_last_name }}</div>
 						<div><strong>Заказанный товар:</strong> {{ object_order.category }}</div>
@@ -41,8 +51,9 @@
 						<div><strong>Время заказа:</strong> {{ object_order.date|slice:":16" }}</div>
 						{% endif %}
 						<br>
-						<a href="{% url 'detail_order' object_order.id %}">Посмотреть заказ</a>		
-					</div>					
+						<a href="{% url 'detail_order' object_order.id %}" >Посмотреть заказ</a>		
+					</div>	
+					{% endif %}				
 				{% endfor %}
 				</div>
 			{% endif %}

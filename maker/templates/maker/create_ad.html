@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="ad-maker-container">
+	<div class="ad-maker-block">
+		<form method="POST" action="">
+			{% csrf_token %}
+			<input type="hidden" name="category" required id="id_category" value="2">
+			<input type="hidden" name="price" required id="id_price" value="1">
+			<textarea name="comment"  rows="5" required id="id_comment" placeholder="Рекламный текст"></textarea>
+			<textarea name="des_image" cols="40" rows="10" id="id_des_image" style="display: none;"></textarea>
+			<input type="text" name="client_first_name" maxlength="50" required id="id_client_first_name" placeholder="Имя клиента">
+			<input type="text" name="client_last_name" maxlength="50" required id="id_client_last_name" placeholder="Фамилия клиента">
+			<input type="link" name="system_info" maxlength="150" required id="id_system_info" placeholder="Ссылка на продукт">
+			<div class="input-image"> 
+				<input type="file" name="image" title="Сурет таңдаңыз" accept="image/*" id="id_image" onchange="encodeImageFileAsURL(this, input_id = 'id_des_image')" />
+			</div>
+			<div class="output-image">
+				<img src="" id="blah" alt="">
+			</div>
+			<button type="submit">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+
+	
+{% endblock %}

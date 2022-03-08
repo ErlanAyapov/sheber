@@ -102,7 +102,7 @@
 			<h2>Оформить заказ</h2>
 			<button id="modal_close_btn" onclick="close_modal()">X</button>
 		</div>
-		<div class="form-modal">()
+		<div class="form-modal">
 			<form action="{% url 'make_order' %}" enctype="multipart/form-data" method="post">
 				{% csrf_token %}
 				<input type="hidden" name="category" required id="id_category" value="1">

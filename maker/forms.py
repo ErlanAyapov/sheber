@@ -22,7 +22,22 @@ class OrderForm(forms.ModelForm):
         exclude = ['ip', 'date', 'system_info']
 
 
-class FragmentAdd(forms.ModelForm):
+class FragmentAddForm(forms.ModelForm):
     class Meta:
         model = OrnamentFragment
         fields = ('__all__')
+
+
+class MakeAdForm(forms.ModelForm):
+    class Meta:
+        model  = Product
+        fields = (
+            'category',
+            'comment',
+            'price',
+            'des_image',
+            'client_first_name',
+            'client_last_name',
+            'system_info',
+        )
+        exclude = ['ip', 'date']

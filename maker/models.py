@@ -11,19 +11,19 @@ class Category(models.Model):
 
 class Product(models.Model):
 	
-	category	= models.ForeignKey(Category, on_delete = models.CASCADE, verbose_name = 'Категрия' )
-	comment 	= models.TextField('Комментарий к заказу')
-	price		= models.DecimalField(max_digits = 9, decimal_places = 0, verbose_name = 'Цена')
-	des_image	= models.TextField('Фото (Base64)', blank = True)
+	category		  = models.ForeignKey(Category, on_delete = models.CASCADE, verbose_name = 'Категрия' )
+	comment 		  = models.TextField('Комментарий к заказу')
+	price			  = models.DecimalField(max_digits = 9, decimal_places = 0, verbose_name = 'Цена')
+	des_image		  = models.TextField('Фото (Base64)', blank = True)
 	client_first_name = models.CharField('Имя', max_length = 50, default = 'Anonymous_user')
 	client_last_name  = models.CharField('Фамилия', max_length = 50, default = 'Anonymous_user')
-	whatsapp 	  = models.CharField('Whatsapp', max_length = 15, default = 'Anonymous_user')
-	phone_number  = models.CharField('Телефон', max_length = 15, default = 'Anonymous_user')
-	ip	  = models.CharField('Ip', max_length = 50, blank = True)
-	date  = models.CharField('Время', max_length = 50, blank = True)
-	system_info   = models.CharField('Системный информация', max_length = 150, default = 'Anonymous_user')
-	ornament_info = models.CharField('Использованные узоры', max_length = 90, default = 'Anonymous_user')
-	number		  = models.DecimalField(max_digits = 9, decimal_places = 0, verbose_name = 'Количесвто', default = 1)
+	whatsapp 	 	  = models.CharField('Whatsapp', max_length = 15, default = 'Anonymous_user')
+	phone_number 	  = models.CharField('Телефон', max_length = 15, default = 'Anonymous_user')
+	ip	  			  = models.CharField('Ip', max_length = 50, blank = True)
+	date  			  = models.CharField('Время', max_length = 50, blank = True)
+	system_info   	  = models.CharField('Системный информация', max_length = 150, default = 'Anonymous_user')
+	ornament_info 	  = models.CharField('Использованные узоры', max_length = 90, default = 'Anonymous_user')
+	number		  	  = models.DecimalField(max_digits = 9, decimal_places = 0, verbose_name = 'Количесвто', default = 1)
 
 	def __str__(self):
 		return f'{self.client_first_name} {self.client_last_name}: {self.ip}'

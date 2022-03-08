@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from .models import Product
 from .models import OrnamentFragment, TypeOfOrnament
 from main.models import Article
-from .forms import OrderForm, FragmentAdd
+from .forms import OrderForm, FragmentAddForm, MakeAdForm
 from django.http import HttpResponseRedirect
 
 
@@ -46,6 +46,24 @@ def create_view(request):
 	}
 	return render(request, 'maker/create.html', data)
 
+
+def create_ad(request):
+	if request.method == 'POST':
+		form = MakeAdForm(request.POST)
+		if form.is_valid():
+			form = form.save(commit=False)
+			form.date = datetime.datetime.now()
+			form.ip = str(get_client_ip(request))
+			# form.system_info = str(request.META['HTTP_USER_AGENT'])
+			form.save()
+			return redirect('main')
+
+	form = MakeAdForm()
+	data = {
+		'form_ad':form,
+	}
+
+	return render(request, 'maker/create_ad.html', data)
 
 
 class AllOrders(ListView):
