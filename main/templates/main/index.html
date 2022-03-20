@@ -20,10 +20,55 @@
 {% block content %}
 	
 	<div class="about-content">
-		<div class="about-title">Erlan Aiapov</div>
-		<div class="about-text" style="font-size:18px">
-			 Привет! Данное время этот плотформа находится под разработкой и мы набираем команду, если хотите вступить в проект то обращайтесь на <a href="https://wa.me/+77478160485?text=Здравствуйте%2C+Ерлан+Аяпов+у+меня+есть+к+вам+вопрос">WhatsApp</a>. Этот проект является учебным. Автор проекта <strong>Ерлан Аяпов</strong>. Платформа временно расположен на бесплатном хостинге. Наш хост-провайдер Heroku. Наш <a href="">GitHub</a> !
-		</div>
+		<p class="about-welcome">Добро пожаловать!</p>
+		<p class="about-text">Здесь вы можете нарисовать стиль матраса, нажмите начать</p>
+		 <div class="about-img">
+		 	<img src="{% static 'main/image/desk.png' %}">
+		 	<a href="{% url 'maker' %}">НАЧАТЬ</a>
+		 </div>
+		 <div class="about-text"> 
+		 	
+		 </div>
+		 <div class="alert-text-block">
+		 	<p class="alert-text-title">Начните зарабатывать!</p>
+		 	<p class="alert-text">Оформите подписку и получите заказы для сшития матрасов</p>
+		 </div>
+		 <div class="tarif-continer">
+		 	<div class="tarif-block">
+		 		<div class="tarif-title">Бесплатная подписка</div>
+		 		<div class="tarif-img">
+		 		</div>
+		 		<div class="tarif-about">
+		 			<ul>
+		 				<li><span>✔</span> Цена заказа</li>
+		 				<li><span>✔</span> Телефон</li>
+		 				<li><span>✔</span> Дизайн</li>
+		 				<li><span>❌</span> WhatsApp</li>
+		 				<li><span>❌</span> Количество</li>
+		 				<li><span>❌</span> Орнаменты</li> 
+		 			</ul>
+		 		</div>
+		 		<div class="get-tarif"><a href="">Приобрести</a></div>
+		 	</div> 
+
+		 	<div class="tarif-block">
+		 		<div class="tarif-title">Платная подписка</div>
+		 		<div class="tarif-img">
+		 		</div>
+		 		<div class="tarif-about">
+		 			<ul>
+		 				<li><span>✔</span> Цена заказа</li>
+		 				<li><span>✔</span> Телефон</li>
+		 				<li><span>✔</span> Дизайн</li>
+		 				<li><span>✔</span> WhatsApp</li>
+		 				<li><span>✔</span> Количество</li>
+		 				<li><span>✔</span> Орнаменты</li> 
+		 				<span id="tarif-price">1700₸ в месяц</span>
+		 			</ul>
+		 		</div>
+		 		<div class="get-tarif"><a href="">Приобрести</a></div>
+		 	</div> 
+		 </div>
 	</div>
 
 	
@@ -60,9 +105,9 @@
 		</div>
 	
 	</div>
-	<div id="news_block_open" class="news_button">
+	<!-- <div id="news_block_open" class="news_button">
 		>
-	</div>
+	</div> -->
 	<div id="news_block_close" class="news_button">
 		<
 	</div>
