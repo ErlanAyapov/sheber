@@ -10,20 +10,19 @@
 		{% block other_links %}
 		{% endblock %}
 		<script src="{% static 'main/script/jquery.js' %}"></script>
+		<script src="{% static 'main/script/lang.js' %}"></script>
 	</head>
 	<body oncontextmenu="return false;">
 		<header>
 			<div class="logo-content">
 				<div class="top-nav">
-					<div class="nav-inner">
-						{% block nav %}
+					<div class="nav-inner"> 
 						<ul>
-							<li><a href="{% url 'main' %}">Дом</a></li>
-							<li><a href="{% url 'maker' %}">Создать</a></li>
-							<li><a href="{% url 'members' %}">Аккаунт</a></li>
-							<li><a href="{% url 'maker_ad' %}">Помощь</a></li>
-						</ul>
-						{% endblock %}
+							<li><a href="{% url 'main' %}" id="main">Дом</a></li>
+							<li><a href="{% url 'maker' %}" id="make">Создать</a></li>
+							<li><a href="{% url 'members' %}" id="account">Аккаунт</a></li>
+							<li><a href="{% url 'maker_ad' %}" id="help">Помощь</a></li>
+						</ul> 					
 					</div>
 				</div>
 				<div class="logo-dec-line"></div>
@@ -33,13 +32,16 @@
 				</div>
 			</div>
 		</header>
-		{% block content %}
-
-		{% endblock %}
+		<main>{% block content %}{% endblock %}</main> 
+		</footer>
+		<script type="text/javascript">
+			myStorage = window.localStorage;
+			let mod = localStorage.getItem('language') 
+			language_select(mod)
+		</script>
 		<script src="https://kit.fontawesome.com/e9b4a4c6c5.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="{% static 'main/script/maker.js' %}"></script>
 		<script src="{% static 'main/script/html2canvas.js' %}"></script>
 		<script src="{% static 'main/script/scripts.js' %}"></script>
-
 	</body>
 </html>

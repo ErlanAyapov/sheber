@@ -76,7 +76,6 @@
 	font-size: 60px;
 	text-align: center;
 	color: blue;
-	font-family: fantasy;
 	margin: 3em 0;
 	padding: 20px;
 }
@@ -84,7 +83,6 @@
 	font-size: 40px;
 	text-align: center;
 	color: blue;
-	font-family: fantasy;
 	margin: 3em 0;
 	padding: 20px;
 }
@@ -141,6 +139,9 @@
 .top-nav ul li {
 	list-style-type: none;
 	
+}
+ 
+.top-nav ul li {
 }
 .top-nav ul li a {
 	text-decoration: none;
@@ -1098,7 +1099,7 @@
 }
 .tarif-block ul li{
 	display: block;
-	padding-left: 40px;
+	padding-left: 25px;
 	font-size: 20px;
 }	
 .tarif-block ul {
@@ -1145,9 +1146,10 @@
 	margin-top: 10px;
 }
 .alert-text-block { 
-	margin-top: 2em;
  	width: 100%;
  	text-align: center;
+	margin-top: 250px;
+
 }
 .alert-text-title {
 	width: 100%;
@@ -1160,6 +1162,87 @@
 	font-size: 30px; 
 	color: blue;
 }
+.modal-finance {
+	position: fixed;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  box-shadow: 0 0 5px #000;
+  display: none;
+}
+.modal-title {
+	color: blue;
+	font-size: 26px;
+	width: 100%;
+	display: inline-block;
+	border-bottom: 1px solid #200;
+	padding-bottom: 5px;
+}
+.modal-text {
+	float: left;
+}
+.modal-close  {
+	float: right;
+	background: gray;
+	color: red; 
+	border-radius: 5px; 
+	padding: 0 5px;
+	cursor: pointer;
+}
+.about-video {
+	width: 80%;
+	margin: auto;
+	font-family: serif;
+}
+.about-project-title {
+	font-size: 50px;
+	color: blue;
+	text-align: center;
+	margin: 20px 0;
+}
+.about-project {
+	margin-top: 10em;
+
+}
+.language-container {
+	display: none;
+	justify-content: center; 
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	padding-top: 20vh;
+}
+
+.language-block {
+	display: flex;
+	font-size: 26px;
+	cursor: pointer;  
+	margin: 40px;
+	margin-top: 10vh; 
+	border-radius: 5px; 
+}
+.lang-img img {
+	width: 100%;
+}
+.lang-img {
+	width: 60px;
+}
+.language-text {
+	padding-left: 5px;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -1195,6 +1278,16 @@
 	}
 	.alert-text {
 		font-size: 20px;
+	}
+	.language-container {
+		display: block;
+		padding-top: 40%;
+	}
+	.language-block {
+		margin: 0;
+		margin-left: 15vh;
+		margin-top: 20px;
+		display: flex;
 	}
 }
 @media screen and (max-width: 580px) {

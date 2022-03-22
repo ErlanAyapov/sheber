@@ -1,44 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block nav %}
-	<ul>
-		<li><a href="{% url 'main' %}" id="active">Дом</a></li>
-		<li><a href="{% url 'maker' %}">Заказать</a></li>
-		{% if user.is_authenticated %}
-			<li><a href="{% url 'profile' request.user.id %}">Аккаунт</a></li>
-		{% else %}
-			<li><a href="{% url 'members' %}">Аккаунт</a></li>
-			<li><a href="#">Помощь</a></li>
-
-		{% endif %}
-		{% if request.user.is_staff %}
-			<li><a href="{% url 'add_fragment' %}">Добавить</a></li>
-		{% endif %}
-		
-	</ul>
-{% endblock %}
-{% block content %}
+ 
+{% block content %} 
 	
 	<div class="about-content">
-		<p class="about-welcome">Добро пожаловать!</p>
-		<p class="about-text">Здесь вы можете нарисовать стиль матраса, нажмите начать</p>
+		
+		<strong>
+			<p class="about-welcome" id="welcome">Добро пожаловать!</p>
+		</strong>
+		<strong>
+			<p class="about-text" id="welcome_text">Здесь вы можете нарисовать стиль коврика, нажмите начать</p>
+		</strong>
 		 <div class="about-img">
 		 	<img src="{% static 'main/image/desk.png' %}">
-		 	<a href="{% url 'maker' %}">НАЧАТЬ</a>
-		 </div>
-		 <div class="about-text"> 
-		 	
-		 </div>
+		 	<a href="{% url 'maker' %}" id="start">НАЧАТЬ</a>
+		 </div> 
 		 <div class="alert-text-block">
-		 	<p class="alert-text-title">Начните зарабатывать!</p>
-		 	<p class="alert-text">Оформите подписку и получите заказы для сшития матрасов</p>
+		 	<p class="alert-text-title" id="alert_title">Начните зарабатывать!</p>
+		 	<p class="alert-text" id="alert_text">Оформите подписку и получите заказы для шитьия ковриков</p>
 		 </div>
 		 <div class="tarif-continer">
 		 	<div class="tarif-block">
-		 		<div class="tarif-title">Бесплатная подписка</div>
+		 		<div class="tarif-title" id="free_tarif_title">Бесплатная подписка</div>
 		 		<div class="tarif-img">
 		 		</div>
-		 		<div class="tarif-about">
+		 		<div class="tarif-about" id="free_tarif">
 		 			<ul>
 		 				<li><span>✔</span> Цена заказа</li>
 		 				<li><span>✔</span> Телефон</li>
@@ -48,14 +34,13 @@
 		 				<li><span>❌</span> Орнаменты</li> 
 		 			</ul>
 		 		</div>
-		 		<div class="get-tarif"><a href="">Приобрести</a></div>
-		 	</div> 
-
+		 		<div class="get-tarif"><a id="get_tarif_1" href="#">Приобрести</a></div>
+		 	</div>
 		 	<div class="tarif-block">
-		 		<div class="tarif-title">Платная подписка</div>
+		 		<div class="tarif-title" id="premium_tarif_title">Платная подписка</div>
 		 		<div class="tarif-img">
 		 		</div>
-		 		<div class="tarif-about">
+		 		<div class="tarif-about" id="premium_tarif">
 		 			<ul>
 		 				<li><span>✔</span> Цена заказа</li>
 		 				<li><span>✔</span> Телефон</li>
@@ -66,12 +51,27 @@
 		 				<span id="tarif-price">1700₸ в месяц</span>
 		 			</ul>
 		 		</div>
-		 		<div class="get-tarif"><a href="">Приобрести</a></div>
+		 		<div class="get-tarif"><a id="get_tarif_2" href="#">Приобрести</a></div>
 		 	</div> 
 		 </div>
+		 <div class="about-project">
+		 	<div class="about-project-title" id="about_project"><strong>О нашем проекте</strong></div>
+		 	<div class="about-video"><iframe width="100%" height="600" src="https://www.youtube.com/embed/o39ODUHJIvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		 </div>
+		
+		
 	</div>
-
-	
+	<div class="language-container" id="lg_container">
+		<div class="language-block" id="qazaqsha">
+			<div class="lang-img"><img src="{% static 'main/image/tu.jpg' %}"></div>
+			<div class="language-text">Қазақ тілі</div>
+		</div>
+		<div class="language-block" id="russkiy">
+			<div class="lang-img"><img src="{% static 'main/image/flag.jpg' %}"></div>
+			<div class="language-text">Руский язык</div>
+		</div>
+	</div>
 	<div class="main-container">
 		<div class="block-left">
 			{% if product %}
@@ -85,7 +85,7 @@
 						<div><img src="{{ object_order.des_image }}"></div>
 						{% endif %}<br>
 						<br>
-						<a href="{{ object_order.sys_info }}" target="_blank">Перейти на продукт</a>		
+						<a  href="{{ object_order.sys_info }}" target="_blank">Перейти на продукт</a>		
 					</div>
 					{% else %}
 					<div class="order-product-block">
@@ -96,38 +96,23 @@
 						<div><strong>Время заказа:</strong> {{ object_order.date|slice:":16" }}</div>
 						{% endif %}
 						<br>
-						<a href="{% url 'detail_order' object_order.id %}" >Посмотреть заказ</a>		
+						<a  href="{% url 'detail_order' object_order.id %}" >Посмотреть заказ</a>		
 					</div>	
 					{% endif %}				
 				{% endfor %}
 				</div>
 			{% endif %}
 		</div>
-	
 	</div>
-	<!-- <div id="news_block_open" class="news_button">
-		>
-	</div> -->
-	<div id="news_block_close" class="news_button">
-		<
+	<div class="modal-finance">
+		<div class="modal-title">
+			<div class="modal-text"><strong><i class="fa-solid fa-display-code"></i> Еще в разработке</strong></div>
+			<div class="modal-close">Закрыть</div>
+		 </div>
+		<div class="modal-message">Данный время этот проект еще не реализован, но вы можете оказать финансовую поддержку Каспий: +7478160485 Ерлан Аяпов</div>
 	</div>
+	<div id="news_block_close" class="news_button"><</div>
 	<script type="text/javascript">
-		jQuery('#news_block_open').on('click', function() {
-			$(".block-left").css("left","0")
-			$(".block-left").css("position","absolute")
-			$("#news_block_close").css("display","block")
-			$(".about-content").css("display","none")
-		});
-		jQuery('#news_block_close').on('click', function() {
-			$(".block-left").css("left","-100%")
-			$(".block-left").css("position","absolute")
-			$(".about-content").css("display","block")
-
-			$("#news_block_close").css("display","none")
-			$("#news_block_open").css("display","block")
-		});
 		
 	</script>
-
-	 
 {% endblock %}

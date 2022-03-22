@@ -120,3 +120,42 @@ function close_modal() {
 function close_info() {
 	$(".delete-info").css("display","none")
 };
+jQuery('#news_block_open').on('click', function() {
+	$(".block-left").css("left","0")
+	$(".block-left").css("position","absolute")
+	$("#news_block_close").css("display","block")
+	$(".about-content").css("display","none")
+});
+jQuery('#news_block_close').on('click', function() {
+	$(".block-left").css("left","-100%")
+	$(".block-left").css("position","absolute")
+	$(".about-content").css("display","block")
+	$("#news_block_close").css("display","none")
+	$("#news_block_open").css("display","block")
+});
+
+jQuery('.get-tarif').on('click', function() {			
+	$(".modal-finance").css("display","block")
+});
+jQuery('.modal-close').on('click', function() {			
+	$(".modal-finance").css("display","none")
+});
+jQuery('#qazaqsha').on('click', function() {
+	localStorage.clear();	
+	localStorage.setItem('language', 'kk')
+	language_select('kk')		
+	$(".language-container").css("display","none")
+});
+jQuery('#russkiy').on('click', function() {	
+	localStorage.clear();
+	localStorage.setItem('language', 'ru')	
+	language_select('ru')	
+	$(".language-container").css("display","none")
+});
+console.log(localStorage.getItem('language'))
+if (localStorage.getItem('language')) {
+	$(".language-container").css("display","none")
+} else {
+	$(".language-container").css("display","block")
+
+}
