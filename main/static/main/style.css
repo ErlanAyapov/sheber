@@ -1235,11 +1235,29 @@
 .language-text {
 	padding-left: 5px;
 }
+footer {
+	background: gray;
+	position: relative;
+	height: 4.2em;
+	display: flex;
+	justify-content: center;
+	background: blue;
+	box-shadow: 0 0 10px;
+}
 
+#lang_summary {
+	font-size: 18px;
+}
+.select-lang div {
+	padding-left: 20px;
+	font-size: 18px;
 
-
-
-
+}
+.select-lang {
+	padding: 5px;
+	outline: none;
+	color: #fff;
+}
 
 
 
@@ -1301,8 +1319,9 @@
 }
 @media screen and (max-width: 450px) {
 	.top-nav {
-		width: 340px;
+		width: 280px;
 		height: 24px;
+		padding-left: 15px;
 	}
 	.top-nav ul li a {
 		font-size: 16px;
@@ -1380,6 +1399,9 @@
 	}
 	.c2 {
 		bottom: 50px;
+	}
+	.modal-message, .modal-text, .modal-close {
+		font-size: 15px;
 	}
 }
 @media screen and (max-width: 920px) {

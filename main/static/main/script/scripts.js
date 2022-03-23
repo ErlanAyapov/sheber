@@ -38,7 +38,6 @@ function border_click() {
 		};
 	};
 };
-// data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABRwAAAj8CAYAAAAm8SYzAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
 function center_content() {
 	var center_name = document.getElementsByName('center_ornament');
 	var center_content_top = document.getElementsByClassName('border_content_inner_top');
@@ -79,7 +78,6 @@ function bg_pos() {
 	}
 
 }
-
 function screen_shot(){
 	html2canvas(document.getElementById("content")).then(function(canvas) {
 		var logo = document.getElementById('id_des_image');
@@ -94,23 +92,22 @@ function screen_shot(){
 	price = price_c + price_b + 1000
 	document.getElementById('id_price').value = price;
 	document.getElementById('id_ornament_info').value = data;
-	document.getElementById('range_res').innerHTML ='Количество: ' + 1 + '<br> Общая цена: ' + price + '₸';
-
+	if (lang == 'kk') {
+		document.getElementById('range_res').innerHTML ='Көрпеше саны: ' + 1 + '<br> Жалпы құны: ' + price + '₸';
+	} else {
+		document.getElementById('range_res').innerHTML ='Количество: ' + 1 + '<br> Общая цена: ' + price + '₸';	
+	}
 	number = document.getElementById('id_number')
 	document.getElementById('id_number').onchange = function() {
-		document.getElementById('range_res').innerHTML ='Количество: ' + number.value + '<br> Общая цена: ' + price * number.value + '₸';
-		document.getElementById('id_price').value = price * number.value;
-
-	}
-};	
-// document.getElementById('block_1').innerHTML = answers[fake_answer_1];
-
- 
-// el.onmousedown = function (e) {
-//     if (window.event.stopPropagation) window.event.stopPropagation();
-//     window.event.cancelBubble = true;
-//     e.cancelBubble = true;
-// }
+		if (lang == 'kk') {
+			document.getElementById('range_res').innerHTML ='Көрпеше саны: ' + number.value + '<br> Жалпы құны: ' + price * number.value + '₸';
+			document.getElementById('id_price').value = price * number.value;
+		} else {
+			document.getElementById('range_res').innerHTML ='Количество: ' + number.value + '<br> Общая цена: ' + price * number.value + '₸';
+			document.getElementById('id_price').value = price * number.value;
+		};
+	};
+};	 
 $("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 function close_modal() {
@@ -159,3 +156,44 @@ if (localStorage.getItem('language')) {
 	$(".language-container").css("display","block")
 
 }
+
+$('input').on('input invalid', function() {
+	this.setCustomValidity('')
+	if (this.validity.valueMissing) {
+		if (lang == 'kk')
+			this.setCustomValidity("Осы жолақты толтыру міндетті")
+	}
+	if (this.validity.typeMismatch) {
+		if (lang == 'kk')
+			this.setCustomValidity("Енгізілген деректер типі сәйкес емес")
+	}
+	if (this.validity.patternMismatch) {
+		if (lang == 'kk')
+			this.setCustomValidity("Паттернге сәйкес емес")
+	}
+})
+$('textarea').on('input invalid', function() {
+	this.setCustomValidity('')
+	if (this.validity.valueMissing) {
+		if (lang == 'kk')
+			this.setCustomValidity("Осы жолақты толтыру міндетті")
+	}
+	if (this.validity.typeMismatch) {
+		if (lang == 'kk')
+			this.setCustomValidity("Енгізілген деректер типі сәйкес емес")
+	}
+	if (this.validity.patternMismatch) {
+		if (lang == 'kk')
+			this.setCustomValidity("Паттернге сәйкес емес")
+	}
+}) 
+jQuery('#select_kazakh').on('click', function() {
+	localStorage.clear();	
+	localStorage.setItem('language', 'kk')
+	language_main('kk')
+});
+jQuery('#select_russkiy').on('click', function() {	
+	localStorage.clear();
+	localStorage.setItem('language', 'ru')	
+	location.reload();
+});

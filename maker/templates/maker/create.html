@@ -125,7 +125,8 @@
 	var centerImgText = center_images[0].src.substr(-50, 30);
 	var price_c = eval(border_price[0]), price_b = eval(center_price[0]);
 	var l, b;
-
+	let lang = localStorage.getItem('language') 
+	myStorage = window.localStorage;
 
 	function picture_load(image_c, image_b) { 
 		for (l = image_c.length - 1; l>= 0; l--) { 
@@ -139,7 +140,7 @@
 
 	picture_load(center_images, border_images) 
 
-
+	language_creat(lang)
 
 
 

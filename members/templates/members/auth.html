@@ -19,8 +19,8 @@
 		<h3>Авторизация</h3>
 		<form action="{% url 'auth' %}" method="POST">
 			{% csrf_token %}
-			<input type="text" placeholder="Имя пользователя" name="username" required>
-			<input type="password" placeholder="Пороль" name="password" required>
+			<input type="text" placeholder="Имя пользователя" name="username" required id="username1">
+			<input type="password" placeholder="Пороль" name="password" required id="password">
 			{% if error %}
 				<div class="message">
 				{{ error }}
@@ -30,4 +30,8 @@
 		</form>
 	</div>
 </div>
+<script type="text/javascript">
+	var lang = localStorage.getItem('language')
+	language_register(lang)
+</script>
 {% endblock %}

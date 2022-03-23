@@ -3,20 +3,7 @@
 
 {% block other_links %}
 	<link rel="stylesheet" type="text/css" href="{% static 'members/style.css' %}">
-{% endblock %}
-
-{% block nav %}
-	<ul>
-		<li><a href="{% url 'main' %}">Дом</a></li>
-		<li><a href="{% url 'maker' %}">Заказать</a></li>
-		{% if not user.is_authenticated %}
-			<li><a href="{% url 'members' %}" id="active">Аккаунт</a></li>
-		{% else %}
-			<li><a href="{% url 'profile' request.user.id %}" id="active">Аккаунт</a></li>
-		{% endif %}
-		<li><a href="#">Помощь</a></li>
-	</ul>
-{% endblock %}
+{% endblock %} 
 
 {% block content %}
 	{% if not user.is_authenticated %}
@@ -37,7 +24,7 @@
 
 							{% endif %}
 							<p id="go_to">У вас уже есть <a href="{% url 'auth' %}"> аккаунт</a> ?</p>
-							<button type="submit">Далее</button>
+							<button type="submit" id="btn_next">Далее</button>
 						</form>
 					</div>
 				</div>
@@ -46,14 +33,18 @@
 						<h3>Авторизация</h3>
 						<form action="{% url 'auth' %}" method="POST">
 							{% csrf_token %}
-							<input type="text" placeholder="Имя пользователя" name="username" required>
-							<input type="password" placeholder="Пороль" name="password" required>
+							<input type="text" placeholder="Имя пользователя" name="username" required id="username1">
+							<input type="password" placeholder="Пороль" name="password" required id="password">
 
 							<button type="submit">Авторизоватся</button>
 						</form>
 					</div>
 				</div>
 			</div>
+			<script type="text/javascript">
+				var lang = localStorage.getItem('language')
+				language_register(lang)
+			</script>
 		{% endif %}
 	{% endif %} 
 {% endblock %}

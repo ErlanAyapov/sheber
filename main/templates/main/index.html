@@ -106,13 +106,26 @@
 	</div>
 	<div class="modal-finance">
 		<div class="modal-title">
-			<div class="modal-text"><strong><i class="fa-solid fa-display-code"></i> Еще в разработке</strong></div>
-			<div class="modal-close">Закрыть</div>
+			<strong><div class="modal-text" id="modal_title">Еще в разработке</div></strong>
+			<div class="modal-close" id="modal_close">Закрыть</div>
 		 </div>
-		<div class="modal-message">Данный время этот проект еще не реализован, но вы можете оказать финансовую поддержку Каспий: +7478160485 Ерлан Аяпов</div>
+		<div class="modal-message" id="modal_message">
+			Данный время этот проект еще не реализован, но вы можете оказать финансовую поддержку Каспий: +7478160485 Ерлан Аяпов
+		</div>
 	</div>
 	<div id="news_block_close" class="news_button"><</div>
 	<script type="text/javascript">
-		
+		myStorage = window.localStorage;
+		let mod = localStorage.getItem('language') 
+		language_main(mod)
 	</script>
+	<footer>
+		<div class="select-lang">
+			<details>
+				<summary id="lang_summary">Выбрать язык</summary>
+				<div id="select_kazakh">Қазақ тілі</div>
+				<div id="select_russkiy">Русский язык</div>
+			</details>
+		</div>	
+	</footer>
 {% endblock %}

@@ -6,11 +6,11 @@
 		<title>Freelance Sheber</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+		<script src="{% static 'main/script/lang.js' %}"></script>
 		<link rel="icon" type="image/png" href="{% static 'main/image/icon.png' %}">
 		{% block other_links %}
 		{% endblock %}
 		<script src="{% static 'main/script/jquery.js' %}"></script>
-		<script src="{% static 'main/script/lang.js' %}"></script>
 	</head>
 	<body oncontextmenu="return false;">
 		<header>
@@ -21,7 +21,7 @@
 							<li><a href="{% url 'main' %}" id="main">Дом</a></li>
 							<li><a href="{% url 'maker' %}" id="make">Создать</a></li>
 							<li><a href="{% url 'members' %}" id="account">Аккаунт</a></li>
-							<li><a href="{% url 'maker_ad' %}" id="help">Помощь</a></li>
+							<li><a href="#" id="help">Помощь</a></li>
 						</ul> 					
 					</div>
 				</div>
@@ -33,12 +33,7 @@
 			</div>
 		</header>
 		<main>{% block content %}{% endblock %}</main> 
-		</footer>
-		<script type="text/javascript">
-			myStorage = window.localStorage;
-			let mod = localStorage.getItem('language') 
-			language_select(mod)
-		</script>
+				
 		<script src="https://kit.fontawesome.com/e9b4a4c6c5.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="{% static 'main/script/maker.js' %}"></script>
 		<script src="{% static 'main/script/html2canvas.js' %}"></script>
