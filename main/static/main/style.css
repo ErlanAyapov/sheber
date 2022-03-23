@@ -1246,11 +1246,13 @@ footer {
 }
 
 #lang_summary {
+	cursor: pointer;
 	font-size: 18px;
 }
 .select-lang div {
 	padding-left: 20px;
 	font-size: 18px;
+	cursor: pointer;
 
 }
 .select-lang {
