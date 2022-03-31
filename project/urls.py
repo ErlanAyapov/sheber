@@ -8,7 +8,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('make/', include('maker.urls')),
-    path('members/', include('members.urls'))
+    path('members/', include('members.urls')),
+    path('help/', include('help.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # статик файлдарды қосу 
 
 

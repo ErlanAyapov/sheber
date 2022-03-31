@@ -5,7 +5,8 @@
 		<meta charset="utf-8">
 		<title>Freelance Sheber</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'main/style/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'main/style/responsive.css' %}">
 		<script src="{% static 'main/script/lang.js' %}"></script>
 		<link rel="icon" type="image/png" href="{% static 'main/image/icon.png' %}">
 		{% block other_links %}
@@ -19,9 +20,9 @@
 					<div class="nav-inner"> 
 						<ul>
 							<li><a href="{% url 'main' %}" id="main">Дом</a></li>
-							<li><a href="{% url 'maker' %}" id="make">Создать</a></li>
+							<li><a href="{% url 'maker' %}" id="make">Заказать</a></li>
 							<li><a href="{% url 'members' %}" id="account">Аккаунт</a></li>
-							<li><a href="#" id="help">Помощь</a></li>
+							<li><a href="#скоро" id="help">Помощь</a></li>
 						</ul> 					
 					</div>
 				</div>

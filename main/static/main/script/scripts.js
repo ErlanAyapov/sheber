@@ -140,13 +140,13 @@ jQuery('.modal-close').on('click', function() {
 jQuery('#qazaqsha').on('click', function() {
 	localStorage.clear();	
 	localStorage.setItem('language', 'kk')
-	language_select('kk')		
+	language_main('kk')		
 	$(".language-container").css("display","none")
 });
 jQuery('#russkiy').on('click', function() {	
 	localStorage.clear();
 	localStorage.setItem('language', 'ru')	
-	language_select('ru')	
+	language_main('ru')	
 	$(".language-container").css("display","none")
 });
 console.log(localStorage.getItem('language'))
@@ -195,5 +195,6 @@ jQuery('#select_kazakh').on('click', function() {
 jQuery('#select_russkiy').on('click', function() {	
 	localStorage.clear();
 	localStorage.setItem('language', 'ru')	
-	location.reload();
+	language_main('ru')
+
 });

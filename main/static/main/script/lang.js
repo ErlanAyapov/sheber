@@ -6,44 +6,25 @@ function navigation_lang(lang) {
 		main.innerHTML = 'Басты';
 		make.innerHTML = 'Тапсырыс';
 		help.innerHTML = 'Көмек';
+	} else if (lang == 'ru') {
+		main.innerHTML = 'Дом';
+		make.innerHTML = 'Заказать';
+		help.innerHTML = 'Помощь';
 	};
 };
-function language_main(lang) {
-	var welcome	= document.getElementById('welcome');
-	var start	= document.getElementById('start');
-	var welcome_text	= document.getElementById('welcome_text');
-	var alert_title		= document.getElementById('alert_title');
-	var alert_text		= document.getElementById('alert_text');
-	var free_tarif_title= document.getElementById('free_tarif_title');
-	var free_tarif  	= document.getElementById('free_tarif');
-	var about_project	= document.getElementById('about_project');
-	var get_tarif_1		= document.getElementById('get_tarif_1');
-	var get_tarif_2		= document.getElementById('get_tarif_2'); 
-	var get_order		= document.getElementById('get_order');
-	var premium_tarif	= document.getElementById('premium_tarif');
-	var premium_tarif_title = document.getElementById('premium_tarif_title');
-	var lang_summary = document.getElementById('lang_summary'); 
-	var modal_title = document.getElementById('modal_title');
-	var modal_close = document.getElementById('modal_close');
-	var modal_message = document.getElementById('modal_message');
+function language_main(lang) { 
+	var main_welcome = document.getElementById('main_welcome');
+	var main_about	 = document.getElementById('main_about');
+	var lang_summary = document.getElementById('lang_summary');
 	navigation_lang(lang)
 	if (lang == 'kk') { 
-		welcome.innerHTML 	   = 'Қош келдіңіз!';
-		welcome_text.innerHTML = 'Бұл жерде сіз көрпешенің дизайнын дайын өрнектермен құрастыра аласыз, БАСТАУ-ды басыңыз';
-		start.innerHTML		   = 'БАСТАУ';
-		alert_title.innerHTML  = 'Тапсырыс орындау!';
-		alert_text.innerHTML   = 'Егер сіз тігінші болсаңыз сайтқа тіркелу арқылы көрпеше тігуге тапсырыcтар қабылдай аласыз';
-		free_tarif_title.innerHTML = 'Тегін аккаунт';
-		premium_tarif_title.innerHTML = 'Премиум аккаунт';
-		free_tarif.innerHTML	   = '<div class="tarif-about" id="free_tarif"><ul><li><span>✔</span> Жалпы құны</li>	<li><span>✔</span> Телефон</li><li><span>✔</span> Дизайн</li>	<li><span>❌</span> WhatsApp</li><li><span>❌</span> Көрпеше саны</li><li><span>❌</span> Ою-өрнектер</li>	</ul></div>';
-		premium_tarif.innerHTML	   = '<div class="tarif-about" id="free_tarif"><ul><li><span>✔</span> Жалпы құны</li>	<li><span>✔</span> Телефон</li><li><span>✔</span> Дизайн</li>	<li><span>✔</span> WhatsApp</li><li><span>✔</span> Көрпеше саны</li><li><span>✔</span> Ою-өрнектер</li>	</ul></div>';
-		about_project.innerHTML    = 'Жоба жайында';
-		get_tarif_1.innerHTML	   = 'Таңдау';
-		get_tarif_2.innerHTML	   = 'Таңдау'; 
-		lang_summary.innerHTML	   = 'Тілді өзгерту';
-		modal_title.innerHTML = 'Жоба даму үстінде';
-		modal_close.innerHTML = 'Жабу';
-		modal_message.innerHTML = 'Дәл қазіргі уақытта жаба жетілдіріліп жатыр, бірақ сыз қаржылай қолдау көрсете аласыз: Каспий: +7478160485 Ерлан Аяпов';
+		main_welcome.innerHTML	= 'Қош келдіңіз!'
+		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз'
+		lang_summary.innerHTML	= 'Тілді ауыстыру'
+	} else if (lang == 'ru') {
+		main_welcome.innerHTML = 'Добро пожаловать!'
+		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика.'
+		lang_summary.innerHTML	= 'Выбрать язык'
 	};
 };
 
@@ -63,7 +44,7 @@ function language_creat(lang) {
 		id_client_first_name.placeholder = 'Аты';
 		id_client_last_name.placeholder  = 'Жөні';
 		mk_ord.innerHTML 				 = 'Жіберу';
-	};
+	}
 };
 
 function language_register(lang) {
@@ -77,14 +58,12 @@ function language_register(lang) {
 
 	navigation_lang(lang)
 	if (lang == 'kk') {
-		username.placeholder = 'Қолданушы атауы';
-		password.placeholder = 'Құпия сөз';
+		username.placeholder	= 'Қолданушы атауы';
+		password.placeholder	= 'Құпия сөз';
 		id_username.placeholder = 'Қолданушы атауы';
-		password1.placeholder = 'Құпия сөз';
-		password2.placeholder = 'Құпия сөз қайта жазыңыз';
-		go_to.innerHTML = 'Сізде <a href="authentication/">аккаунт</a> бар ма?';
-		btn_next.innerHTML = 'Алға' 
-
-	}
-
-}
+		password1.placeholder	= 'Құпия сөз';
+		password2.placeholder	= 'Құпия сөз қайта жазыңыз';
+		go_to.innerHTML			= 'Сізде <a href="authentication/">аккаунт</a> бар ма?';
+		btn_next.innerHTML		= 'Алға' 
+	} 
+};

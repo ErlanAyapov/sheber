@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<div class="help-conrainer">
+		<div class="help-block">
+			<h2 id="hel_title_1">Как пользоватся сайтом?</h2>
+			<details>
+				<summary id="ques_1">Введение...</summary>
+				<div class="details-conent"></div>
+			</details>
+			<details>
+				<summary id="ques_1">Как оформить заказ?</summary>
+				<div class="details-conent"></div>
+			</details>
+			<details>
+				<summary id="ques_2">Что такой премиум аккаунт?</summary>
+				<div class="details-conent"></div>
+			</details>
+			<details>
+				<summary id="ques_3">Как зарабатывать в этой платформе?</summary>
+				<div class="details-conent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			</details>
+		</div>
+	</div>
+	<div class="feedback-form-container">
+		<div class="feedback-form-block">
+			<form action="{% url 'feedback' %}" method="POST">
+				<h2>Остались вопросы?</h2>
+				{% csrf_token %}
+				<input type="email" name="email" placeholder="Почта" required="" id="id_email">
+				<textarea name="message" id="id_message" placeholder="Пишите интресующий вопрос или пару теплых слов поддержки)))" rows="1" required=""></textarea>
+				<textarea id="id_image" name="image" style="display:none;"></textarea>
+				<!-- <input type="file" name=""> -->
+				<div class="input-image">
+					<label for="id_img" >Выбрать изоброжение (не обязательно)</label>
+					<input type="file" title="Сурет таңдаңыз" accept="image/*" id="id_img" onchange="encodeImageFileAsURL(this, input_id = 'id_image')" />
+				</div>
+				<div class="output-image">
+					<img src="" id="blah" alt="| Вы еще не выбрали изоброжение	">
+				</div>
+				<button>Отправить</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

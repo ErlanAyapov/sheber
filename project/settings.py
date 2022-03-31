@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'main',
     'maker',
     'members',
+    'help',
 ]
 
 MIDDLEWARE = [

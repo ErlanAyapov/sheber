@@ -1,68 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
  
-{% block content %} 
-	
-	<div class="about-content">
-		
-		<strong>
-			<p class="about-welcome" id="welcome">Добро пожаловать!</p>
-		</strong>
-		<strong>
-			<p class="about-text" id="welcome_text">Здесь вы можете нарисовать стиль коврика, нажмите начать</p>
-		</strong>
-		 <div class="about-img">
-		 	<img src="{% static 'main/image/desk.png' %}">
-		 	<a href="{% url 'maker' %}" id="start">НАЧАТЬ</a>
-		 </div> 
-		 <div class="alert-text-block">
-		 	<p class="alert-text-title" id="alert_title">Начните зарабатывать!</p>
-		 	<p class="alert-text" id="alert_text">Оформите подписку и получите заказы для шитьия ковриков</p>
-		 </div>
-		 <div class="tarif-continer">
-		 	<div class="tarif-block">
-		 		<div class="tarif-title" id="free_tarif_title">Бесплатная подписка</div>
-		 		<div class="tarif-img">
-		 		</div>
-		 		<div class="tarif-about" id="free_tarif">
-		 			<ul>
-		 				<li><span>✔</span> Цена заказа</li>
-		 				<li><span>✔</span> Телефон</li>
-		 				<li><span>✔</span> Дизайн</li>
-		 				<li><span>❌</span> WhatsApp</li>
-		 				<li><span>❌</span> Количество</li>
-		 				<li><span>❌</span> Орнаменты</li> 
-		 			</ul>
-		 		</div>
-		 		<div class="get-tarif"><a id="get_tarif_1" href="#">Приобрести</a></div>
-		 	</div>
-		 	<div class="tarif-block">
-		 		<div class="tarif-title" id="premium_tarif_title">Платная подписка</div>
-		 		<div class="tarif-img">
-		 		</div>
-		 		<div class="tarif-about" id="premium_tarif">
-		 			<ul>
-		 				<li><span>✔</span> Цена заказа</li>
-		 				<li><span>✔</span> Телефон</li>
-		 				<li><span>✔</span> Дизайн</li>
-		 				<li><span>✔</span> WhatsApp</li>
-		 				<li><span>✔</span> Количество</li>
-		 				<li><span>✔</span> Орнаменты</li> 
-		 				<span id="tarif-price">1700₸ в месяц</span>
-		 			</ul>
-		 		</div>
-		 		<div class="get-tarif"><a id="get_tarif_2" href="#">Приобрести</a></div>
-		 	</div> 
-		 </div>
-		 <div class="about-project">
-		 	<div class="about-project-title" id="about_project"><strong>О нашем проекте</strong></div>
-		 	<div class="about-video"><iframe width="100%" height="600" src="https://www.youtube.com/embed/o39ODUHJIvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% block content %}	
+	<div class="main-container">
+		<div class="main-block">
+			<strong><div class="block-title" id="main_welcome">Добро пожаловать!</div></strong>
+			<div class="block-text" id="main_about">
+				Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика.
 			</div>
-		 </div>
-		
-		
-	</div>
-	<div class="language-container" id="lg_container">
+		</div>
+	</div>	 
+	<div class="language-container" id="lg_container" style="display:none;">
 		<div class="language-block" id="qazaqsha">
 			<div class="lang-img"><img src="{% static 'main/image/tu.jpg' %}"></div>
 			<div class="language-text">Қазақ тілі</div>
@@ -71,48 +19,7 @@
 			<div class="lang-img"><img src="{% static 'main/image/flag.jpg' %}"></div>
 			<div class="language-text">Руский язык</div>
 		</div>
-	</div>
-	<div class="main-container">
-		<div class="block-left">
-			{% if product %}
-				<div class="order-product-container">
-				<h2>Все заказы</h2>
-				{% for object_order in product %}
-					{% if object_order.category.name == 'Жарнама' %}
-					<div class="order-product-block ad-product">
-						<div>{{ object_order.comment }}</div> 
-						{% if object_order.des_image %}<br>
-						<div><img src="{{ object_order.des_image }}"></div>
-						{% endif %}<br>
-						<br>
-						<a  href="{{ object_order.sys_info }}" target="_blank">Перейти на продукт</a>		
-					</div>
-					{% else %}
-					<div class="order-product-block">
-						<div><strong>Покупатель: </strong>{{ object_order.client_first_name }} {{ object_order.client_last_name }}</div>
-						<div><strong>Заказанный товар:</strong> {{ object_order.category }}</div>
-						<div><strong>Желаемый цена заказа:</strong> {{ object_order.price }}₸</div>
-						{% if object_order.date %}
-						<div><strong>Время заказа:</strong> {{ object_order.date|slice:":16" }}</div>
-						{% endif %}
-						<br>
-						<a  href="{% url 'detail_order' object_order.id %}" >Посмотреть заказ</a>		
-					</div>	
-					{% endif %}				
-				{% endfor %}
-				</div>
-			{% endif %}
-		</div>
-	</div>
-	<div class="modal-finance">
-		<div class="modal-title">
-			<strong><div class="modal-text" id="modal_title">Еще в разработке</div></strong>
-			<div class="modal-close" id="modal_close">Закрыть</div>
-		 </div>
-		<div class="modal-message" id="modal_message">
-			Данный время этот проект еще не реализован, но вы можете оказать финансовую поддержку Каспий: +7478160485 Ерлан Аяпов
-		</div>
-	</div>
+	</div> 
 	<div id="news_block_close" class="news_button"><</div>
 	<script type="text/javascript">
 		myStorage = window.localStorage;
