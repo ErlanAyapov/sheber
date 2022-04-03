@@ -42,9 +42,10 @@
 		position: absolute;
 		right: 40px;
 	}
-	.block-text {
-		padding-top: 40px;
+	.video-block {
+		width: 90%;
 	}
+	
 }
 @media screen and (max-width: 580px) {
 	.tarif-continer {

@@ -1165,3 +1165,9 @@ footer {
 .block-text {
 	padding-top: 40px;
 }
+.video-block {
+	position: relative;
+	width: 70%;
+	margin: auto;
+	margin-top: 200px;
+}
