@@ -1216,3 +1216,19 @@ footer {
 	max-width: 100%;
 
 }
+.picture-load-block button {
+	padding: 5px 30px;
+	font-size: 18px;
+	color: #fff;
+	background: blue;
+	margin: 20px 0;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	box-shadow: 0 0 5px;
+}
+.picture-load-block p {
+	text-align: center;
+	width: 100%;
+	font-size: 25px;
+}

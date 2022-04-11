@@ -10,7 +10,9 @@
 		<form action="" method="post" id="picture_update"> 
 			{% csrf_token %} 
 			<textarea name="image" id="id_image" required></textarea>
+			<p>Выбрано изоброжение</p>
 			<div class="picture-uplodet">
+
 				<img src="{{ form.image.value }}" id="blah" >
 			</div> 
 		</form>
