@@ -1,11 +1,36 @@
 from django.shortcuts import render, redirect
-from .forms import UserCreateForm, UserUpdateForm
+from .forms import UserCreateForm, UserUpdateForm, CustomerForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as django_logout 
 from django.views.generic import ListView, DetailView, UpdateView
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from .models import Customer
 
+
+class UserProfileView(DetailView):
+	model = User
+	template_name = 'members/profile.html'
+
+
+class UserProfileUpdateView(UpdateView):
+	model = User
+	form_class = UserUpdateForm
+	template_name = 'members/profile_update.html'
+	def form_valid(self, form):
+		form.save()
+		return HttpResponseRedirect('/members/user/' + str(self.request.user.id))
+
+
+class CustomerUpdateView(UpdateView):
+	model = Customer
+	form_class = CustomerForm
+	template_name = 'members/customer_update.html'
+	def form_valid(self, form):
+		form.save(commit=False)
+		form.user = self.request.user
+		form.save()
+		return HttpResponseRedirect('/members/user/' + str(self.request.user.id))
 
 def register(request):
 	error = ''
@@ -17,9 +42,8 @@ def register(request):
 			password = request.POST.get('password1')  
 			user = authenticate(request, username = username, password = password)
 			if user is not None: 
-				login(request, user)
-				return HttpResponseRedirect('continu-%23!&$4%3F' + str(request.user.id))
-				# return redirect('main')
+				login(request, user) 
+				return redirect('customer_add')
 		else:
 			error = 'Пороли не совпадает или логин занят!'
 			data = {
@@ -52,15 +76,15 @@ def authentication(request):
 	return render(request, 'members/auth.html')
 
 
-class UserProfileView(DetailView):
-	model = User
-	template_name = 'members/profile.html'
+def customer_create(request):
+	if request.method == 'POST':
+		form = CustomerForm(request.POST)
+		if form.is_valid():
+			form = form.save(commit=False)
+			form.user = request.user
+			form.save()
 
+			return HttpResponseRedirect('/members/user/' + str(request.user.id))
 
-class UserProfileUpdateView(UpdateView):
-    model = User
-    form_class = UserUpdateForm
-    template_name = 'members/profile_update.html'
-    def form_valid(self, form):
-        form.save()
-        return redirect('main')
+	form = CustomerForm()
+	return render(request, 'members/customer_create.html', {'customer_form':form})

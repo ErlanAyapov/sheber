@@ -21,7 +21,11 @@
 						<ul>
 							<li><a href="{% url 'main' %}" id="main">Дом</a></li>
 							<li><a href="{% url 'maker' %}" id="make">Заказать</a></li>
+							{% if request.user.is_authenticated %}
+							<li><a href="{% url 'profile' request.user.id %}" id="account">Аккаунт</a></li>
+							{% else %}
 							<li><a href="{% url 'members' %}" id="account">Аккаунт</a></li>
+							{% endif %}
 							<li><a href="#скоро" id="help">Помощь</a></li>
 						</ul> 					
 					</div>

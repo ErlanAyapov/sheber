@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+	<div class="picture-load-block">
+
+		<form action="" method="post" id="picture_update"> 
+			{% csrf_token %} 
+			<textarea name="image" id="id_image" required></textarea>
+			<div class="picture-uplodet">
+				<img src="{{ form.image.value }}" id="blah" >
+			</div> 
+		</form>
+		<input type="file" name="image" title="Сурет таңдаңыз" accept="image/*" id="input_image" onchange="encodeImageFileAsURL(this, input_id = 'id_image')" />
+		<button type="submit" form="picture_update">Сохранить</button>
+	</div>
+	
+{% endblock %}

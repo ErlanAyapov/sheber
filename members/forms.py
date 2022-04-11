@@ -24,5 +24,5 @@ class UserUpdateForm(forms.ModelForm):
 class CustomerForm(forms.ModelForm):
 	class Meta:
 		model = Customer
-		fields = ('image', 'user')
+		fields = ['image']
 		exclude = ['user']

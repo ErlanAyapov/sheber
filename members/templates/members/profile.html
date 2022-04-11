@@ -14,9 +14,19 @@
 			<div class="user-profile">
 				<h2>Мой профиль</h2>
 				{% if request.user.id == object.id %}
-					<form action="{% url 'register_continu' request.user.id %}" method="POST">
+					<form action="{% url 'user_continu' request.user.id %}" method="POST">
+						<div class="update-link">	
+							{% if request.user == object %}
+								<a href="{% url 'customer_update' object.customer.id %}">Изменть изоброжение</a>
+							{% endif %}
+						</div>
+
 						<div class="avatar">
+							{% if not object.customer %}
 							<img src="{% static 'main/image/user.png' %}" width="100%">
+							{% else %}
+							<img src="{{ object.customer.image }}" width="100%">
+							{% endif %}
 						</div>
 						{% csrf_token %}
 						<div class="username">
@@ -33,7 +43,7 @@
 						<a href="{% url 'logout' %}" type="button" id="logout">Выйты</a>
 					</form>
 				{% else %}
-					<form action="{% url 'register_continu' request.user.id %}" method="POST">
+					<form action="{% url 'user_continu' request.user.id %}" method="POST">
 						<div class="avatar">
 							<img src="{% static 'main/image/user.png' %}" width="100%">
 						</div>
@@ -49,6 +59,7 @@
 				{% if request.user.is_staff %}
 					<a href="{% url 'maker_ad' %}">Создать рекламу</a>
 				{% endif %}
+				
 			</div>
 		</div>
 	{% endif %}
