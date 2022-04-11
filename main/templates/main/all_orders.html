@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if object_list %}
+	
+	<div class="orders-container">
+		<h2>Все закзаы</h2>
+		{% for order in object_list %}
+		{% if order.category.name == 'Көрпеше' %}
+		<div class="orders-block">
+			<p><strong>Категория: </strong>{{ order.category }}</p>
+			<p><strong>Колличество:</strong>{{ order.number }}</p>
+			<p><strong>Цена:</strong>{{ order.price }}</p>
+			<p><strong>Опубликовано:</strong> {{ order.date|slice:":16" }}</p>
+			<br>
+			<a href="{% url 'detail_order' order.id %}">Подробнее</a>
+			<br>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div> 
+{% endif %}
+{% endblock %}

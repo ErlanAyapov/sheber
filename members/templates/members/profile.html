@@ -12,8 +12,9 @@
 	{% if object %}
 		<div class="user-profile-innner">
 			<div class="user-profile">
-				<h2>Мой профиль</h2>
+				
 				{% if request.user.id == object.id %}
+				<h2>Мой профиль</h2>
 					<form action="{% url 'user_continu' request.user.id %}" method="POST">
 						<div class="update-link">	
 							{% if request.user == object %}
@@ -43,6 +44,7 @@
 						<a href="{% url 'logout' %}" type="button" id="logout">Выйты</a>
 					</form>
 				{% else %}
+				<h2>{{ object.first_name }} {{ object.last_name }}</h2>
 					<form action="{% url 'user_continu' request.user.id %}" method="POST">
 						<div class="avatar">
 							<img src="{% static 'main/image/user.png' %}" width="100%">

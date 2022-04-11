@@ -9,7 +9,7 @@ function navigation_lang(lang) {
 	} else if (lang == 'ru') {
 		main.innerHTML = 'Дом';
 		make.innerHTML = 'Заказать';
-		help.innerHTML = 'Помощь';
+		help.innerHTML = 'Я мастер';
 	};
 };
 function language_main(lang) { 

@@ -14,6 +14,12 @@ class MainView(ListView):
 	template_name = 'main/index.html' 
 
 
+class AllOrderView(ListView):
+	model = Product
+	ordering = '-id'
+	template_name = 'main/all_orders.html' 
+
+
 class OrderDetaleView(DetailView):
 	model = Product
 	template_name = 'main/order_detale.html'
