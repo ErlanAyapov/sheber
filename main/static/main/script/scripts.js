@@ -198,3 +198,10 @@ jQuery('#select_russkiy').on('click', function() {
 	language_main('ru')
 
 });
+
+jQuery('#feedback_btn').on('click', function() {	 
+	$('.my-feedback-modal').css('display',' block');
+});
+jQuery('.my-feedback-modal .btn-secondary').on('click', function() {	 
+	$('.my-feedback-modal').css('display',' none');
+});

@@ -9,5 +9,5 @@ urlpatterns = [
 	path('logout/', views.logout, name = 'logout'),
 	path('update-#!&$4?<int:pk>/', views.UserProfileUpdateView.as_view(), name = 'user_continu'),
 	path('update-customer/<int:pk>/', views.CustomerUpdateView.as_view(), name = 'customer_update'),
-	path('customer/', views.customer_create, name = 'customer_add'),
+	# path('customer/', views.customer_create, name = 'customer_add'),
 ]

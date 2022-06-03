@@ -17,7 +17,21 @@ class MainView(ListView):
 class AllOrderView(ListView):
 	model = Product
 	ordering = '-id'
-	template_name = 'main/all_orders.html' 
+	template_name = 'main/all_orders.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(AllOrderView, self).get_context_data( **kwargs )
+
+		if self.request.user.premiumsubscribe:
+			user = self.request.user.premiumsubscribe
+			real_year, real_mounth, real_day = map( int, str(datetime.datetime.now())[0:10].split('-') )
+			end_year, end_mounth, end_day = map( int, str(user.end_subscribe)[0:10].split('-') )
+			time_left = ( end_year*360 + end_mounth*30 + end_day ) - ( real_year*360 + real_mounth*30 + real_day )
+
+			if not time_left >= 0:
+	 			context['time_left'] = True
+
+		return context
 
 
 class OrderDetaleView(DetailView):
@@ -25,9 +39,9 @@ class OrderDetaleView(DetailView):
 	template_name = 'main/order_detale.html'
 
 	def get_context_data(self, **kwargs):
-		print(self.object.category.name)
+		print( self.object.category.name )
 		if self.object.category.name == 'Көрпеше':
-			context = super(OrderDetaleView, self).get_context_data(**kwargs)
+			context = super( OrderDetaleView, self ).get_context_data( **kwargs )
 			ornament_fragment = OrnamentFragment.objects.all()
 			border_img, center_img = self.object.ornament_info.split()
 			for i in ornament_fragment:
@@ -36,11 +50,11 @@ class OrderDetaleView(DetailView):
 				elif i.image_base64[-50:-20] == center_img:
 					center_img = i.image_base64  
 
-			if str(self.object.ip) == str(get_client_ip(self.request)) and str(self.object.system_info) == str(self.request.META['HTTP_USER_AGENT']):
-				order_hour, order_minute = map(int, str(self.object.date)[11:-10].split(':'))
-				order_date = str(self.object.date)[:-16]
-				real_hour, real_minute = map(int, str(datetime.datetime.now())[11:-10].split(':'))
-				real_date = str(datetime.datetime.now())[:-16] 
+			if str( self.object.ip ) == str( get_client_ip( self.request ) ) and str( self.object.system_info)  == str( self.request.META['HTTP_USER_AGENT'] ):
+				order_hour, order_minute = map( int, str( self.object.date )[11:-10].split(':') )
+				order_date = str( self.object.date )[:-16]
+				real_hour, real_minute = map( int, str( datetime.datetime.now() )[11:-10].split(':') )
+				real_date = str( datetime.datetime.now() )[:-16] 
 				real_minute_1 = real_minute
 				order_minute = order_hour * 60 + order_minute
 				real_minute = real_hour * 60 + real_minute

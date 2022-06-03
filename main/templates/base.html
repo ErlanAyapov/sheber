@@ -12,6 +12,10 @@
 		{% block other_links %}
 		{% endblock %}
 		<script src="{% static 'main/script/jquery.js' %}"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
 	</head>
 	<body oncontextmenu="return false;">
 		<header>
@@ -26,7 +30,11 @@
 							{% else %}
 							<li><a href="{% url 'members' %}" id="account">Аккаунт</a></li>
 							{% endif %}
+							{% if request.user.is_authenticated %}
 							<li><a href="{% url 'all_order' %}" id="help">Я мастер</a></li>
+							{% else %}
+							<li><a href="{% url 'members' %}" id="help">Я мастер</a></li>
+							{% endif %}
 						</ul> 					
 					</div>
 				</div>

@@ -15,15 +15,15 @@ function navigation_lang(lang) {
 function language_main(lang) { 
 	var main_welcome = document.getElementById('main_welcome');
 	var main_about	 = document.getElementById('main_about');
-	var lang_summary = document.getElementById('lang_summary');
+	var lang_summary = document.getElementById('lang_summary'); 
 	navigation_lang(lang)
 	if (lang == 'kk') { 
 		main_welcome.innerHTML	= 'Қош келдіңіз!'
-		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз'
+		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз. <a href="members/">Тіркеліп</a> бір күнге тегін жазылым алыңыз!'
 		lang_summary.innerHTML	= 'Тілді ауыстыру'
 	} else if (lang == 'ru') {
 		main_welcome.innerHTML = 'Добро пожаловать!'
-		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика.'
+		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика. <a href="members/">Зарегистрируйтесь</a> и получите подписку бесплатно на один день!'
 		lang_summary.innerHTML	= 'Выбрать язык'
 	};
 };

@@ -2,22 +2,59 @@
 
 {% block content %}
 {% if object_list %}
-	
+
+	{% if request.user.is_authenticated %}
+	{% if not time_left %}
 	<div class="orders-container">
-		<h2>Все закзаы</h2>
+		<h2>Все заказы</h2>
 		{% for order in object_list %}
 		{% if order.category.name == 'Көрпеше' %}
-		<div class="orders-block">
-			<p><strong>Категория: </strong>{{ order.category }}</p>
-			<p><strong>Колличество:</strong>{{ order.number }}</p>
-			<p><strong>Цена:</strong>{{ order.price }}</p>
-			<p><strong>Опубликовано:</strong> {{ order.date|slice:":16" }}</p>
-			<br>
-			<a href="{% url 'detail_order' order.id %}">Подробнее</a>
-			<br>
-		</div>
+			<div class="orders-block">
+				<div class="order-image">
+
+					<img src="{{ order.des_image }}" width="250">
+				</div>
+				<div class="order-infor">
+					<h2>{{ order.client_first_name }} {{ order.client_last_name }}</h2>
+					<p>{{ order.comment }}</p>
+					<p>{{ order.category }}</p>
+					<p><strong>{{ order.price }} ₸</strong></p>
+					<a href="{% url 'detail_order' order.id %}" class="btn btn-primary">Посмотреть заказ </a>
+				</div>
+			</div>
 		{% endif %}
 		{% endfor %}
+		<div id="feedback_btn" class="open-btn btn btn-primary "> <h1> ? </h1> </div>
 	</div> 
+	{% else %}
+	{% else %}
+	<div class="not-premium">
+		<h2>Вам нужно премиум подписка!</h2><br>
+		<ul>
+			<h3>Что включает в себя премиум подписка?</h3><br>
+			<li>Доступ к всем заказам</li>
+			<li>Все узоры и орнаменты</li>
+			<li>Дизайн</li>
+			<li>Колличество заказа</li>
+			<li>Приблизительная цена заказа</li> 
+			<li>Информация о заказе</li>
+		</ul><br>
+		<p>Подписка осушестивляется ручной</p>
+		<p>Поулчить <a href="https://wa.me/+77478160485?text=Здравствуйте%2C+хочу+получить+подписку!+мой+имя+пользователя:+{{ request.user.username }}">ПОДПИСКУ</a></p>
+	</div>
+	
+	{% endif %}
+	{% endif %}
+
+	<div class="my-feedback-modal">
+		<h3>У вас вопросы?</h3>
+		<form action="{% url 'feedback' %}" method="POST">
+			{% csrf_token %}
+			<input class="form-control" type="text" name="message" id="id_message" placeholder="Опишите вашу проблему?" required>
+			<input class="form-control" type="email" name="email" id="id_email" placeholder="Почта" required>
+			<button type="submit" class="btn btn-primary">Отправить</button>
+			<button type="button" class="btn btn-secondary">Закрыть</button>
+		</form>
+	</div>
 {% endif %}
 {% endblock %}

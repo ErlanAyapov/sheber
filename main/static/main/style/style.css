@@ -1,8 +1,9 @@
 * {
 	margin: 0;
 	padding: 0;
-
+	font-size: 15px;
 }
+ 
 .logo-content {
 	width: 100%;
 	height: 150px;
@@ -25,7 +26,7 @@
 	border-radius: 25px;
 	border: 5px solid #fff;
 	display: inline-block;
-	padding: 5px 10px;
+	padding: 0px 15px;
 	color: #fff;
 	position: absolute;
 	bottom: 20px;
@@ -34,10 +35,11 @@
 }
 .logo-text {
 	position: absolute;
-	bottom: 75px;
-	font-family: monospace;
-	font-size: 18px;
+	bottom: 70px;
+	/*font-family: monospace;*/
 	left: 10%;
+	font-size: 22px;
+
 } 
 .news-conteainer {
 	width: 90%;
@@ -75,13 +77,10 @@
 	list-style-type: none;
 	
 }
- 
-.top-nav ul li {
-}
 .top-nav ul li a {
 	text-decoration: none;
-	font-size: 20px;
-	padding: 5px;
+	font-size: 18px;
+	padding: 0px 5px;
 	color: #000;
 	transition: 0.2s;
 }
@@ -405,7 +404,7 @@
 
 }
 .user-profile-innner {
-	margin: 5% 0;
+	margin: 2vh 0;
 
 }
 .user-profile form input {
@@ -420,10 +419,10 @@
 	margin: auto;
 }
 .user-profile {
-	width: 95%;
+	width: 97%;
 	margin: auto;
-	box-shadow: 0 0 5px;
-	border-radius: 5px;
+	/*box-shadow: 0 0 5px;*/
+	border-radius: 10px;
 }
  
 .username {
@@ -458,15 +457,7 @@
 	color: #fff;
 	font-size: 20px;
 	margin: 5px;
-}
-.user-profile h2 {
-	text-align: center;
-	background: blue;
-	padding: 7px;
-	border-radius: 5px;
-	margin-bottom: 2%;
-	/*box-shadow: 0 0 15px;*/
-}
+} 
 #logout {
 	margin: auto;
 	font-size: 18px;
@@ -739,7 +730,7 @@
 	padding: 5px;
 	display: flex;
 	justify-content: center;
-}
+} 
 .output-image img {
 	margin: auto;
 	max-width: 80%;
@@ -748,6 +739,7 @@
 .maker-block img {
 	position: absolute;
 }
+
 .border_content div:not(:first-child) {
 	display: none;
 }
@@ -757,26 +749,26 @@
 .center_bottom_content div:not(:first-child) {
 	display: none;
 }
-
+.border_content img {
+	top: 2.5px;
+}
 
 .center_top_content img {
 	top: 40px;
-	left: 40px;
+	left: 45px;
 	/*bottom: 0;*/
 	pointer-events: none; 
 }
 .center_bottom_content img {
-	left: 40px;
-	top: 220px;
+	left: 45px;
+	top: 240px;
 	pointer-events: none; 
 }
 
 .maker-block {
-	position: relative;
-	/*background: blue;*/
-	/*border: 5px  solid ;#000;*/
-	width: 240px;
-	height: 420px;
+	position: relative; 
+	width: 250px;
+	height: 430px;
 	display: inline-block;
 	margin-top: 2%;
 	box-shadow: 0 0 20px #ddf;
@@ -786,6 +778,11 @@
 	-ms-user-select: none;
 	-o-user-select: none;
 	user-select: none;
+	padding: 5px;
+	box-shadow: inset -2px -2px 10px rgba(0, 0, 0, 0.7),
+							inset 2px 2px 10px rgba(0, 0, 0, 0.5),
+							0 0 5px #000;
+	border-radius: 5px;
 }
 
 
@@ -805,18 +802,18 @@
 		
 	}
 	.maker-block img {
-		width: 190px;
-		height: 370px;
+		width: 180px;
+		height: 360px;
 	}
 	.border_content_inner_top img, .border_content_inner_bottom img {
-		width: 130px;
-		height: 130px;
+		width: 120px;
+		height: 120px;
 	}
 	.center_top_content img, .center_bottom_content img {
-		left: 30px;
+		left: 35px;
 	}
 	.center_bottom_content img {
-		top: 190px;
+		top: 195px;
 	}
 
 }
@@ -1240,23 +1237,78 @@ footer {
 	margin: 20px 0;
 	width: 100%;
 }
-.orders-block {
+ 
+.not-premium {
 	width: 80%;
 	margin: auto;
-	margin-bottom: 20px;
+	background: rgba(255, 0, 0, 0.2);
+	padding: 20px;
+	font-size: 18px;
+	margin-top: 50px;
 
-	background: #909090;
-	color: #000;
+}
+.not-premium ul li{
+	margin-left: 20px;
+}
+
+.orders-block {
+	display: flex;
+	width: 1000px;
+	margin: auto;
+	box-shadow: 0 0 5px;
 	padding: 5px;
 	border-radius: 10px;
-	box-shadow: 0 0 5px #000;
+	position: relative;
+	margin-top: 5vh;
 }
-.orders-block a {
-	background: blue;
-	color: #fff;
-	padding: 2px 10px;
-	margin: 5px 0;
-	text-decoration: none;
+.order-infor {
+	text-align: center;
+	width: 50%;
+	margin: auto;
+	margin-top: 0;
+}
+.order-infor strong {
+	color: blue;
+}
+.open-btn {
+	position: fixed;
+	bottom: 10vh;
+	right: 7vh; 
+	padding: 10px 10px;
 	box-shadow: 0 0 5px #000;
-	c
+	background: blue;
+}
+.my-feedback-modal {
+	width: 80%;
+	position: fixed;
+	left: 10%;
+	top: 20vh;
+	background: #fff;
+	padding: 5px;
+	border-radius: 10px; 
+	box-shadow: 0 0 100px #000;
+	display: none;
+
+}
+.my-feedback-modal input, .my-feedback-modal form  {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.my-feedback-modal h3 {
+	background: blue;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	padding: 5px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px; 
+	color: #fff;
+}
+.my-feedback-modal form {
+	margin-top: 50px;
+}
+button {
+	background: blue;
 }

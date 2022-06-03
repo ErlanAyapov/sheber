@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
-from .forms import UserCreateForm, UserUpdateForm, CustomerForm
+from .forms import UserCreateForm, UserUpdateForm, CustomerForm, PremiumSubscribeForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as django_logout 
 from django.views.generic import ListView, DetailView, UpdateView
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from .models import Customer
-
+from .models import Customer, PremiumSubscribe
+from datetime import datetime
 
 class UserProfileView(DetailView):
 	model = User
@@ -36,14 +36,19 @@ def register(request):
 	error = ''
 	if request.method == 'POST':
 		form = UserCreateForm(request.POST)
+		
 		if form.is_valid():
 			form.save()
-			username = request.POST.get('username')  
-			password = request.POST.get('password1')  
+			username = request.POST.get( 'username' )  
+			password = request.POST.get( 'password1' )  
 			user = authenticate(request, username = username, password = password)
 			if user is not None: 
-				login(request, user) 
-				return redirect('customer_add')
+				login(request, user)  
+				sub = PremiumSubscribe( user = request.user, start_subscribe = str( datetime.now() ), end_subscribe = datetime.now()) 
+				sub.save()	
+				customer = Customer( user = request.user, image = 'default')
+				customer.save()
+				return HttpResponseRedirect('/members/user/' + str(request.user.id))
 		else:
 			error = 'Пороли не совпадает или логин занят!'
 			data = {
@@ -75,7 +80,7 @@ def authentication(request):
 			return render(request, 'members/auth.html', {'error':error})	
 	return render(request, 'members/auth.html')
 
-
+'''
 def customer_create(request):
 	if request.method == 'POST':
 		form = CustomerForm(request.POST)
@@ -88,3 +93,4 @@ def customer_create(request):
 
 	form = CustomerForm()
 	return render(request, 'members/customer_create.html', {'customer_form':form})
+'''

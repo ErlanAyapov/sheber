@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, EmailInput
-from members.models import Customer
+from members.models import Customer, PremiumSubscribe
 class UserCreateForm(UserCreationForm):
 	class Meta:
 		model = User
@@ -26,3 +26,10 @@ class CustomerForm(forms.ModelForm):
 		model = Customer
 		fields = ['image']
 		exclude = ['user']
+
+class PremiumSubscribeForm(forms.ModelForm):
+	class Meta:
+		model = PremiumSubscribe
+		fields = ['start_subscribe']
+		exclude = ['user']
+		

@@ -13,8 +13,7 @@
 		<div class="user-profile-innner">
 			<div class="user-profile">
 				
-				{% if request.user.id == object.id %}
-				<h2>Мой профиль</h2>
+				{% if request.user.id == object.id %} 
 					<form action="{% url 'user_continu' request.user.id %}" method="POST">
 						<div class="update-link">	
 							{% if request.user == object %}
@@ -23,7 +22,7 @@
 						</div>
 
 						<div class="avatar">
-							{% if not object.customer %}
+							{% if object.customer.image == 'default' %}
 							<img src="{% static 'main/image/user.png' %}" width="100%">
 							{% else %}
 							<img src="{{ object.customer.image }}" width="100%">
@@ -38,8 +37,7 @@
 							<input type="text" name="last_name" class="form-control" placeholder="Тегі" maxlength="150" id="id_last_name" value="{{object.last_name}}">
 						</div>
 						<input type="text" name="email" class="form-control" placeholder="почта" maxlength="254" id="id_email" value="{{object.email}}">
-						
-
+					
 						<button>Сохранить</button>
 						<a href="{% url 'logout' %}" type="button" id="logout">Выйты</a>
 					</form>
@@ -57,10 +55,7 @@
 						</div>
 						
 					</form>
-				{% endif %}
-				{% if request.user.is_staff %}
-					<a href="{% url 'maker_ad' %}">Создать рекламу</a>
-				{% endif %}
+				{% endif %} 
 				
 			</div>
 		</div>
