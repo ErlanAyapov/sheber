@@ -3,7 +3,6 @@
 {% block content %}
 {% if object_list %}
 
-	{% if request.user.is_authenticated %}
 	{% if not time_left %}
 	<div class="orders-container">
 		<h2>Все заказы</h2>
@@ -26,8 +25,7 @@
 		{% endfor %}
 		<div id="feedback_btn" class="open-btn btn btn-primary "> <h1> ? </h1> </div>
 	</div> 
-	{% else %}
-	{% else %}
+	{% else %} 
 	<div class="not-premium">
 		<h2>Вам нужно премиум подписка!</h2><br>
 		<ul>
@@ -42,8 +40,7 @@
 		<p>Подписка осушестивляется ручной</p>
 		<p>Поулчить <a href="https://wa.me/+77478160485?text=Здравствуйте%2C+хочу+получить+подписку!+мой+имя+пользователя:+{{ request.user.username }}">ПОДПИСКУ</a></p>
 	</div>
-	
-	{% endif %}
+	 
 	{% endif %}
 
 	<div class="my-feedback-modal">
