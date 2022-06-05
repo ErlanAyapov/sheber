@@ -44,7 +44,7 @@ def register(request):
 			user = authenticate(request, username = username, password = password)
 			if user is not None: 
 				login(request, user)  
-				sub = PremiumSubscribe( user = request.user, start_subscribe = str( datetime.now() ), end_subscribe = datetime.now()) 
+				sub = PremiumSubscribe( user = request.user, start_subscribe = datetime.now(), end_subscribe = datetime.now()) 
 				sub.save()	
 				customer = Customer( user = request.user, image = 'default')
 				customer.save()

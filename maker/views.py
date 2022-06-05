@@ -100,7 +100,7 @@ def add_fragment(request):
 		if form.is_valid():
 			form.save(commit = False)
 			form.save()
-			return redirect('main')
+			return redirect('add_fragment')
 
 	form = FragmentAddForm()
 	data = {
