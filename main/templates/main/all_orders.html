@@ -15,7 +15,7 @@
 				</div>
 				<div class="order-infor">
 					<h2>{{ order.client_first_name }} {{ order.client_last_name }}</h2>
-					<p>{{ order.comment }}</p>
+					<p>{{ order.comment|slice:":200" }}...</p>
 					<p>{{ order.category }}</p>
 					<p><strong>{{ order.price }} ₸</strong></p>
 					<a href="{% url 'detail_order' order.id %}" class="btn btn-primary">Посмотреть заказ </a>

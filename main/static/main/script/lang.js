@@ -5,11 +5,11 @@ function navigation_lang(lang) {
 	if (lang == 'kk') {
 		main.innerHTML = 'Басты';
 		make.innerHTML = 'Тапсырыс';
-		help.innerHTML = 'Көмек';
+		help.innerHTML = 'Шеберхана';
 	} else if (lang == 'ru') {
 		main.innerHTML = 'Дом';
 		make.innerHTML = 'Заказать';
-		help.innerHTML = 'Я мастер';
+		help.innerHTML = 'Мастерская';
 	};
 };
 function language_main(lang) { 
@@ -18,13 +18,13 @@ function language_main(lang) {
 	var lang_summary = document.getElementById('lang_summary'); 
 	navigation_lang(lang)
 	if (lang == 'kk') { 
-		main_welcome.innerHTML	= 'Қош келдіңіз!'
-		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз. <a href="members/">Тіркеліп</a> бір күнге тегін жазылым алыңыз!'
-		lang_summary.innerHTML	= 'Тілді ауыстыру'
+		main_welcome.innerHTML	= 'Қош келдіңіз!';
+		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз. <a href="members/">Тіркеліп</a> бір күнге тегін жазылым алыңыз!';
+		lang_summary.innerHTML	= 'Тілді ауыстыру';
 	} else if (lang == 'ru') {
-		main_welcome.innerHTML = 'Добро пожаловать!'
-		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика. <a href="members/">Зарегистрируйтесь</a> и получите подписку бесплатно на один день!'
-		lang_summary.innerHTML	= 'Выбрать язык'
+		main_welcome.innerHTML = 'Добро пожаловать!';
+		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика. <a href="members/">Зарегистрируйтесь</a> и получите подписку бесплатно на один день!';
+		lang_summary.innerHTML	= 'Выбрать язык';
 	};
 };
 
@@ -67,3 +67,35 @@ function language_register(lang) {
 		btn_next.innerHTML		= 'Алға' 
 	} 
 };
+
+function language_profile(lang) {  
+	var update_picture_link = document.getElementById('update_picture_link');
+	var id_username			= document.getElementById('id_username');
+	var id_first_name 		= document.getElementById('id_first_name');
+	var id_last_name 		= document.getElementById('id_last_name');
+	var id_email 			= document.getElementById('id_email');
+	var profile_save_id 	= document.getElementById('profile_save_id');
+	var logout 				= document.getElementById('logout');
+
+
+	navigation_lang(lang)
+	if (lang == 'kk') {
+		update_picture_link.text 	= 'Суретті өзгерту';
+		id_username.placeholder 	= 'Қолданушы атауы';
+		id_first_name.placeholder 	= 'Есімі';
+		id_last_name.placeholder 	= 'Тегі';
+		id_email.placeholder 		= 'Почта';
+		profile_save_id.innerText	= 'Сақтау';
+		logout.text 				= 'Шығу';
+
+	} else if (lang == 'ru') {
+		update_picture_link.text 	= 'Изменть изоброжение';
+		id_username.placeholder 	= 'Қолданушы атауы';
+		id_first_name.placeholder 	= 'Имя';
+		id_last_name.placeholder 	= 'Фамилия';
+		id_email.placeholder 		= 'Почта';
+		profile_save_id.innerText	= 'Сохранить';
+		logout.text 				= 'Выйти';
+
+	};
+}; 

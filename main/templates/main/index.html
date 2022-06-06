@@ -13,15 +13,21 @@
 			<iframe width="100%" height="415" src="https://www.youtube.com/embed/o39ODUHJIvE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 	</div>	 
-	<div class="language-container" id="lg_container" style="display:none;">
-		<div class="language-block" id="qazaqsha">
-			<div class="lang-img"><img src="{% static 'main/image/tu.jpg' %}"></div>
-			<div class="language-text">Қазақ тілі</div>
+	<div class="language-container" id="lg_container">
+		<div class="logo-image">
+			<img src="{% static 'main/image/logo.png' %}">
 		</div>
-		<div class="language-block" id="russkiy">
-			<div class="lang-img"><img src="{% static 'main/image/flag.jpg' %}"></div>
-			<div class="language-text">Руский язык</div>
+		<div class="language-block-container">
+			<div class="language-block" id="qazaqsha">
+				<div class="lang-img"><img src="{% static 'main/image/tu.jpg' %}"></div>
+				<div class="language-text">Қазақ тілі</div>
+			</div>
+			<div class="language-block" id="russkiy">
+				<div class="lang-img"><img src="{% static 'main/image/flag.jpg' %}"></div>
+				<div class="language-text">Руский язык</div>
+			</div>
 		</div>
+		
 	</div> 
 	<div id="news_block_close" class="news_button"><</div>
 	<script type="text/javascript">
@@ -29,7 +35,7 @@
 		let mod = localStorage.getItem('language') 
 		language_main(mod)
 	</script>
-	<!-- <footer>
+	<footer>
 		<div class="select-lang">
 			<details>
 				<summary id="lang_summary">Выбрать язык</summary>
@@ -37,5 +43,5 @@
 				<div id="select_russkiy">Русский язык</div>
 			</details>
 		</div>	
-	</footer> -->
+	</footer>
 {% endblock %}

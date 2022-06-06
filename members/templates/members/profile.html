@@ -17,7 +17,7 @@
 					<form action="{% url 'user_continu' request.user.id %}" method="POST">
 						<div class="update-link">	
 							{% if request.user == object %}
-								<a href="{% url 'customer_update' object.customer.id %}">Изменть изоброжение</a>
+								<a href="{% url 'customer_update' object.customer.id %}" id="update_picture_link">Изменть изоброжение</a>
 							{% endif %}
 						</div>
 
@@ -36,9 +36,9 @@
 							<input type="text" name="first_name" class="form-control" placeholder="Есімі" maxlength="150" id="id_first_name" value="{{object.first_name}}">
 							<input type="text" name="last_name" class="form-control" placeholder="Тегі" maxlength="150" id="id_last_name" value="{{object.last_name}}">
 						</div>
-						<input type="text" name="email" class="form-control" placeholder="почта" maxlength="254" id="id_email" value="{{object.email}}">
+						<input type="text" name="email" class="form-control" placeholder="Почта" maxlength="254" id="id_email" value="{{object.email}}">
 					
-						<button>Сохранить</button>
+						<button id="profile_save_id"></button>
 						<a href="{% url 'logout' %}" type="button" id="logout">Выйты</a>
 					</form>
 				{% else %}
@@ -61,5 +61,8 @@
 		</div>
 	{% endif %}
 
-	
+	<script type="text/javascript">
+		var lang = localStorage.getItem('language')
+		language_profile(lang)
+	</script>
 {% endblock %}
