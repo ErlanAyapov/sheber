@@ -669,8 +669,8 @@
 	width: 80%;
 	margin: auto;
 	margin-top: 10vh;
-	box-shadow: 0 0 20px #000;
-	border-radius: 20px;
+	box-shadow: 0 0 10px #000;
+	border-radius: 10px;
 	/*position: relative;*/
 }
 .order-block h2 {
@@ -951,11 +951,11 @@
 	position: fixed;
 	top: 50px;
 	width: 70%;
-	background: yellow;
+	background: #ddd;
 	margin: auto;
 	margin-left: 15%;
 	padding: 5px;
-	border-radius: 15px;
+	border-radius: 10px;
 	border: 2px solid blue;
 	box-shadow: 0 0 25px;
 

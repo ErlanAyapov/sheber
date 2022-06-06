@@ -1,6 +1,34 @@
+function geoFindMe() {
+	const status = document.querySelector('#status');
+	const input_latitude = document.querySelector('#id_latitude');
+	const input_longitude = document.querySelector('#id_longitude');
 
+	input_latitude.value = '';
+	input_longitude.value = '';
 
+	function success(position) {
+		const latitude  = position.coords.latitude;
+		const longitude = position.coords.longitude; 
 
+		input_latitude.value = latitude;
+		input_longitude.value = longitude;
+	}
+
+	function error() {
+		input_latitude.value = 'Не известно';
+		input_longitude.value = 'Не известно';
+	}
+
+	if (!navigator.geolocation) {
+		input_latitude.value = 'Geolocation не поддерживается';
+		input_longitude.value = 'Geolocation не поддерживается';
+	} else { 
+		navigator.geolocation.getCurrentPosition(success);
+	} 
+
+}
+
+geoFindMe()
 function fun1() {
 	var rad = document.getElementsByName('r1');
 	var hd;
@@ -73,8 +101,9 @@ function screen_shot(){
 		var my_screen = canvas.toDataURL();
 		logo.value = my_screen;
 		document.getElementById('rm').src = my_screen;
+		console.log('sss')
+		geoFindMe();
 	});	
-	
 };
 
 function encodeImageFileAsURL(element, input_id) {

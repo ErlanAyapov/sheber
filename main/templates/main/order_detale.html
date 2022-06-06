@@ -9,6 +9,7 @@
 				<p><strong>Комментарий к заказу:</strong> {{ object.comment }}</p>
 				<p><strong>Цена заказа:</strong> {{ object.price }}₸</p>
 				<p><strong>Заказано:</strong> {{ object.number }}x</p>
+				<p><strong>Местоположение:</strong> <a href="{% url 'detail_map' object.id %}">Открыть карту</a></p>
 				<p>
 					<strong>Телефон:</strong> 
 					<a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a>

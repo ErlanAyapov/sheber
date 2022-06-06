@@ -3,7 +3,7 @@
 {% block content %}
 {% if object_list %}
 
-	{% if not time_left %}
+	{% if not time_left or request.user.is_staff %}
 	<div class="orders-container">
 		<h2>Все заказы</h2>
 		{% for order in object_list %}

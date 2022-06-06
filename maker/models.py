@@ -9,8 +9,7 @@ class Category(models.Model):
 		return self.name
  
 
-class Product(models.Model):
-	
+class Product(models.Model): 
 	category		  = models.ForeignKey(Category, on_delete = models.CASCADE, verbose_name = 'Категрия' )
 	comment 		  = models.TextField('Комментарий к заказу')
 	price			  = models.DecimalField(max_digits = 9, decimal_places = 0, verbose_name = 'Цена')
@@ -24,7 +23,9 @@ class Product(models.Model):
 	system_info   	  = models.CharField('Системный информация', max_length = 150, default = 'Anonymous_user')
 	ornament_info 	  = models.CharField('Использованные узоры', max_length = 90, default = 'Anonymous_user')
 	number		  	  = models.DecimalField(max_digits = 9, decimal_places = 0, verbose_name = 'Количесвто', default = 1)
-
+	latitude		  = models.CharField('Широта', max_length = 30, blank = True)
+	longitude		  = models.CharField('Долгота', max_length = 30, blank = True)
+	
 	def __str__(self):
 		return f'{self.client_first_name} {self.client_last_name}: {self.ip}'
 

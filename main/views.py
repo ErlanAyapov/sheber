@@ -6,7 +6,14 @@ import datetime
 from maker.views import get_client_ip
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+import folium
 
+
+def get_user_map(latitude, longitude, name): 
+	m = folium.Map( location=[eval(latitude), eval(longitude)], zoom_start = 50)
+	folium.Marker([eval(latitude), eval(longitude)],popup = f"<strong>Заказчик:</strong> {name}",toolkit = f'Sheber Freelance',).add_to(m)
+	order_map: str = m.get_root().render() 
+	return order_map
 
 class MainView(ListView):
 	model = Article
@@ -38,8 +45,7 @@ class OrderDetaleView(DetailView):
 	model = Product
 	template_name = 'main/order_detale.html'
 
-	def get_context_data(self, **kwargs):
-		print( self.object.category.name )
+	def get_context_data(self, **kwargs): 
 		if self.object.category.name == 'Көрпеше':
 			context = super( OrderDetaleView, self ).get_context_data( **kwargs )
 			ornament_fragment = OrnamentFragment.objects.all()
@@ -73,7 +79,19 @@ class OrderDetaleView(DetailView):
 
 					
 				context['result'] = result
-
+ 
 			context['border_img'] = border_img
-			context['center_img'] = center_img
+			context['center_img'] = center_img 
+
 			return context
+
+class OrderMapView(DetailView):
+	model = Product 
+	template_name = 'main/order_map.html' 
+
+	def get_context_data(self, **kwargs):
+		global template_name, b
+		context = super( OrderMapView, self ).get_context_data( **kwargs )
+		context['map'] = order_map = get_user_map(self.object.longitude, self.object.latitude, self.object.client_first_name)
+		 
+		return context 

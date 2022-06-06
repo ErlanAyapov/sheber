@@ -113,8 +113,8 @@
 						{% csrf_token %}
 						<div class="model-left">
 							<input type="hidden" name="category" required id="id_category" value="1">
-							<!-- <input type="hidden" name="custom" required id="id_custom" value="{{ request.user.id }}"> -->
-							<!-- <input type="hidden" name="salesman" required id="id_salesman" value="5"> -->
+							<input type="hidden" name="latitude" required id="id_latitude" value="">
+							<input type="hidden" name="longitude" required id="id_longitude" value="">
 							<textarea class="model-form" name="comment"  rows="1" required id="id_comment" placeholder="Комментарий к заказу"></textarea>
 							<!-- <input type="file" name="image" accept="image/*" required id="id_image" value=""> -->
 							<textarea style="display:none" name="des_image"  id="id_des_image"></textarea>
