@@ -90,13 +90,14 @@
 }
 .top-nav {
 	background: blue;
-	width: 400px;
+	width: 350px;
 	margin: auto;
 	border-bottom-right-radius: 17px;
 	border-bottom-left-radius: 17px;
 	height: 27px;
 	box-shadow: 0 0 15px;
 	/*position: fixed;*/
+	padding-left: 30px;
 }
 .nav-inner {
 	width: 90%;

@@ -28,9 +28,9 @@
 							<li><a href="{% url 'members' %}" id="account">Аккаунт</a></li>
 							{% endif %}
 							{% if request.user.is_authenticated %}
-							<li><a href="{% url 'all_order' %}" id="help">Я мастер</a></li>
+							<li><a href="{% url 'all_order' %}" id="help">Мастерская</a></li>
 							{% else %}
-							<li><a href="{% url 'members' %}" id="help">Я мастер</a></li>
+							<li><a href="{% url 'members' %}" id="help">Мастерская</a></li>
 							{% endif %}
 						</ul> 					
 					</div>
