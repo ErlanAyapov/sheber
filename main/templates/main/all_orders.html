@@ -5,7 +5,7 @@
 
 	{% if not time_left or request.user.is_staff %}
 	<div class="orders-container">
-		<h2>Все заказы</h2>
+		<h2 id="all_orders_text">Все заказы</h2>
 		{% for order in object_list %}
 		{% if order.category.name == 'Көрпеше' %}
 			<div class="orders-block">
@@ -38,7 +38,7 @@
 			<li>Информация о заказе</li>
 		</ul><br>
 		<p>Подписка осушестивляется ручной</p>
-		<p>Поулчить <a href="https://wa.me/+77478160485?text=Здравствуйте%2C+хочу+получить+подписку!+мой+имя+пользователя:+{{ request.user.username }}">ПОДПИСКУ</a></p>
+		<p>Поулчить <a href="https://wa.me/+77783142837?text=Здравствуйте%2C+хочу+получить+подписку!+мой+имя+пользователя:+{{ request.user.username }}">ПОДПИСКУ</a></p>
 	</div>
 	 
 	{% endif %}
@@ -54,4 +54,8 @@
 		</form>
 	</div>
 {% endif %}
+	<script type="text/javascript">
+		lang = localStorage.getItem('language');
+		language_all_orders(lang)
+	</script>
 {% endblock %}

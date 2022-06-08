@@ -99,3 +99,18 @@ function language_profile(lang) {
 
 	};
 }; 
+function language_all_orders(lang) {
+	var all_orders_text = document.getElementById('all_orders_text');
+	var orders_link = document.querySelector('.order-infor a');
+
+	navigation_lang(lang)
+	if (lang == 'kk') {
+		all_orders_text.innerText = 'Барлық тапсырыстар'
+		orders_link.innerText = 'Тапсырысты көру';
+	} else if (lang == 'ru') {
+		all_orders_text.innerText = 'Все заказы'
+		orders_link.innerText = 'Посмотреть заказ';
+
+	}
+
+};
