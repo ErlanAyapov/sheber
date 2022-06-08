@@ -9,7 +9,13 @@
 				<p><strong>Комментарий к заказу:</strong> {{ object.comment }}</p>
 				<p><strong>Цена заказа:</strong> {{ object.price }}₸</p>
 				<p><strong>Заказано:</strong> {{ object.number }}x</p>
+				{% if object.latitude == 'Не известно' %}
+				<p><strong>Местоположение:</strong> Не известно </p>
+				{% elif object.latitude == 'Geolocation не поддерживается' %}
 				<p><strong>Местоположение:</strong> <a href="{% url 'detail_map' object.id %}">Открыть карту</a></p>
+				{% else %}
+				<p><strong>Местоположение:</strong> <a href="{% url 'detail_map' object.id %}">Открыть карту</a></p>
+				{% endif %}
 				<p>
 					<strong>Телефон:</strong> 
 					<a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a>
@@ -23,7 +29,6 @@
 			<div class="order-design">
 				<img src="{{ object.des_image }}">
 			</div>
-
 			{% if result == 'True' %}
 				<div class="delete-form">
 					<form action="{% url 'order_delete' object.id %}" method="POST">
@@ -31,7 +36,6 @@
 						<button type="submit">Удалить заказ</button>
 					</form>
 				</div>
-
 			{% endif %}
 			<h3>Использованные узоры</h3>
 			<div class="maked-ornaments-container">

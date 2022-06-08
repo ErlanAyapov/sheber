@@ -3,8 +3,8 @@ function geoFindMe() {
 	const input_latitude = document.querySelector('#id_latitude');
 	const input_longitude = document.querySelector('#id_longitude');
 
-	input_latitude.value = '';
-	input_longitude.value = '';
+	input_latitude.value = 'Не известно';
+	input_longitude.value = 'Не известно';
 
 	function success(position) {
 		const latitude  = position.coords.latitude;
@@ -28,7 +28,7 @@ function geoFindMe() {
 
 }
 
-geoFindMe()
+
 function fun1() {
 	var rad = document.getElementsByName('r1');
 	var hd;
@@ -101,9 +101,10 @@ function screen_shot(){
 		var my_screen = canvas.toDataURL();
 		logo.value = my_screen;
 		document.getElementById('rm').src = my_screen;
-		console.log('sss')
-		geoFindMe();
+		
 	});	
+	console.log('sss');
+	
 };
 
 function encodeImageFileAsURL(element, input_id) {
