@@ -26,7 +26,6 @@
 		font-size: 20px;
 	}
 	.language-container {
-		display: block;
 		padding-top: 40%;
 	}
 	.language-block {
@@ -51,7 +50,6 @@
 		margin-top: 0;
 	}
 	.language-block-container {
-		display: inline-block; 
 		width: 100%;
 	}
 	.language-block {
@@ -72,7 +70,7 @@
 }
 @media screen and (max-width: 450px) {
 	.top-nav {
-		width: 280px;
+		width: 300px;
 		height: 22px;
 		padding-left: 25px;
 	}

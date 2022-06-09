@@ -90,14 +90,14 @@
 }
 .top-nav {
 	background: blue;
-	width: 350px;
+	width: 390px;
 	margin: auto;
 	border-bottom-right-radius: 17px;
 	border-bottom-left-radius: 17px;
 	height: 27px;
 	box-shadow: 0 0 15px;
 	/*position: fixed;*/
-	padding-left: 30px;
+	padding-left: 37px;
 }
 .nav-inner {
 	width: 90%;
@@ -1033,10 +1033,12 @@
 
 }
 .language-block-container {
-	display: flex;
+	display: none;
 	justify-content: center; 
 	align-items: center;
 	margin-top: 5vh;
+	width: 210px;
+	margin: auto;
 }
 .lang-img img {
 	width: 100%;
@@ -1334,4 +1336,65 @@ footer {
 }
 button {
 	background: blue;
+}
+
+.load-main-block {
+	margin: 50px 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background:;/*/
+
+}
+.loader {
+	position: relative;
+	display: flex;
+}
+.loader span {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background: blue;
+	border-radius: 50%;
+	margin: 0 5px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.loader span:not(:last-child) {
+	animation: animate 0.51s linear infinite;
+}
+.loader span:last-child {
+	animation: jump 0.51s ease-in-out infinite;
+}
+@keyframes animate {
+	0% {
+		transform: translateX(3);
+	} 100% {
+		transform: translateX(30px);
+	}
+}
+@keyframes jump {
+	0% {
+		transform: translate(0, 0);
+	} 10% {
+		transform: translate(5px, 5px);
+	} 20% {
+		transform: translate(10px, -20px);
+	} 30% {
+		transform: translate(15px, -30px);
+	} 40% {
+		transform: translate(0, -30px);
+	} 50% {
+		transform: translate(-15px, -30px);
+	} 60% {
+		transform: translate(-30px, -30px);
+	} 70% {
+		transform: translate(-45px, -30px);
+	} 80% {
+		transform: translate(-60px, -30px);
+	} 90% {
+		transform: translate(-90px, -30px);
+	} 100% {
+		transform: translate(-120px, 5px);
+	}
 }

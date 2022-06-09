@@ -4,12 +4,12 @@ function navigation_lang(lang) {
 	var help	= document.getElementById('help');
 	if (lang == 'kk') {
 		main.innerHTML = 'Басты';
-		make.innerHTML = 'Тапсырыс';
-		help.innerHTML = 'Шеберхана';
+		make.innerHTML = 'Шеберхана';
+		help.innerHTML = 'Тапсырыстар';
 	} else if (lang == 'ru') {
 		main.innerHTML = 'Дом';
-		make.innerHTML = 'Заказать';
-		help.innerHTML = 'Мастерская';
+		make.innerHTML = 'Мастерская';
+		help.innerHTML = 'Заказы';
 	};
 };
 function language_main(lang) { 
