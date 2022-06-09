@@ -44,13 +44,13 @@
 	{% endif %}
 
 	<div class="my-feedback-modal">
-		<h3>У вас вопросы?</h3>
+		<h3 id="feedback_title">У вас вопросы?</h3>
 		<form action="{% url 'feedback' %}" method="POST">
 			{% csrf_token %}
 			<input class="form-control" type="text" name="message" id="id_message" placeholder="Опишите вашу проблему?" required>
 			<input class="form-control" type="email" name="email" id="id_email" placeholder="Почта" required>
-			<button type="submit" class="btn btn-primary">Отправить</button>
-			<button type="button" class="btn btn-secondary">Закрыть</button>
+			<button id="send_btn" type="submit" class="btn btn-primary">Отправить</button>
+			<button id="close_btn" type="button" class="btn btn-secondary">Закрыть</button>
 		</form>
 	</div>
 {% endif %}

@@ -102,17 +102,27 @@ function language_profile(lang) {
 function language_all_orders(lang) {
 	var all_orders_text = document.getElementById('all_orders_text');
 	var orders_link = document.getElementsByClassName('order_btn');
-	console.log(orders_link)
+	var id_message = document.getElementById('id_message');
+	var send_btn = document.getElementById('send_btn');
+	var close_btn = document.getElementById('close_btn'); 
+	var feedback_title = document.getElementById('feedback_title'); 
 
 	navigation_lang(lang)
 	if (lang == 'kk') {
-		all_orders_text.innerText = 'Барлық тапсырыстар' 
+		all_orders_text.innerText = 'Барлық тапсырыстар';
+		id_message.placeholder 	  = 'Сізде қандай мәселе туындады?';
+		send_btn.innerText 		  = 'Жіберу';
+		close_btn.innerText 	  = 'Жабу';
+		feedback_title.innerText  = 'Сұрақтарыңыз барма?';
 		for (var i = 0; i < orders_link.length; i++) {
 			orders_link[i].innerText = 'Тапсырысты көру';
 		}
 	} else if (lang == 'ru') {
 		all_orders_text.innerText = 'Все заказы'
-		// orders_link.innerText = 'Посмотреть заказ';
+		id_message.placeholder 	  = 'Опишите вашу проблему?';
+		send_btn.innerText 		  = 'Отправить';
+		close_btn.innerText 	  = 'Закрыть';
+		feedback_title.innerText  = 'У вас вопросы?';
 		for (var i = 0; i < orders_link.length; i++) {
 			orders_link[i].innerText = 'Посмотреть заказ';
 		}
