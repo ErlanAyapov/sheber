@@ -61,17 +61,17 @@ function fun1() {
 function bg_pos() {
 	var bg = document.getElementsByName('bg_pos');
 	if (bg[0].checked) {
-		$(".maker-block").css("background","yellow")
+		$(".maker-block").css("background","fec4d2")
 	} else if (bg[1].checked) {
-		$(".maker-block").css("background","blue")
+		$(".maker-block").css("background","#f0f1f6")
 	} else if (bg[2].checked) {
-		$(".maker-block").css("background","lightgreen")
+		$(".maker-block").css("background","#778f51")
 	} else if (bg[3].checked) {
-		$(".maker-block").css("background","gray")
+		$(".maker-block").css("background","#acc38b")
 	} else if (bg[4].checked) {
 		$(".maker-block").css("background","white")
 	} else if (bg[5].checked) {
-		$(".maker-block").css("background","magenta")
+		$(".maker-block").css("background","#f8e5c7")
 	}
 
 }

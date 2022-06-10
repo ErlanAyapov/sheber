@@ -263,22 +263,22 @@
 	margin-top: 10vh;
 }
 .yellow {
-	background: yellow;
+	background: #fec4d2;
 }
 .blue {
-	background: blue;
+	background: #f0f1f6;
 }
 .gray {
-	background: gray;
+	background: #acc38b;
 }
 .green {
-	background: lightgreen;
+	background: #778f51;
 }
 .white {
 	background: #fff;
 }
 .magenta {
-	background: magenta;
+	background: #f8e5c7;
 }
 
 .members-container {
