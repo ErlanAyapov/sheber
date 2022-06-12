@@ -1434,9 +1434,9 @@ button {
 	margin: 50px 0;
 
 }
- .navigation-block i {
- 	font-size: 140px;
- 	margin-top: 40px;
+.navigation-block i {
+	font-size: 140px;
+	margin-top: 40px;
 }
 .cards-container {
 	background: blue;
@@ -1462,8 +1462,10 @@ button {
 	color: blue;
 }
 .card-block img {
-	width: 100%;
+	width: 90%;
+	margin: 15px auto;
 	border-radius: 50%;
+	border: 2px solid blue;
 }
 .card-block span a {
 	background: blue;
