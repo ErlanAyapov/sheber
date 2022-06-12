@@ -19,11 +19,11 @@ function language_main(lang) {
 	navigation_lang(lang)
 	if (lang == 'kk') { 
 		main_welcome.innerHTML	= 'Қош келдіңіз!';
-		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз. <a href="members/">Тіркеліп</a> бір күнге тегін жазылым алыңыз!';
+		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз. Тапсырыс беру тегін!';
 		lang_summary.innerHTML	= 'Тілді ауыстыру';
 	} else if (lang == 'ru') {
 		main_welcome.innerHTML = 'Добро пожаловать!';
-		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика. <a href="members/">Зарегистрируйтесь</a> и получите подписку бесплатно на один день!';
+		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика. Оформит заказ бесплатно!';
 		lang_summary.innerHTML	= 'Выбрать язык';
 	};
 };
@@ -55,6 +55,7 @@ function language_register(lang) {
 	var password2	= document.getElementById('id_password2')
 	var go_to		= document.getElementById('go_to')
 	var btn_next	= document.getElementById('btn_next')
+	var rec_text	= document.querySelector('.register-recomendation-block p')
 
 	navigation_lang(lang)
 	if (lang == 'kk') {
@@ -65,6 +66,7 @@ function language_register(lang) {
 		password2.placeholder	= 'Құпия сөз қайта жазыңыз';
 		go_to.innerHTML			= 'Сізде <a href="authentication/">аккаунт</a> бар ма?';
 		btn_next.innerHTML		= 'Алға' 
+		rec_text.innerText 		= 'Тапсырыстар алу үшін тіркеліңіз!'
 	} 
 };
 

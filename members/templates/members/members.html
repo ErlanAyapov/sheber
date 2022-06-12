@@ -7,6 +7,9 @@
 
 {% block content %}
 	{% if not user.is_authenticated %}
+		<div class="register-recomendation-block">
+			<p>Зарегистрируйтесь что бы выполнить заказы!</p>
+		</div>
 		{% if register_form %}
 			<div class="members-container">
 				<div class="register">
@@ -47,4 +50,5 @@
 			</script>
 		{% endif %}
 	{% endif %} 
+	<br>
 {% endblock %}
