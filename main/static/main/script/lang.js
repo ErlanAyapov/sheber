@@ -13,30 +13,59 @@ function navigation_lang(lang) {
 	};
 };
 function language_main(lang) { 
-	var main_welcome = document.getElementById('main_welcome');
-	var main_about	 = document.getElementById('main_about');
-	var lang_summary = document.getElementById('lang_summary'); 
+	var main_welcome 	= document.getElementById('main_welcome');
+	var main_about	 	= document.getElementById('main_about');
+	var lang_summary 	= document.getElementById('lang_summary'); 
+	var card_title 		= document.getElementById('card_title');
+	var nav_title 		= document.getElementById('nav_title');
+	var card_title_1 	= document.getElementById('card_title_1');
+	var card_message_1 	= document.getElementById('card_message_1');
+	var card_link_1 	= document.getElementById('card_link_1');
+	var card_title_2 	= document.getElementById('card_title_2');
+	var card_message_2 	= document.getElementById('card_message_2');
+	var card_link_2 	= document.getElementById('card_link_2');
+	var nav_link 		= document.getElementById('nav_link');
+
+
 	navigation_lang(lang)
 	if (lang == 'kk') { 
-		main_welcome.innerHTML	= 'Қош келдіңіз!';
-		main_about.innerHTML	= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз. Тапсырыс беру тегін!';
-		lang_summary.innerHTML	= 'Тілді ауыстыру';
+		lang_summary.innerText		= 'Изменить язык';
+		main_welcome.innerHTML		= 'Қош келдіңіз!';
+		main_about.innerHTML		= 'Бұл көрпеше дизайнын жасауға арналған платформа. Дайын ою-өрнектерді таңдау арқылы сіз көрпеше дизайнын құрастыра аласыз және оны тігетін шеберді таба аласыз. Тапсырыс беру тегін!';
+		card_title.innerText		= 'Кез-келген сұрақты шешеміз!'
+		card_title_1.innerHTML		= '<i class="far fa-user"></i> Жоба менеджері';
+		card_message_1.innerHTML	= '<i class="far fa-address-card"></i> Жобаға байланысты іскерлік ұсыныстар болса маған хабарласыңыз!';
+		card_link_1.innerHTML 		= '<i class="fab fa-whatsapp"></i> Байланысу';
+		card_title_2.innerHTML		= '<i class="far fa-user"></i> Сату менеджері';
+		card_message_2.innerHTML	= '<i class="far fa-address-card"></i> Мен сізге премиум аккаунт алу үшін көмектесемін!';
+		card_link_2.innerHTML 		= '<i class="fab fa-whatsapp"></i> Байланысу';
+		nav_title.innerText 		= 'Тегін бастау үшін';
+		nav_link.innerText 			= 'Басыңыз';
 	} else if (lang == 'ru') {
-		main_welcome.innerHTML = 'Добро пожаловать!';
-		main_about.innerHTML = 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика. Оформит заказ бесплатно!';
-		lang_summary.innerHTML	= 'Выбрать язык';
+		lang_summary.innerText		= 'Тілді ауыстыру';
+		main_welcome.innerHTML 		= 'Добро пожаловать!';
+		main_about.innerHTML 		= 'Платформа предназначена для создание дизайна ковриков, выбирая готовые орнаменты вы можете легко и быстро создать собственный дизайн коврика. И за одно можно найти мастера для сшитья этого коврика. Оформит заказ бесплатно!';
+		card_title.innerText		= 'Поможем в любом плане!'
+		card_title_1.innerHTML		= '<i class="far fa-user"></i> Менеджер проекта';
+		card_message_1.innerHTML	= '<i class="far fa-address-card"></i> Что бы предлагать деловые сотрудничество обращайтесь ко мне!';
+		card_link_1.innerHTML 		= '<i class="fab fa-whatsapp"></i> Связаться';
+		card_title_2.innerHTML		= '<i class="far fa-user"></i> Менеджер по продажам';
+		card_message_2.innerHTML	= '<i class="far fa-address-card"></i> Я помогу вам что бы приобрести премиум аккаунт!';
+		card_link_2.innerHTML 		= '<i class="fab fa-whatsapp"></i> Связаться';
+		nav_title.innerText 		= 'Нажмите что бы';
+		nav_link.innerText 			= 'Начать';
 	};
 };
 
 function language_creat(lang) {
-	var get_images	= document.getElementById('get_images');
-	var get_order	= document.getElementById('get_order');
-	var id_comment	= document.getElementById('id_comment');
+	var get_images				= document.getElementById('get_images');
+	var get_order				= document.getElementById('get_order');
+	var id_comment				= document.getElementById('id_comment');
 	var id_client_first_name	= document.getElementById('id_client_first_name');
-	var id_client_last_name	= document.getElementById('id_client_last_name');
-	var id_price	= document.getElementById('id_price');
-	var mk_ord		= document.getElementById('mk_ord');
-	navigation_lang(lang)
+	var id_client_last_name		= document.getElementById('id_client_last_name');
+	var id_price				= document.getElementById('id_price');
+	var mk_ord					= document.getElementById('mk_ord');
+	navigation_lang(lang);
 	if (lang == 'kk') {
 		get_images.innerHTML			 = 'Тапсырыс беру';
 		get_order.innerHTML 			 = 'Тапсырыс беру';

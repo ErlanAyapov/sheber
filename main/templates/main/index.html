@@ -12,30 +12,30 @@
 		<div class="video-block">
 			<!-- <iframe width="100%" height="415" src="https://www.youtube.com/embed/o39ODUHJIvE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 		</div>
-		<h2>Поможем в любом плане!</h2>
+		<h2 id="card_title">Поможем в любом плане!</h2>
 
 		<div class="cards-container">
 			<div class="card-block">
 				<img src="{% static 'main/image/my_picture.jpg' %}">
-				<p><i class="far fa-user"></i> Менеджер проекта</p>
-				<p><i class="far fa-address-card"></i> Что бы предлагать деловые сотрудничество обращайтесь ко мне!</p>
+				<p id="card_title_1"><i class="far fa-user"></i> Менеджер проекта</p>
+				<p id="card_message_1"><i class="far fa-address-card"></i> Что бы предлагать деловые сотрудничество обращайтесь ко мне!</p>
 				<span>
-					<a href="https://wa.me/+77478160485?text=Добрый+день!+Ерлан+Аяпов++"><i class="fab fa-whatsapp"></i> Связаться</a>
+					<a id="card_link_1" href="https://wa.me/+77478160485?text=Добрый+день!+Ерлан+Аяпов++"><i class="fab fa-whatsapp"></i> Связаться</a>
 				</span>
 			</div>
 			<div class="card-block">
 				<img src="{% static 'main/image/logo-icon.png' %}">
-				<p><i class="far fa-user"></i> Менеджер по продажам</p>
-				<p><i class="far fa-address-card"></i> Я помогу вам что бы приобрести премиум аккаунт!</p>
+				<p id="card_title_2"><i class="far fa-user"></i> Менеджер по продажам</p>
+				<p id="card_message_2"><i class="far fa-address-card"></i> Я помогу вам что бы приобрести премиум аккаунт!</p>
 				<span>
-					<a href="https://wa.me/+77478160485?text=Добрый+день!"><i class="fab fa-whatsapp"></i> Связаться</a>
+					<a id="card_link_2" href="https://wa.me/+77783142837?text=Добрый+день!"><i class="fab fa-whatsapp"></i> Связаться</a>
 				</span>
 			</div>
 		</div>
 		<div class="navigation-block">
-			<h1>Нажмите, что бы</h1>
+			<h1 id="nav_title">Нажмите, что бы</h1>
 			<i class="fas fa-long-arrow-alt-down"></i>
-			<p><a href="{% url 'maker' %}" class="btn btn-primary">Начать</a></p>
+			<p><a href="{% url 'maker' %}" class="btn btn-primary" id="nav_link">Начать</a></p>
 		</div>
 	</div>	 
 	<div class="language-container" id="lg_container">
@@ -64,18 +64,19 @@
 		
 	</div> 
 	<div id="news_block_close" class="news_button"><</div>
-	<script type="text/javascript">
-		myStorage = window.localStorage;
-		let mod = localStorage.getItem('language') 
-		language_main(mod)
-	</script>
+	
 	<footer>
 		<div class="select-lang">
 			<details>
-				<summary id="lang_summary">Выбрать язык</summary>
+				<summary id="lang_summary"></summary>
 				<div id="select_kazakh">Қазақ тілі</div>
 				<div id="select_russkiy">Русский язык</div>
 			</details>
 		</div>	
 	</footer>
+	<script type="text/javascript">
+		myStorage = window.localStorage;
+		let mod = localStorage.getItem('language') 
+		language_main(mod)
+	</script>
 {% endblock %}
