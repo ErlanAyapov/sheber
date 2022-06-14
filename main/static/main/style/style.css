@@ -255,7 +255,11 @@
 	margin: 5px;*/
 	border-radius: 10px;
 	background: gray;
+	transition: 0.2s;
 
+}
+.color-block:hover {
+	box-shadow: 0 0 5px #000;
 }
 /*.color-container {
 	display: flex;
@@ -284,7 +288,13 @@
 .magenta {
 	background: #f8e5c7;
 }
-
+.fragment-img:hover {
+	box-shadow: 0 0 5px #000;
+}
+.fragment-img {
+	transform: 0.2s;
+	border-radius: 10px;
+}
 .members-container {
 	margin-top: 5%;
 	width: 100%;

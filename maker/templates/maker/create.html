@@ -55,7 +55,7 @@
 				<div class="color-container">
 				{% for border in border_ornament %}
 					<label>
-						<img name="border_img" src="{{ border.image_base64 }}" width="80" height="140.67">
+						<img class="fragment-img" name="border_img" src="{{ border.image_base64 }}" width="80" height="140.67">
 						<input type="radio" onclick="border_click();" name="border_ornament">
 						<script type="text/javascript">
 							border_price[x] = '{{ border.price }}';
@@ -71,7 +71,7 @@
 				<div class="color-container">
 				{% for center in center_ornament %}
 					<label>
-						<img name="center_im" src="{{ center.image_base64 }}" width="80">
+						<img class="fragment-img" name="center_im" src="{{ center.image_base64 }}" width="80">
 						<input type="radio" onclick="center_content()" name="center_ornament">
 						<script type="text/javascript">
 							center_price[y] = '{{ center.price }}';
