@@ -25,7 +25,7 @@ class Product(models.Model):
 	number		  	  = models.DecimalField(max_digits = 9, decimal_places = 0, verbose_name = 'Количесвто', default = 1)
 	latitude		  = models.CharField('Широта', max_length = 30, blank = True)
 	longitude		  = models.CharField('Долгота', max_length = 30, blank = True)
-	sterm 			  = models.DateTimeField(verbose_name = 'Дата оканчание', blank = True, null = True)
+	sterm 			  = models.CharField(verbose_name = 'Дата оканчание', max_length = 50, blank = True, null = True)
 	
 	def __str__(self):
 		return f'{self.client_first_name} {self.client_last_name}: {self.ip}'
