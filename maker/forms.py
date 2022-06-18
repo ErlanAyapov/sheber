@@ -19,6 +19,7 @@ class OrderForm(forms.ModelForm):
             'number',
             'latitude',
             'longitude',
+            'sterm',
             )
 
         exclude = ['ip', 'date', 'system_info']
