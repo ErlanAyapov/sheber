@@ -8,7 +8,7 @@
 	scroll-behavior: smooth;
 }
 .btn-primary {
-	background: #495B71;
+	background: #027683;
 	border: 0;
 	transition: 0.2s;
 }
@@ -24,12 +24,12 @@
 .logo-dec-line {
 	width: 100%;
 	height: 75px;
-	background: #495B71;
+	background: #027683;
 	position: absolute;
 	bottom: 0;
 }
 .logo-icon {
-	background: #495B71;
+	background: #027683;
 	font-size: 50px;
 	border-radius: 25px;
 	border: 5px solid #fff;
@@ -93,7 +93,7 @@
 	transition: 0.2s;
 }
 .top-nav {
-	background: #495B71;
+	background: #027683;
 	width: 390px;
 	margin: auto;
 	border-bottom-right-radius: 17px;
@@ -111,7 +111,7 @@
 	color: #fff;
 }
 #active {
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 }
 .maker-content {
@@ -136,7 +136,7 @@
 
 }
 .img-mk i{
-	color: #495B71;
+	color: #027683;
 }
 .maker-inner {
 	position: absolute;
@@ -241,7 +241,7 @@
 	display: none;
 }
 .tools-title {
-	background: #495B71;
+	background: #027683;
 	text-align: center;
 	width: 70%;
 	margin: auto;
@@ -273,7 +273,7 @@
 .yellow {
 	background: #fec4d2;
 }
-.#495B71 {
+.#027683 {
 	background: #f0f1f6;
 }
 .gray {
@@ -336,7 +336,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 }
 .message {
@@ -386,7 +386,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 }
 .update-container {
@@ -418,7 +418,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 
 }
@@ -458,7 +458,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 
 }
@@ -510,7 +510,7 @@
 }
 .news-conteainer h1 {
 	text-align: center;
-	background: #495B71;
+	background: #027683;
 	padding: 7px;
 	color: #fff;
 	box-shadow: 0 0 15px #000;
@@ -521,7 +521,7 @@
 	font-size: 40px;
 	position: fixed;
 	top: 30vh;
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	padding: 0 15px 5px 15px;
 	border-radius: 0 15px 15px 0;
@@ -547,12 +547,12 @@
 	font-size: 19px;
 }
 #go_to a {
-	color: #495B71;
+	color: #027683;
 }
 
 .mk-button {
 	position: absolute;
-	background: #495B71;
+	background: #027683;
 	right: 20px;
 	bottom: 20px;
 	padding: 15px;
@@ -565,7 +565,7 @@
 }
 .mk-button:hover {
 	background: white;
-	color: #495B71;
+	color: #027683;
 }
 .order-model {
 	position: absolute;
@@ -648,7 +648,7 @@
 	padding: 5px 15px;
 	font-size: 18px;
 	outline: none;
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	display: flex;
 	margin: auto;
@@ -699,7 +699,7 @@
 	padding: 5px;
 }
 .order-info a {
-	color: #495B71;
+	color: #027683;
 }
 .order-design {
 	padding: 5px;
@@ -862,7 +862,7 @@
 	margin-bottom: 5px;
 	border-radius: 50px;
 	padding: 2.5px 5px;
-	border: 1px solid #495B71;
+	border: 1px solid #027683;
 	background: #ddf;
 }
 .form-modal {
@@ -947,7 +947,7 @@
 	/*padding: 2.5px;*/
 	font-size: 17px;
 	color: #fff;
-	background: #495B71;
+	background: #027683;
 	border-radius: 15px;
 
 }
@@ -957,7 +957,7 @@
 	left: 0;
 }
 .delete-form button {
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	font-size: 18px;
 	border: 0;
@@ -975,12 +975,12 @@
 	margin-left: 15%;
 	padding: 5px;
 	border-radius: 10px;
-	border: 2px solid #495B71;
+	border: 2px solid #027683;
 	box-shadow: 0 0 25px;
 
 }
 .delete-info button {
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	border: 0;
 	padding: 5px;
@@ -1017,13 +1017,13 @@
 .alert-text-title {
 	width: 100%;
 	font-size: 50px;
-	color: #495B71;
+	color: #027683;
 	font-family: fantasy;
 }
 .alert-text {
 	width: 100%;
 	font-size: 30px; 
-	color: #495B71;
+	color: #027683;
 } 
 .language-container {
 	height: 100%;
@@ -1069,7 +1069,7 @@ footer {
 	height: 100px;
 	display: flex;
 	justify-content: center;
-	background: #495B71;
+	background: #027683;
 	box-shadow: 0 0 10px; 
 }
 .logo-image {
@@ -1112,7 +1112,7 @@ footer {
 	padding-bottom: 5px;
 }
 .help-block h2 {
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	border-radius: 10px; 	
 	text-align: center;
@@ -1163,7 +1163,7 @@ footer {
 	width: 100%;
 	padding: 5px;
 	font-size: 18px;
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	outline: none;
 	margin: 15px 0;
@@ -1184,7 +1184,7 @@ footer {
 	position: relative;
 	width: 700px;
 	font-size: 24px;
-	border-left: 5px solid #495B71;
+	border-left: 5px solid #027683;
 	padding: 0 20px 20px 20px;
 	box-shadow: 0 0 7px;
 	margin-left: 100px;
@@ -1192,7 +1192,7 @@ footer {
 	border-bottom-right-radius: 20px;
 }
 .block-title {
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	display: inline-block;
 	margin-bottom: 20px; 
@@ -1228,7 +1228,7 @@ footer {
 }
 .update-link a {
 	text-align: center;
-	color: #495B71;
+	color: #027683;
 	width: 100%;
 	text-decoration: none;
 }
@@ -1260,7 +1260,7 @@ footer {
 	padding: 5px 30px;
 	font-size: 18px;
 	color: #fff;
-	background: #495B71;
+	background: #027683;
 	margin: 20px 0;
 	cursor: pointer;
 	outline: none;
@@ -1311,7 +1311,7 @@ footer {
 	margin-top: 0;
 }
 .order-infor strong {
-	color: #495B71;
+	color: #027683;
 }
 .open-btn {
 	position: fixed;
@@ -1319,7 +1319,7 @@ footer {
 	right: 7vh; 
 	padding: 10px 10px;
 	box-shadow: 0 0 5px #000;
-	background: #495B71;
+	background: #027683;
 }
 .my-feedback-modal {
 	width: 80%;
@@ -1338,7 +1338,7 @@ footer {
 	margin-bottom: 5px;
 }
 .my-feedback-modal h3 {
-	background: #495B71;
+	background: #027683;
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -1353,7 +1353,7 @@ footer {
 	margin-top: 50px;
 }
 button {
-	background: #495B71;
+	background: #027683;
 }
 
 .load-main-block {
@@ -1424,7 +1424,7 @@ button {
 .register-recomendation-block p {
 	display: inline-block;  
 	margin: 5vh auto 0 auto; 
-	background: #495B71;
+	background: #027683;
 	color: #fff; 
 	padding: 5px 15px;
 	font-size: 20px;
@@ -1433,7 +1433,7 @@ button {
 
 }
 .navigation-block {
-	color: #495B71;
+	color: #027683;
 	text-align: center;
  	margin-top: 120px;
 
@@ -1449,7 +1449,7 @@ button {
 	margin-top: 40px;
 }
 .cards-container {
-	background: #495B71;
+	background: #027683;
 	border-radius: 40px;
 	margin: 50px 0;
 	box-shadow: 0 0 15px;
@@ -1469,16 +1469,16 @@ button {
 .card-block p {
 	padding: 0 15px;
 	/*text-align: left;*/
-	color: #495B71;
+	color: #027683;
 }
 .card-block img {
 	width: 90%;
 	margin: 15px auto;
 	border-radius: 50%;
-	border: 2px solid #495B71;
+	border: 2px solid #027683;
 }
 .card-block span a {
-	background: #495B71;
+	background: #027683;
 	color: #fff;
 	outline: none;
 	padding: 5px 30px;
@@ -1492,7 +1492,7 @@ button {
 	position: absolute;
 	bottom: 0;
 	right: 50px;
-	background: #495B71;
+	background: #027683;
 	padding: 5px 35px;
 	font-size: 18px;
 	color: #fff;
