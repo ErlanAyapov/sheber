@@ -65,6 +65,7 @@ function language_creat(lang) {
 	var id_client_last_name		= document.getElementById('id_client_last_name');
 	var id_price				= document.getElementById('id_price');
 	var mk_ord					= document.getElementById('mk_ord');
+	var id_sterm 				= document.getElementById('id_sterm');
 	navigation_lang(lang);
 	if (lang == 'kk') {
 		get_images.innerHTML			 = 'Тапсырыс беру';
@@ -73,6 +74,7 @@ function language_creat(lang) {
 		id_client_first_name.placeholder = 'Аты';
 		id_client_last_name.placeholder  = 'Жөні';
 		mk_ord.innerHTML 				 = 'Жіберу';
+		id_sterm.placeholder 			 = 'Тапсырыстың орындалу мерзімі'
 	}
 };
 
@@ -133,6 +135,8 @@ function language_profile(lang) {
 function language_all_orders(lang) {
 	var all_orders_text = document.getElementById('all_orders_text');
 	var orders_link = document.getElementsByClassName('order_btn');
+	var order_date = document.getElementsByClassName('order_date');
+	var order_sterm = document.getElementsByClassName('order_sterm');
 	var id_message = document.getElementById('id_message');
 	var send_btn = document.getElementById('send_btn');
 	var close_btn = document.getElementById('close_btn'); 
@@ -147,6 +151,8 @@ function language_all_orders(lang) {
 		feedback_title.innerText  = 'Сұрақтарыңыз барма?';
 		for (var i = 0; i < orders_link.length; i++) {
 			orders_link[i].innerText = 'Тапсырысты көру';
+			order_date[i].innerText = 'Тапсырыс берілді ';
+			order_sterm[i].innerText = 'Тапсырыс аяқталады ';
 		}
 	} else if (lang == 'ru') {
 		all_orders_text.innerText = 'Все заказы'
@@ -156,6 +162,8 @@ function language_all_orders(lang) {
 		feedback_title.innerText  = 'У вас вопросы?';
 		for (var i = 0; i < orders_link.length; i++) {
 			orders_link[i].innerText = 'Посмотреть заказ';
+			order_date[i].innerText = 'Заказано в ';
+			order_sterm[i].innerText = 'Актуально до ';
 		}
 	}
 

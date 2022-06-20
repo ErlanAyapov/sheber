@@ -17,7 +17,7 @@
 					<h2>{{ order.client_first_name }} {{ order.client_last_name }}</h2>
 					<p>{{ order.comment|slice:":200" }}...</p>
 					<p>{{ order.category }}</p>
-					<p><strong><span class="order_sterm">Заказано в </span></strong> {{ order.sterm|slice:":16" }}</p>
+					<p><strong><span class="order_date">Заказано в </span></strong> {{ order.sterm|slice:":16" }}</p>
 					<p><strong><span class="order_sterm">Актуально до </span></strong> {{ order.sterm|slice:":16" }}</p>
 					<div class="order-price">{{ order.price }} ₸</div>
 					<a href="{% url 'detail_order' order.id %}" class="btn btn-primary order_btn" >Посмотреть заказ </a>

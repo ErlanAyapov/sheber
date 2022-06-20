@@ -8,6 +8,9 @@ import datetime
 def help_view(request):
 	return render(request, 'help/help.html')
 
+def doc_ru_view(request):
+	return render(request, 'help/doc_ru.html')
+
 def feedback(request):
 	user_system = request.META['HTTP_USER_AGENT']
 	if request.method == 'POST':
