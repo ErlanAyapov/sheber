@@ -95,3 +95,5 @@ class OrderMapView(DetailView):
 		context['map'] = order_map = get_user_map(self.object.longitude, self.object.latitude, self.object.client_first_name)
 		 
 		return context 
+def ssl(request):
+	return render(request, 'main/CD3556AE42075DE27EFA43993599E44D.txt')
