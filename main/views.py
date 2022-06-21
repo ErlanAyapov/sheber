@@ -7,7 +7,7 @@ from maker.views import get_client_ip
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 import folium
-
+from django.http import HttpResponse
 
 def get_user_map(latitude, longitude, name): 
 	m = folium.Map( location=[eval(latitude), eval(longitude)], zoom_start = 50)
@@ -96,4 +96,8 @@ class OrderMapView(DetailView):
 		 
 		return context 
 def ssl(request):
-	return render(request, 'main/CD3556AE42075DE27EFA43993599E44D.txt')
+	f = open('.well-known/pki-validation/CD3556AE42075DE27EFA43993599E44D.txt', 'r')
+	file_content = f.read()
+	f.close()
+	return HttpResponse(file_content, content_type="text/plain")
+	# return render(request, 'main/CD3556AE42075DE27EFA43993599E44D.txt')
