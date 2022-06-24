@@ -7,11 +7,30 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from .models import Customer, PremiumSubscribe
 from datetime import datetime
+from maker.models import Product
 
 class UserProfileView(DetailView):
 	model = User
 	template_name = 'members/profile.html'
 
+	def get_context_data(self, **kwargs): 
+		context = super( UserProfileView, self ).get_context_data( **kwargs )
+		product = Product.objects.order_by('-id')[0:5] 
+
+		if self.request.user.premiumsubscribe:
+			user = self.request.user.premiumsubscribe
+			real_year, real_mounth, real_day = map( int, str(datetime.now())[0:10].split('-') )
+			end_year, end_mounth, end_day = map( int, str(user.end_subscribe)[0:10].split('-') )
+			time_left = ( end_year*360 + end_mounth*30 + end_day ) - ( real_year*360 + real_mounth*30 + real_day )
+			if not time_left >= 0:
+				context['time_left'] = True
+		
+		context['time_'] = time_left
+
+
+		context['product_profile'] = product
+
+		return context
 
 class UserProfileUpdateView(UpdateView):
 	model = User

@@ -6,7 +6,7 @@
 }
 :root {
 	scroll-behavior: smooth;
-}
+} 
 .btn-primary {
 	background: #027683;
 	border: 0;
@@ -423,7 +423,7 @@
 
 }
 .user-profile-innner {
-	margin: 2vh 0;
+	/*margin: 2vh auto;*/
 
 }
 .user-profile form input {
@@ -438,9 +438,9 @@
 	margin: auto;
 }
 .user-profile {
-	width: 97%;
-	margin: auto;
-	/*box-shadow: 0 0 5px;*/
+	width: 80%;
+	margin: 5vh auto;
+	display: flex;
 	border-radius: 10px;
 }
  
@@ -466,7 +466,7 @@
 	display: inline-block;
 	margin: auto;
 	padding: 5px;
-	/*background: transparent;*/
+	background: #fff;
 	margin: 15px;
 	border-radius: 5px;
 	box-shadow: 0 0 5px #000;
@@ -477,6 +477,100 @@
 	font-size: 20px;
 	margin: 5px;
 } 
+.more-information {
+	width: 70%;
+	margin: 15px;
+	padding: 5px;
+	box-shadow: 0 0 5px #000;
+	background: #fff;
+	border-radius: 5px;
+
+}
+.product-container-profile {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	overflow: auto;
+	width: 100%;
+	margin: auto;
+}
+.product-profile img {
+	width: 150px;
+}
+.more-information h3 {
+	text-align: center;
+}
+.product-profile {
+	margin: 10px;
+	box-shadow: 0 0 15px #fafafa;
+	position: relative;
+}
+.all-order-link-profile {
+	width: 100%;
+	margin: 10px auto;
+}
+.order-detail-button {
+	position: absolute;
+	bottom: 0;
+	left: 25px;
+	width: 100px;
+	background: #027683;
+	color: #fff;
+	text-align: center;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	transition: 0.2s;
+	outline: none;
+
+}
+.order-detail-button:hover {
+	padding: 5px 0;
+	color: #fff;
+}
+.product-profile-name {
+	position: absolute;
+	top: 0;
+	width: 120px;
+	left: 15px;
+	background: #027683;
+	color: #fff;
+	text-align: center;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.sterm-block {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+}
+.light-green-profile {
+	background: rgba(124,252,0, 0.8);
+}
+.yellow-profile {
+	background: rgba(255,255,0, 0.5);
+}	
+.red-profile {
+	background: rgba(139,0,0, 0.4);
+}
+.details-profile-content {
+	padding: 10px;
+
+}
+.details-profile-content p {
+	padding: 0;
+	margin: 0;
+}
+
+.more-information details {
+	background: #fdfdfd;
+	margin-top: 10px ;
+}
+.more-information details summary {
+	margin: 0;
+}
+
+
 #logout {
 	margin: auto;
 	font-size: 18px;

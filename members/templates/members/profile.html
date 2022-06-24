@@ -1,13 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block nav %}
-	<ul>
-		<li><a href="{% url 'main' %}">Дом</a></li>
-		<li><a href="{% url 'maker' %}">Заказать</a></li>
-		<li><a href="{% url 'members' %}" id="active">Аккаунт</a></li>
-		<li><a href="#">Помощь</a></li>
-	</ul>
-{% endblock %}
+{% load static %} 
 {% block content %}
 	{% if object %}
 		<div class="user-profile-innner">
@@ -56,13 +48,100 @@
 						
 					</form>
 				{% endif %} 
-				
+			{% if request.user.id == object.id %}
+			<div class="more-information">
+				<h3 id="new_orders">Новые заказы</h3>
+				<div class="product-container-profile">
+					{% for prud in product_profile %}
+					<div  class="product-profile">
+						<img src="{{ prud.des_image }}">
+						{% if not time_left %}
+						<span class="product-profile-name">{{ prud.client_first_name }}</span>
+						<a href="{% url 'detail_order' prud.id %}" class="order-detail-button">Подробнее</a>
+						{% endif %}
+					</div>
+					{% endfor %}
+
+					{% if time_left %}
+					<style type="text/css">
+						.product-profile {filter: blur(3px);}
+					</style>
+					{% endif %}
+				</div>
+				<a id="oll_orders_page" href="{% url 'all_order' %}" class="btn btn-primary all-order-link-profile">Посмотреть все заказы</a>
+					{% if time_ > 0 %}
+					<div class="sterm-block light-green-profile">
+						<h4 id="sub_sterm">Срок подписки</h4>
+						<p id="sub_text_1">У вас отсалось {{ time_ }}</p>
+					</div>
+
+					{% elif time_ == 0 %}
+					<div class="sterm-block yellow-profile" >
+						<h4 id="sub_sterm">Срок подписки</h4>
+						<p><span id="sub_text_2">Сегодня последний день подписки</span>, <a href="https://wa.me/+77783142837?text=Добрый+день!+хочу+продлить+подписку!"><span id="sub_text_link_2">нажмите чтобы продлить подписку</span></a></p>
+					</div>
+					<details>
+					<summary id="profile_summary" class="btn btn-primary all-order-link-profile">Данные для продление подписки</summary>
+					<div class="details-profile-content">
+						<p><strong>ID:</strong> {{ request.user.id }}</p>
+						<p><strong><span id="profile_c_username">Имя пользователя:</span></strong> {{ request.user }}</p>
+						<p><strong><span id="profile_f_name">Имя:</span></strong> {{ request.user.first_name }}</p>
+						<p><strong><span id="profile_l_name">Фамилия:</span></strong> {{ request.user.last_name }}</p> 
+						<p><strong><span id="profile_e_email">Email:</span></strong> {{ request.user.email }}</p> 
+						<a id="profile_l_link" href="https://wa.me/+77783142837?text=
+						ID:+{{ request.user.id }};+
+						Имя:+{{ request.user.first_name }};+
+						Фамилия:+{{ request.user.last_name }};+
+						Имя пользователя:+{{ request.user }}." class="btn btn-secondary all-order-link-profile">Отправить данные к администрацию</a>
+
+					</div>
+				</details>	
+					{% else %}
+					<div class="sterm-block red-profile">
+						<h4 id="sub_sterm">Срок подписки</h4>
+						<p id="sub_text_3">Время истек</p>
+					</div>
+					<details>
+					<summary id="profile_summary" class="btn btn-primary all-order-link-profile">Данные для продление подписки</summary>
+					<div class="details-profile-content">
+						<p><strong>ID:</strong> {{ request.user.id }}</p>
+						<p><strong><span id="profile_c_username">Имя пользователя:</span></strong> {{ request.user }}</p>
+						<p><strong><span id="profile_f_name">Имя:</span></strong> {{ request.user.first_name }}</p>
+						<p><strong><span id="profile_l_name">Фамилия:</span></strong> {{ request.user.last_name }}</p> 
+						<p><strong><span id="profile_e_email">Email:</span></strong> {{ request.user.email }}</p>
+						<a id="profile_l_link" href="https://wa.me/+77783142837?text=
+						ID:+{{ request.user.id }};+
+						Имя:+{{ request.user.first_name }};+
+						Фамилия:+{{ request.user.last_name }};+
+						Имя пользователя:+{{ request.user }}." class="btn btn-secondary all-order-link-profile">Отправить данные к администрацию</a>
+
+					</div>
+				</details>	
+					{% endif %}
+				{% endif %}
+				<div style="display: none;">
+					<div id="sub_text_1"></div>
+					<div id="sub_text_2"></div>
+					<div id="sub_text_link_2"></div>
+					<div id="sub_text_3"></div>
+					<div id="profile_summary"></div>
+					<div id="profile_c_username"></div>
+					<div id="profile_f_name"></div>
+					<div id="profile_l_name"></div>
+					<div id="profile_l_link"></div>
+					<div id="profile_l_name"></div>
+					
+				</div>
 			</div>
+			</div>
+
+			
 		</div>
 	{% endif %}
 
 	<script type="text/javascript">
 		var lang = localStorage.getItem('language')
+		var sterm_ = '{{ time_ }}'
 		language_profile(lang)
 	</script>
 {% endblock %}

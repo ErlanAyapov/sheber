@@ -28,13 +28,14 @@ class AllOrderView(ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(AllOrderView, self).get_context_data( **kwargs )
-
+		print('time_left')
 		if self.request.user.premiumsubscribe:
 			user = self.request.user.premiumsubscribe
 			real_year, real_mounth, real_day = map( int, str(datetime.datetime.now())[0:10].split('-') )
 			end_year, end_mounth, end_day = map( int, str(user.end_subscribe)[0:10].split('-') )
 			time_left = ( end_year*360 + end_mounth*30 + end_day ) - ( real_year*360 + real_mounth*30 + real_day )
 
+			print(time_left, 'asdasd')
 			if not time_left >= 0:
 	 			context['time_left'] = True
 

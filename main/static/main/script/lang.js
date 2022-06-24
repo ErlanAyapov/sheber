@@ -109,17 +109,46 @@ function language_profile(lang) {
 	var id_email 			= document.getElementById('id_email');
 	var profile_save_id 	= document.getElementById('profile_save_id');
 	var logout 				= document.getElementById('logout');
-
+	var sub_sterm 			= document.getElementById('sub_sterm');
+	var sub_text_1 			= document.getElementById('sub_text_1');
+	var sub_text_2 			= document.getElementById('sub_text_2');
+	var sub_text_link_2		= document.getElementById('sub_text_link_2');
+	var sub_text_3			= document.getElementById('sub_text_3');
+	var profile_summary		= document.getElementById('profile_summary');
+	var profile_c_username	= document.getElementById('profile_c_username');
+	var profile_f_name		= document.getElementById('profile_f_name');
+	var profile_l_name		= document.getElementById('profile_l_name');
+	var profile_l_link		= document.getElementById('profile_l_link');
+	var order_detail_button = document.getElementsByClassName('order-detail-button');
+	var new_orders			= document.getElementById('new_orders');
+	var oll_orders_page		= document.getElementById('oll_orders_page');
 
 	navigation_lang(lang)
 	if (lang == 'kk') {
-		update_picture_link.text 	= 'Суретті өзгерту';
-		id_username.placeholder 	= 'Қолданушы атауы';
-		id_first_name.placeholder 	= 'Есімі';
-		id_last_name.placeholder 	= 'Тегі';
-		id_email.placeholder 		= 'Почта';
-		profile_save_id.innerText	= 'Сақтау';
-		logout.text 				= 'Шығу';
+		update_picture_link.text 		= 'Суретті өзгерту';
+		id_username.placeholder 		= 'Қолданушы атауы';
+		id_first_name.placeholder 		= 'Есімі';
+		id_last_name.placeholder 		= 'Тегі';
+		id_email.placeholder 			= 'Почта';
+		profile_save_id.innerText		= 'Сақтау';
+		logout.text 					= 'Шығу';
+		sub_sterm.innerText 			= 'Жазылым уақыты';
+		sub_text_2.innerText 			= 'Бүгін жазылымның соңғы күні';
+		sub_text_link_2.innerText 		= 'уақыты ұзарту үшін басыңыз';
+		profile_summary.innerText		= 'Жазылымға қажет ақпарат';
+		profile_c_username.innerText 	= 'Қолданушы атауы:';
+		profile_l_name.innerText 		= 'Тегі:';
+		profile_f_name.innerText 		= 'Есімі:';
+		profile_l_link.innerText 		= 'Ақпаратты әкімшілікке жіберу';
+		new_orders.innerText  			= 'Жаңа тапсырыстар';
+		oll_orders_page.innerText 		= 'Барлық тапсырыстарды көру'
+		sub_text_1.innerText 			= 'Сізде қалған күдер саны ' + sterm_;
+		sub_text_3.innerText 			= 'Уақыт бітті';
+
+		for (var i = 0; i < order_detail_button.length; i++) {
+			order_detail_button[i].innerText = 'Толығырақ'; 
+		}
+
 
 	} else if (lang == 'ru') {
 		update_picture_link.text 	= 'Изменть изоброжение';
@@ -129,6 +158,7 @@ function language_profile(lang) {
 		id_email.placeholder 		= 'Почта';
 		profile_save_id.innerText	= 'Сохранить';
 		logout.text 				= 'Выйти';
+		sub_sterm.innerText 		= 'Срок подписки'
 
 	};
 }; 
