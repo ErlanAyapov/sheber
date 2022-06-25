@@ -93,7 +93,7 @@ def authentication(request):
 		user = authenticate(request, username = username, password = password)
 		if user is not None: 
 			login(request, user)
-			return redirect('main')
+			return HttpResponseRedirect('/members/user/' + str(request.user.id))
 		else:
 			error = 'Логин и пароль не совпадает, повторите попытку!'
 			return render(request, 'members/auth.html', {'error':error})	
