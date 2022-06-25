@@ -8,7 +8,7 @@
 	scroll-behavior: smooth;
 } 
 .btn-primary {
-	background: #027683;
+	background: #4169e1;
 	border: 0;
 	transition: 0.2s;
 }
@@ -24,12 +24,12 @@
 .logo-dec-line {
 	width: 100%;
 	height: 75px;
-	background: #027683;
+	background: #4169e1;
 	position: absolute;
 	bottom: 0;
 }
 .logo-icon {
-	background: #027683;
+	background: #4169e1;
 	font-size: 50px;
 	border-radius: 25px;
 	border: 5px solid #fff;
@@ -91,9 +91,10 @@
 	padding: 0px 5px;
 	color: #fff;
 	transition: 0.2s;
+	margin: 0;
 }
 .top-nav {
-	background: #027683;
+	background: #4169e1;
 	width: 390px;
 	margin: auto;
 	border-bottom-right-radius: 17px;
@@ -102,16 +103,17 @@
 	box-shadow: 0 0 15px;
 	/*position: fixed;*/
 	padding-left: 37px;
+	border: 0;
 }
 .nav-inner {
 	width: 90%;
 }
 .top-nav ul li a:hover {
-	background: #182E49;
+	background: #000080 ;
 	color: #fff;
 }
 #active {
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 }
 .maker-content {
@@ -136,7 +138,7 @@
 
 }
 .img-mk i{
-	color: #027683;
+	color: #4169e1;
 }
 .maker-inner {
 	position: absolute;
@@ -244,7 +246,7 @@
 	display: none;
 }
 .tools-title {
-	background: #027683;
+	background: #4169e1;
 	text-align: center;
 	width: 70%;
 	margin: auto;
@@ -276,7 +278,7 @@
 .yellow {
 	background: #fec4d2;
 }
-.#027683 {
+.#4169e1 {
 	background: #f0f1f6;
 }
 .gray {
@@ -339,7 +341,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 }
 .message {
@@ -389,7 +391,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 }
 .update-container {
@@ -421,7 +423,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 
 }
@@ -461,7 +463,7 @@
 	border: 0;
 	box-shadow: 0 0 5px #000;
 	cursor: pointer;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 
 }
@@ -518,7 +520,7 @@
 	bottom: 0;
 	left: 25px;
 	width: 100px;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	text-align: center;
 	border-top-right-radius: 10px;
@@ -536,7 +538,7 @@
 	top: 0;
 	width: 120px;
 	left: 15px;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	text-align: center;
 	border-bottom-right-radius: 10px;
@@ -605,7 +607,7 @@
 }
 .news-conteainer h1 {
 	text-align: center;
-	background: #027683;
+	background: #4169e1;
 	padding: 7px;
 	color: #fff;
 	box-shadow: 0 0 15px #000;
@@ -616,7 +618,7 @@
 	font-size: 40px;
 	position: fixed;
 	top: 30vh;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	padding: 0 15px 5px 15px;
 	border-radius: 0 15px 15px 0;
@@ -642,12 +644,12 @@
 	font-size: 19px;
 }
 #go_to a {
-	color: #027683;
+	color: #4169e1;
 }
 
 .mk-button {
 	position: absolute;
-	background: #027683;
+	background: #4169e1;
 	right: 20px;
 	bottom: 20px;
 	padding: 15px;
@@ -660,7 +662,7 @@
 }
 .mk-button:hover {
 	background: white;
-	color: #027683;
+	color: #4169e1;
 }
 .order-model {
 	position: absolute;
@@ -743,7 +745,7 @@
 	padding: 5px 15px;
 	font-size: 18px;
 	outline: none;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	display: flex;
 	margin: auto;
@@ -794,7 +796,7 @@
 	padding: 5px;
 }
 .order-info a {
-	color: #027683;
+	color: #4169e1;
 }
 .order-design {
 	padding: 5px;
@@ -958,7 +960,7 @@
 	margin-bottom: 5px;
 	border-radius: 50px;
 	padding: 2.5px 5px;
-	border: 1px solid #027683;
+	border: 1px solid #4169e1;
 	background: #ddf;
 }
 .form-modal {
@@ -1043,7 +1045,7 @@
 	/*padding: 2.5px;*/
 	font-size: 17px;
 	color: #fff;
-	background: #027683;
+	background: #4169e1;
 	border-radius: 15px;
 
 }
@@ -1053,7 +1055,7 @@
 	left: 0;
 }
 .delete-form button {
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	font-size: 18px;
 	border: 0;
@@ -1071,12 +1073,12 @@
 	margin-left: 15%;
 	padding: 5px;
 	border-radius: 10px;
-	border: 2px solid #027683;
+	border: 2px solid #4169e1;
 	box-shadow: 0 0 25px;
 
 }
 .delete-info button {
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	border: 0;
 	padding: 5px;
@@ -1113,13 +1115,13 @@
 .alert-text-title {
 	width: 100%;
 	font-size: 50px;
-	color: #027683;
+	color: #4169e1;
 	font-family: fantasy;
 }
 .alert-text {
 	width: 100%;
 	font-size: 30px; 
-	color: #027683;
+	color: #4169e1;
 } 
 .language-container {
 	height: 100%;
@@ -1165,7 +1167,7 @@ footer {
 	height: 100px;
 	display: none;
 	justify-content: center;
-	background: #027683;
+	background: #4169e1;
 	box-shadow: 0 0 10px; 
 }
 .logo-image {
@@ -1208,7 +1210,7 @@ footer {
 	padding-bottom: 5px;
 }
 .help-block h2 {
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	border-radius: 10px; 	
 	text-align: center;
@@ -1259,7 +1261,7 @@ footer {
 	width: 100%;
 	padding: 5px;
 	font-size: 18px;
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	outline: none;
 	margin: 15px 0;
@@ -1280,7 +1282,7 @@ footer {
 	position: relative;
 	width: 700px;
 	font-size: 24px;
-	border-left: 5px solid #027683;
+	border-left: 5px solid #4169e1;
 	padding: 0 20px 20px 20px;
 	box-shadow: 0 0 7px;
 	margin-left: 100px;
@@ -1288,7 +1290,7 @@ footer {
 	border-bottom-right-radius: 20px;
 }
 .block-title {
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	display: inline-block;
 	margin-bottom: 20px; 
@@ -1324,7 +1326,7 @@ footer {
 }
 .update-link a {
 	text-align: center;
-	color: #027683;
+	color: #4169e1;
 	width: 100%;
 	text-decoration: none;
 }
@@ -1356,7 +1358,7 @@ footer {
 	padding: 5px 30px;
 	font-size: 18px;
 	color: #fff;
-	background: #027683;
+	background: #4169e1;
 	margin: 20px 0;
 	cursor: pointer;
 	outline: none;
@@ -1407,7 +1409,7 @@ footer {
 	margin-top: 0;
 }
 .order-infor strong {
-	color: #027683;
+	color: #4169e1;
 }
 .open-btn {
 	position: fixed;
@@ -1415,7 +1417,7 @@ footer {
 	right: 7vh; 
 	padding: 10px 10px;
 	box-shadow: 0 0 5px #000;
-	background: #027683;
+	background: #4169e1;
 }
 .my-feedback-modal {
 	width: 80%;
@@ -1434,7 +1436,7 @@ footer {
 	margin-bottom: 5px;
 }
 .my-feedback-modal h3 {
-	background: #027683;
+	background: #4169e1;
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -1449,7 +1451,7 @@ footer {
 	margin-top: 50px;
 }
 button {
-	background: #027683;
+	background: #4169e1;
 }
 
 .load-main-block {
@@ -1520,7 +1522,7 @@ button {
 .register-recomendation-block p {
 	display: inline-block;  
 	margin: 5vh auto 0 auto; 
-	background: #027683;
+	background: #4169e1;
 	color: #fff; 
 	padding: 5px 15px;
 	font-size: 20px;
@@ -1529,7 +1531,7 @@ button {
 
 }
 .navigation-block {
-	color: #027683;
+	color: #4169e1;
 	text-align: center;
  	margin-top: 120px;
 
@@ -1545,7 +1547,7 @@ button {
 	margin-top: 40px;
 }
 .cards-container {
-	background: #027683;
+	background: #4169e1;
 	border-radius: 40px;
 	margin: 50px 0;
 	box-shadow: 0 0 15px;
@@ -1565,16 +1567,16 @@ button {
 .card-block p {
 	padding: 0 15px;
 	/*text-align: left;*/
-	color: #027683;
+	color: #4169e1;
 }
 .card-block img {
 	width: 90%;
 	margin: 15px auto;
 	border-radius: 50%;
-	border: 2px solid #027683;
+	border: 2px solid #4169e1;
 }
 .card-block span a {
-	background: #027683;
+	background: #4169e1;
 	color: #fff;
 	outline: none;
 	padding: 5px 30px;
@@ -1588,7 +1590,7 @@ button {
 	position: absolute;
 	bottom: 0;
 	right: 50px;
-	background: #027683;
+	background: #4169e1;
 	padding: 5px 35px;
 	font-size: 18px;
 	color: #fff;
