@@ -227,7 +227,7 @@
 
 }
 .inner-tool {
-	display: none;
+	/*display: none;*/
 }
 .input-image {
 	text-align: center;
@@ -659,6 +659,7 @@
 	color: #fff;
 	cursor: pointer;
 	transition: 0.2s;
+	display: none;
 }
 .mk-button:hover {
 	background: white;

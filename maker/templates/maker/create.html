@@ -5,7 +5,16 @@
 	var center_price = [0], border_price = [0], price = 1000;
 	var x = 0, y = 0;
 </script>
-<div class="maker-container">
+<div class="load-main-block" style="margin-top:35vh">
+	<div class="loader">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div> 
+</div>
+<div class="maker-container" style="display:none;">
 	<div class="maker-content">
 		<div class="maker-block" id="content"><br>
 			<div class="border_content">
@@ -20,15 +29,7 @@
 		</div>
 	</div>
 	<div class="maker-tools">
-		<div class="load-main-block" style="margin-top:35vh">
-			 <div class="loader">
-			 	<span></span>
-			 	<span></span>
-			 	<span></span>
-			 	<span></span>
-			 	<span></span>
-			 </div> 
-		</div>
+		
 		<div class="inner-tool">
 			<details open>
 				<summary class="summary1"><span>Фрагмент</span> <i class="fas fa-palette"></i></summary>
@@ -143,9 +144,11 @@
 	myStorage = window.localStorage;
 
 	document.addEventListener("DOMContentLoaded", function() {
-		var loadet_content = document.querySelector('.inner-tool');
-		var load_animation= document.querySelector('.load-main-block');
+		var loadet_content = document.querySelector('.maker-container');
+		var loadet_btn = document.querySelector('.mk-button');
+		var load_animation = document.querySelector('.load-main-block');
 		loadet_content.style.display = 'block';
+		loadet_btn.style.display = 'block';
 		load_animation.style.display = 'none';
 	})
 
