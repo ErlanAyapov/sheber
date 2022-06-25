@@ -1,10 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-	var loadet_content = document.querySelector('.language-block-container');
-	var load_animation= document.querySelector('.load-main-block');
-	loadet_content.style.display = 'block';
-	load_animation.style.display = 'none';
-})
-
 function encodeImageFileAsURL(element, input_id) {
 	const input_base64 = document.getElementById(input_id);
 	var file = element.files[0];

@@ -183,8 +183,8 @@
 	position: fixed;
 	display: block;
 	box-shadow: 0 0 10px #000;
-	background: #999;
-	max-height: 70vh;
+	background: #fafafa;
+	height: 70vh;
 	overflow-y: scroll;
 	left: 0;
 	top: 160px;
@@ -223,6 +223,9 @@
 	cursor: pointer;
 	list-style: none;
 
+}
+.inner-tool {
+	display: none;
 }
 .input-image {
 	text-align: center;
@@ -1455,8 +1458,8 @@ button {
 	padding: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	/*background:;/*/
+	align-items: center; 
+
 
 }
 .loader {

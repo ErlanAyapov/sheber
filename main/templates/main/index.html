@@ -78,5 +78,11 @@
 		myStorage = window.localStorage;
 		let mod = localStorage.getItem('language') 
 		language_main(mod)
+		document.addEventListener("DOMContentLoaded", function() {
+			var loadet_content = document.querySelector('.language-block-container');
+			var load_animation= document.querySelector('.load-main-block');
+			loadet_content.style.display = 'block';
+			load_animation.style.display = 'none';
+		})
 	</script>
 {% endblock %}

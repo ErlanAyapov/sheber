@@ -142,7 +142,7 @@ function language_profile(lang) {
 		profile_l_link.innerText 		= 'Ақпаратты әкімшілікке жіберу';
 		new_orders.innerText  			= 'Жаңа тапсырыстар';
 		oll_orders_page.innerText 		= 'Барлық тапсырыстарды көру'
-		sub_text_1.innerText 			= 'Сізде қалған күдер саны ' + sterm_;
+		sub_text_1.innerText 			= 'Сізде қалған күндер саны ' + sterm_;
 		sub_text_3.innerText 			= 'Уақыт бітті';
 
 		for (var i = 0; i < order_detail_button.length; i++) {
