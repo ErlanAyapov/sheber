@@ -937,14 +937,16 @@
 
 .form-modal-container-my {
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
+	max-height: 500%;
 	margin: auto;
-	display: block;
+	display: inline-block;
 	position: absolute;
 	top: -100%;
 	transition: 0.5s;
 	/*background: #fff;*/
 	background: #ddd;
+	padding-bottom: 5vh;
 }
 .clear-fix:after {
   content: "";
@@ -1459,7 +1461,7 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center; 
-
+	cursor: wait;
 
 }
 .loader {
