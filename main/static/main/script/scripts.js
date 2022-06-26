@@ -1,5 +1,5 @@
 function checkHostName() {
-	if (location.hostname == '127.0.0.1') {
+	if (localStorage.getItem('sequriety') == 'not') {
 		$('.container-host').css('display',' none');
 	} else if (location.hostname == 'sheber.herokuapp.com') {
 		$('.container-host').css('display',' none');
@@ -214,6 +214,7 @@ jQuery('.my-feedback-modal .btn-secondary').on('click', function() {
 });
 jQuery('.container-host .btn-secondary').on('click', function() {	 
 	$('.container-host').css('display',' none');
+	localStorage.setItem('sequriety', 'not')
 });
 
 checkHostName()
