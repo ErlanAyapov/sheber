@@ -1598,3 +1598,14 @@ button {
 	border-top-right-radius: 15px;
 	border-top-left-radius: 15px;
 }
+.container-host {
+	position: fixed;
+	top: 10vh;
+	background: #fff;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 50px gray;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+}

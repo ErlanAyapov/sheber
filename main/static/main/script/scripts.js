@@ -1,3 +1,11 @@
+function checkHostName() {
+	if (location.hostname == '127.0.0.1') {
+		$('.container-host').css('display',' none');
+	} else if (location.hostname == 'sheber.herokuapp.com') {
+		$('.container-host').css('display',' none');
+	}
+}
+
 function encodeImageFileAsURL(element, input_id) {
 	const input_base64 = document.getElementById(input_id);
 	var file = element.files[0];
@@ -204,3 +212,8 @@ jQuery('#feedback_btn').on('click', function() {
 jQuery('.my-feedback-modal .btn-secondary').on('click', function() {	 
 	$('.my-feedback-modal').css('display',' none');
 });
+jQuery('.container-host .btn-secondary').on('click', function() {	 
+	$('.container-host').css('display',' none');
+});
+
+checkHostName()

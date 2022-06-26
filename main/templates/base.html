@@ -42,7 +42,14 @@
 				</div>
 			</div>
 		</header>
-		<main>{% block content %}{% endblock %}</main> 
+		<main>
+			<div class="container-host">
+				<p>Нажмите что бы перейти в безопасный подключение</p>
+				<a href="https://sheber.herokuapp.com/" class="btn btn-primary">Подключиться безопасно</a>
+				<a href="#" id="close_btn_host" class="btn btn-secondary">Закрыть</a>
+			</div>
+		{% block content %}{% endblock %}
+		</main> 
 				
 		<script src="https://kit.fontawesome.com/e9b4a4c6c5.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="{% static 'main/script/maker.js' %}"></script>
