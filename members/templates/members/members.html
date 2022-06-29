@@ -24,8 +24,11 @@
 							<div class="message">
 								{{ message}}
 							</div>
-
 							{% endif %}
+							<label id="policy_label">
+								<input type="checkbox" id="policy_checkbox" required>
+								<span id="policy_text">Я принимаю правил использование. </span><a id="policy_link" href="{% url 'doc_ru' %}">Правила использование</a>
+							</label>
 							<p id="go_to">У вас уже есть <a href="{% url 'auth' %}"> аккаунт</a> ?</p>
 							<button type="submit" id="btn_next">Далее</button>
 						</form>

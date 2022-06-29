@@ -48,6 +48,13 @@
 				<a href="https://sheber.herokuapp.com/" class="btn btn-primary">Подключиться безопасно</a>
 				<a href="#" id="close_btn_host" class="btn btn-secondary">Закрыть</a>
 			</div>
+			<script type="text/javascript"> 
+				if (localStorage.getItem('sequriety') == 'not') {
+					$('.container-host').css('display',' none');
+				} else if (location.hostname == 'sheber.herokuapp.com') {
+					$('.container-host').css('display',' none');
+				} 
+			</script>
 		{% block content %}{% endblock %}
 		</main> 
 				

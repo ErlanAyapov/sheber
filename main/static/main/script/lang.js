@@ -79,16 +79,18 @@ function language_creat(lang) {
 };
 
 function language_register(lang) {
-	var username	= document.getElementById('username1')
-	var password 	= document.getElementById('password')
-	var id_username	= document.getElementById('id_username')
-	var password1 	= document.getElementById('id_password1')
-	var password2	= document.getElementById('id_password2')
-	var go_to		= document.getElementById('go_to')
-	var btn_next	= document.getElementById('btn_next')
-	var rec_text	= document.querySelector('.register-recomendation-block p')
-
+	var username	= document.getElementById('username1');
+	var password 	= document.getElementById('password');
+	var id_username	= document.getElementById('id_username');
+	var password1 	= document.getElementById('id_password1');
+	var password2	= document.getElementById('id_password2');
+	var go_to		= document.getElementById('go_to');
+	var btn_next	= document.getElementById('btn_next');
+	var rec_text	= document.querySelector('.register-recomendation-block p');
+	var policy_text = document.getElementById('policy_text');
+	var policy_link = document.getElementById('policy_link');
 	navigation_lang(lang)
+
 	if (lang == 'kk') {
 		username.placeholder	= 'Қолданушы атауы';
 		password.placeholder	= 'Құпия сөз';
@@ -96,8 +98,11 @@ function language_register(lang) {
 		password1.placeholder	= 'Құпия сөз';
 		password2.placeholder	= 'Құпия сөз қайта жазыңыз';
 		go_to.innerHTML			= 'Сізде <a href="authentication/">аккаунт</a> бар ма?';
-		btn_next.innerHTML		= 'Алға' 
-		rec_text.innerText 		= 'Тапсырыстар алу үшін тіркеліңіз!'
+		btn_next.innerHTML		= 'Алға';
+		rec_text.innerText 		= 'Тапсырыстар алу үшін тіркеліңіз!';
+		policy_text.innerText 	= 'Мен ережелермен таныстым.';
+		policy_link.innerText 	= 'Ережелерді көру';
+		policy_link.href 		= '/help/documentation-kz/';;
 	} 
 };
 

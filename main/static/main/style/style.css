@@ -85,6 +85,15 @@
 	list-style-type: none;
 	
 }
+#policy_label {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin: 10px 0;
+}
+#policy_label input {
+	width: 20px;
+}
 .top-nav ul li a {
 	text-decoration: none;
 	font-size: 18px;
@@ -642,9 +651,11 @@
 	text-align: center;
 	padding: 10px;
 	font-size: 19px;
+	display: none;
 }
 #go_to a {
 	color: #4169e1;
+	font-size: 19px;
 }
 
 .mk-button {

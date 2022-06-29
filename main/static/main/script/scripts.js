@@ -1,11 +1,3 @@
-function checkHostName() {
-	if (localStorage.getItem('sequriety') == 'not') {
-		$('.container-host').css('display',' none');
-	} else if (location.hostname == 'sheber.herokuapp.com') {
-		$('.container-host').css('display',' none');
-	}
-}
-
 function encodeImageFileAsURL(element, input_id) {
 	const input_base64 = document.getElementById(input_id);
 	var file = element.files[0];
@@ -25,7 +17,6 @@ function picture_load(image) {
 	for (l = image.length - 1; l>= 0; l--) {
 	console.log(image[l].src.substr(-50, 30));
 	$('<div class="border_content_inner_bottom"><img src="'+image[l].src+'"width="160"unselectable="on"></div>').insertAfter('p');
-
 };}
 
 
@@ -51,8 +42,6 @@ function center_content() {
 	var center_content_top = document.getElementsByClassName('border_content_inner_top');
 	var center_content_bottom = document.getElementsByClassName('border_content_inner_bottom');
 	var center_img = document.getElementsByName('center_im');
-
-
 	for (var i = center_name.length - 1; i >= 0; i--) {
 		if (center_name[i].checked) {
 			for(var d = 0; d < center_content_top.length; d++) {
@@ -215,6 +204,4 @@ jQuery('.my-feedback-modal .btn-secondary').on('click', function() {
 jQuery('.container-host .btn-secondary').on('click', function() {	 
 	$('.container-host').css('display',' none');
 	localStorage.setItem('sequriety', 'not')
-});
-
-checkHostName()
+}); 

@@ -11,6 +11,9 @@ def help_view(request):
 def doc_ru_view(request):
 	return render(request, 'help/doc_ru.html')
 
+def doc_kz_view(request):
+	return render(request, 'help/doc_kz.html')
+
 def feedback(request):
 	user_system = request.META['HTTP_USER_AGENT']
 	if request.method == 'POST':
