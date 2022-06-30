@@ -7,7 +7,7 @@ import decouple
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-SECRET_KEY = 'v+c!=t^!xah@ty8tu$u_w1xi73()4m5qgxr(8req1nbg$zi$^^'
+SECRET_KEY = 'v+casdasd!=t^!xah@ty8tuasd$u_w1xi73()4asdasdasdm5qgxr(8req1nbg$zasdasdi$^^'
 
 DEBUG = True
 
