@@ -139,7 +139,7 @@ function language_profile(lang) {
 		logout.text 					= 'Шығу';
 		sub_sterm.innerText 			= 'Жазылым уақыты';
 		sub_text_2.innerText 			= 'Бүгін жазылымның соңғы күні';
-		sub_text_link_2.innerText 		= 'уақыты ұзарту үшін басыңыз';
+		sub_text_link_2.innerText 		= 'уақытты ұзарту үшін басыңыз';
 		profile_summary.innerText		= 'Жазылымға қажет ақпарат';
 		profile_c_username.innerText 	= 'Қолданушы атауы:';
 		profile_l_name.innerText 		= 'Тегі:';

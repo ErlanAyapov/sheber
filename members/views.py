@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView, UpdateView
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from .models import Customer, PremiumSubscribe
-from datetime import datetime
+import datetime
 from maker.models import Product
 
 class UserProfileView(DetailView):
@@ -19,7 +19,7 @@ class UserProfileView(DetailView):
 
 		if self.request.user.premiumsubscribe:
 			user = self.request.user.premiumsubscribe
-			real_year, real_mounth, real_day = map( int, str(datetime.now())[0:10].split('-') )
+			real_year, real_mounth, real_day = map( int, str(datetime.datetime.now())[0:10].split('-') )
 			end_year, end_mounth, end_day = map( int, str(user.end_subscribe)[0:10].split('-') )
 			time_left = ( end_year*360 + end_mounth*30 + end_day ) - ( real_year*360 + real_mounth*30 + real_day )
 			if not time_left >= 0:
@@ -51,6 +51,10 @@ class CustomerUpdateView(UpdateView):
 		form.save()
 		return HttpResponseRedirect('/members/user/' + str(self.request.user.id))
 
+def plus_year():
+	real_time = datetime.datetime.now()
+	return datetime.datetime( int(real_time.year) + 1, real_time.month, real_time.day, real_time.hour, real_time.minute, real_time.second, real_time.microsecond)
+
 def register(request):
 	error = ''
 	if request.method == 'POST':
@@ -63,7 +67,8 @@ def register(request):
 			user = authenticate(request, username = username, password = password)
 			if user is not None: 
 				login(request, user)  
-				sub = PremiumSubscribe( user = request.user, start_subscribe = datetime.now(), end_subscribe = datetime.now()) 
+
+				sub = PremiumSubscribe( user = request.user, start_subscribe = datetime.datetime.now(), end_subscribe = plus_year() ) 
 				sub.save()	
 				customer = Customer( user = request.user, image = 'default')
 				customer.save()
