@@ -2,10 +2,17 @@ function navigation_lang(lang) {
 	var main 	= document.getElementById('main');
 	var make 	= document.getElementById('make'); 
 	var help	= document.getElementById('help');
+	var security_modal_text = document.querySelector('.container-host p');
+	var security_link_text = document.querySelector('.container-host a');
+	var close_btn_host = document.getElementById('close_btn_host');
+
 	if (lang == 'kk') {
 		main.innerHTML = 'Басты';
 		make.innerHTML = 'Шеберхана';
 		help.innerHTML = 'Тапсырыстар';
+		security_modal_text.innerText = 'Қауіпсіз қосылу үшін басыңыз';
+		security_link_text.innerText = 'Қауіпсіз қосылу';
+		close_btn_host.innerText = 'Жабу'
 	} else if (lang == 'ru') {
 		main.innerHTML = 'Дом';
 		make.innerHTML = 'Мастерская';
@@ -25,7 +32,14 @@ function language_main(lang) {
 	var card_message_2 	= document.getElementById('card_message_2');
 	var card_link_2 	= document.getElementById('card_link_2');
 	var nav_link 		= document.getElementById('nav_link');
-
+	var policy_text 	= document.getElementById('policy_text');
+	var policy_link 	= document.getElementById('policy_link');
+	var about_info		= document.getElementById('about_info');
+	var policy_info		= document.getElementById('policy_info');
+	var messangers_info	= document.getElementById('messangers_info');
+	var register_info	= document.getElementById('register_info');
+	var register__info	= document.getElementById('register__info');
+	var account_info	= document.getElementById('account_info');
 
 	navigation_lang(lang)
 	if (lang == 'kk') { 
@@ -41,6 +55,16 @@ function language_main(lang) {
 		card_link_2.innerHTML 		= '<i class="fab fa-whatsapp"></i> Байланысу';
 		nav_title.innerText 		= 'Тегін бастау үшін';
 		nav_link.innerText 			= 'Басыңыз';
+		policy_link.innerText 		= 'Ережелерді көру';
+		policy_link.href 			= '/help/documentation-kz/';
+		about_info.innerText 		= 'Жоба жайында';
+		policy_info.innerText 		= 'Ⓒ Барлық құқық қорғалған';
+		messangers_info.innerText	= 'Әлеуметтік желілер';
+		register_info.innerText		= 'Тіркелу';
+		register__info.innerText	= 'Дәл қазір тіркеліп 360 күнге премиум жазылымды тегін алыңыз!';
+		account_info.innerText		= 'Қазір тіркелу';
+
+
 	} else if (lang == 'ru') {
 		lang_summary.innerText		= 'Тілді ауыстыру';
 		main_welcome.innerHTML 		= 'Добро пожаловать!';
