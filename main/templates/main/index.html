@@ -69,54 +69,56 @@
 {% endblock %}
 
 {% block footer %}
-<div class="footer-container">
-	<div class="footer-block">
-		<div class="footer-inner">
-			<h4><img src="{% static 'main/image/logo-icon.png' %}" width="30"> Bala Progger</h4>
-			<ul>
-				<li><a href="" id="about_info">О проекте</a></li>
-				<li><a id="policy_link" href="{% url 'doc_ru' %}">Правила использование</a></li>
-				<li id="policy_info">Ⓒ Все права защищены</li>
-			</ul>
-		</div>
-		<div class="footer-inner">
-			<ul>
-				<h4 id="messangers_info">Социальные сети</h4>
-				<li><a href="https://www.instagram.com/bala.progger.community/">Instagram</a></li>
-				<li><a href="https://www.facebook.com/bala.progger.community/">Facebook</a></li>
-				<li><a href="https://wa.me/+77783142837/">Whatsapp</a></li>
-				<!-- <li><a href="#">ВКонтакте</a></li> -->
-			</ul>
-		</div>
-		<div class="footer-inner">
-			<ul>
-				<h4 id="register_info">Зарегестрироваться</h4>
-				<li id="register__info">Зарегистрируйтесь сейчась и получите премиум аккаунт на 360 дней бесплатно!</li> 
-				{% if request.user.is_authenticated %}
-					<li><a href="{% url 'profile' request.user.id %}" id="account_info">Зарегистрироваться сейчась</a></li>
-				{% else %}
-					<li><a href="{% url 'members' %}" id="account_info">Зарегистрироваться сейчась</a></li>
-				{% endif %}
-			</ul>
+<footer>
+	<div class="footer-container">
+		<div class="footer-block">
+			<div class="footer-inner">
+				<h4><img src="{% static 'main/image/logo-icon.png' %}" width="30"> Bala Progger</h4>
+				<ul>
+					<li><a href="" id="about_info">О проекте</a></li>
+					<li><a id="policy_link" href="{% url 'doc_ru' %}">Правила использование</a></li>
+					<li id="policy_info">Ⓒ Все права защищены</li>
+				</ul>
+			</div>
+			<div class="footer-inner">
+				<ul>
+					<h4 id="messangers_info">Социальные сети</h4>
+					<li><a href="https://www.instagram.com/bala.progger.community/">Instagram</a></li>
+					<li><a href="https://www.facebook.com/bala.progger.community/">Facebook</a></li>
+					<li><a href="https://wa.me/+77783142837/">Whatsapp</a></li>
+					<!-- <li><a href="#">ВКонтакте</a></li> -->
+				</ul>
+			</div>
+			<div class="footer-inner">
+				<ul>
+					<h4 id="register_info">Зарегестрироваться</h4>
+					<li id="register__info">Зарегистрируйтесь сейчась и получите премиум аккаунт на 360 дней бесплатно!</li> 
+					{% if request.user.is_authenticated %}
+						<li><a href="{% url 'profile' request.user.id %}" id="account_info">Зарегистрироваться сейчась</a></li>
+					{% else %}
+						<li><a href="{% url 'members' %}" id="account_info">Зарегистрироваться сейчась</a></li>
+					{% endif %}
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="select-lang">
-	<details>
-		<summary id="lang_summary"></summary>
-		<div id="select_kazakh">Қазақ тілі</div>
-		<div id="select_russkiy">Русский язык</div>
-	</details>
-</div>
-<script type="text/javascript">
-	myStorage = window.localStorage;
-	let mod = localStorage.getItem('language') 
-	language_main(mod)
-	document.addEventListener("DOMContentLoaded", function() {
-		var loadet_content = document.querySelector('.language-block-container');
-		var load_animation= document.querySelector('.load-main-block');
-		loadet_content.style.display = 'block';
-		load_animation.style.display = 'none';
-	});
-</script>
+	<div class="select-lang">
+		<details>
+			<summary id="lang_summary"></summary>
+			<div id="select_kazakh">Қазақ тілі</div>
+			<div id="select_russkiy">Русский язык</div>
+		</details>
+	</div>
+	<script type="text/javascript">
+		myStorage = window.localStorage;
+		let mod = localStorage.getItem('language') 
+		language_main(mod)
+		document.addEventListener("DOMContentLoaded", function() {
+			var loadet_content = document.querySelector('.language-block-container');
+			var load_animation= document.querySelector('.load-main-block');
+			loadet_content.style.display = 'block';
+			load_animation.style.display = 'none';
+		});
+	</script>
+</footer>
 {% endblock %}
